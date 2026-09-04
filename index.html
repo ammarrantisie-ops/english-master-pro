@@ -609,6 +609,7 @@ const Q=[{t:"العلم نور والجهل ظلام",a:"مثل عربي"},{t:"�
 const APP_VER='4.0/11';
 
 document.addEventListener('DOMContentLoaded',()=>{
+if(location.search.indexOf('reset=1')>-1){try{localStorage.clear();}catch(e){}}
 listenData();
 const s=localStorage.getItem('emu');
 if(s){try{U=JSON.parse(s);}catch(e){U=null;}}
