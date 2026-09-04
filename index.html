@@ -505,6 +505,12 @@ body{font-family:'Tajawal',sans-serif;background:var(--bg);color:var(--t);min-he
 <input type="file" id="fiBox" accept=".json" onchange="impJson(event)" style="display:none">
 </div>
 <p style="font-size:10px;color:var(--td);margin-top:10px;line-height:1.7">بعد تعديل المحتوى: نزّل <b>content.json</b> وارفعه في المستودع على GitHub ليتحدّث لدى جميع الطلاب فور فتح التطبيق.</p>
+<div class="la" style="max-width:none;gap:8px;flex-wrap:wrap;margin-top:6px">
+<button class="bp" onclick="resync()" style="background:var(--g2)">🔄 مزامنة المحتوى من الخادم الرسمي</button>
+</div>
+</div>
+<p style="font-size:10px;color:var(--td);margin-top:10px;line-height:1.7">بعد تعديل المحتوى: نزّل <b>content.json</b> وارفعه في المستودع على GitHub ليتحدّث لدى جميع الطلاب فور فتح التطبيق. <span style="color:var(--wbs)">تعديلاتك تُحفظ محلياً حتى ترفعها بنفسك.</span></p>
+<button class="bp" style="margin-top:8px;background:var(--g4)" onclick="resync()">🔄 مزامنة: سحب أحدث محتوى من الخادم</button>
 </div>
 </div>
 </div>
@@ -573,7 +579,10 @@ body{font-family:'Tajawal',sans-serif;background:var(--bg);color:var(--t);min-he
 
 <script>
 /* التطبيق يعمل محلياً بالكامل على جهاز الطالب — بدون سيرفر وبدون إنترنت. */
-const DBG='em_grades',DBX='em_xp',DBQ='em_qz',DBU='em_users',DBU2='em_u';
+const DBG='em_grades',DBX='em_xp',DBQ='em_qz',DBU='em_users',DBU2='em_u',DBD='em_dirty';
+const isDirty=()=>{try{return localStorage.getItem(DBD)==='1';}catch(e){return false;}};
+const markDirty=()=>{try{localStorage.setItem(DBD,'1');}catch(e){}};
+const clearDirty=()=>{try{localStorage.removeItem(DBD);}catch(e){}};
 const us=()=>{try{return JSON.parse(localStorage.getItem(DBU))||[];}catch(e){return[];}};
 const su=u=>localStorage.setItem(DBU,JSON.stringify(u));
 const GN=['الصف الأول','الصف الثاني','الصف الثالث','الصف الرابع','الصف الخامس','الصف السادس','الصف السابع','الصف الثامن','الصف التاسع','الصف العاشر','الصف الحادي عشر','الصف الثاني عشر'];
@@ -684,6 +693,7 @@ if(id==='exercises')rEx();
 const CONTENT_URL='content.json';
 async function mergeContent(){
 try{
+if(isDirty()){loadCache();return;}
 const res=await fetch(CONTENT_URL,{cache:'no-store'});
 if(!res.ok)throw 0;
 const j=await res.json();
@@ -713,6 +723,19 @@ localStorage.setItem('em_last_content',JSON.stringify(j));
 loadCache();
 }
 }catch(e){}
+}
+async function resync(){
+clearDirty();
+try{
+const res=await fetch(CONTENT_URL,{cache:'no-store'});
+if(!res.ok)throw 0;
+const j=await res.json();
+if(j&&Array.isArray(j.grades)&&j.grades.length){D.grades=j.grades;}
+}catch(e){}
+localStorage.setItem('em_grades',JSON.stringify(D.grades));
+loadCache();
+rH();rB();rEx();uG2();renderAdmin2();
+tt('تمت المزامنة مع الخادم ✓','success');
 }
 function loadCache(){
 const lc=localStorage.getItem('em_grades');
@@ -848,7 +871,7 @@ const nu={id:Date.now(),word:en,translation:ar,done:false,cat:cat};
 if(en2)nu.en_s=en2;if(ar2)nu.ar_s=ar2;
 else{const a=autoEx(nu);nu.en_s=a[0];nu.ar_s=a[1];}
 u.words.push(nu);
-saveG();document.getElementById('ae').value='';document.getElementById('aa').value='';document.getElementById('ae2').value='';document.getElementById('aa2').value='';document.getElementById('aCat').value='n';
+saveG();markDirty();document.getElementById('ae').value='';document.getElementById('aa').value='';document.getElementById('ae2').value='';document.getElementById('aa2').value='';document.getElementById('aCat').value='n';
 tt('تمت الإضافة ✓','success');uUS();
 }
 
@@ -859,7 +882,7 @@ D.grades.forEach(g=>{if(!g.units)return;g.units.forEach(u=>{if(!u.words)return;u
 const a=autoEx(w);
 if(!w.en_s||!w.ar_s){w.en_s=a[0];w.ar_s=a[1];c++;}
 });});});
-saveG();
+saveG();markDirty();
 tt('تم توليد/إصلاح جمل '+c+' كلمة ✓','success');
 }
 
@@ -886,7 +909,7 @@ const a=autoEx(nu);nu.en_s=a[0];nu.ar_s=a[1];
 u.words.push(nu);c++;
 }else skip++;
 });
-saveG();tt(`تمت إضافة ${c} كلمة ✓${skip?' (تخطي '+skip+')':''}`,'success');uUS();
+saveG();markDirty();tt(`تمت إضافة ${c} كلمة ✓${skip?' (تخطي '+skip+')':''}`,'success');uUS();
 };
 reader.readAsText(f);e.target.value='';
 }
@@ -900,20 +923,20 @@ if(!name){tt('أدخل اسم الوحدة','error');return;}
 const g=D.grades.find(x=>x.id===gid);if(!g){tt('اختر الصف','error');return;}
 if(!g.units)g.units=[];
 g.units.push({id:Date.now(),name,icon,words:[]});
-saveG();document.getElementById('un2').value='';document.getElementById('uI').value='';
+saveG();markDirty();document.getElementById('un2').value='';document.getElementById('uI').value='';
 tt('تمت الإضافة ✓','success');uUS();uFU();
 }
 
 function delUnit(gid,uid,name){
 showConfirm(`حذف الوحدة "${name}"؟`,`سيتم حذف جميع الكلمات في هذه الوحدة`,()=>{
 const g=D.grades.find(x=>x.id===gid);
-if(g&&g.units){g.units=g.units.filter(u=>u.id!==uid);saveG();rH();tt('تم الحذف ✓','success');}
+if(g&&g.units){g.units=g.units.filter(u=>u.id!==uid);saveG();markDirty();rH();tt('تم الحذف ✓','success');}
 });
 }
 
 function delGrade(gid,name){
 showConfirm(`حذف "${name}" بالكامل؟`,`سيتم حذف الوحدات والكلمات جميعها`,()=>{
-D.grades=D.grades.filter(g=>g.id!==gid);saveG();rH();uG2();renderAdmin2();tt('تم الحذف ✓','success');
+D.grades=D.grades.filter(g=>g.id!==gid);saveG();markDirty();rH();uG2();renderAdmin2();tt('تم الحذف ✓','success');
 });
 }
 
@@ -956,7 +979,7 @@ if(!ad){tt('فقط المعلم','error');return;}
 const name=document.getElementById('agName').value.trim();
 if(!name){tt('أدخل اسم الصف','error');return;}
 D.grades.push({id:Date.now(),name,icon:'📚',units:[]});
-saveG();document.getElementById('agName').value='';
+saveG();markDirty();document.getElementById('agName').value='';
 rH();uG2();renderAdmin2();tt('تمت إضافة الصف ✓','success');
 }
 function addUnit3(gid){
@@ -966,14 +989,14 @@ if(!name)return;
 const g=D.grades.find(x=>x.id===gid);if(!g)return;
 if(!g.units)g.units=[];
 g.units.push({id:Date.now(),name,icon:'📦',words:[]});
-saveG();rH();uG2();renderAdmin2();tt('تمت إضافة الوحدة ✓','success');
+saveG();markDirty();rH();uG2();renderAdmin2();tt('تمت إضافة الوحدة ✓','success');
 }
 function editGradeName(gid,old){
 if(!ad)return;
 const nm=prompt('اسم الصف الجديد:',old);
 if(!nm)return;
 const g=D.grades.find(x=>x.id===gid);if(!g)return;
-g.name=nm.trim();saveG();rH();uG2();renderAdmin2();tt('تم التعديل ✓','success');
+g.name=nm.trim();saveG();markDirty();rH();uG2();renderAdmin2();tt('تم التعديل ✓','success');
 }
 function delGrade2(gid,name){
 delGrade(gid,name);
@@ -986,12 +1009,12 @@ const nm=prompt('اسم الوحدة الجديد:',u.name||'');
 if(nm)u.name=nm.trim();
 const ic=prompt('أيقونة الوحدة:',u.icon||'📦');
 if(ic)u.icon=ic.trim()||'📦';
-saveG();rH();uG2();renderAdmin2();tt('تم التعديل ✓','success');
+saveG();markDirty();rH();uG2();renderAdmin2();tt('تم التعديل ✓','success');
 }
 function delUnit2(gid,uid,name){
 showConfirm(`حذف الوحدة "${name}"؟`,`سيتم حذف جميع الكلمات في هذه الوحدة`,()=>{
 const g=D.grades.find(x=>x.id===gid);
-if(g&&g.units){g.units=g.units.filter(u=>u.id!==uid);saveG();rH();uG2();renderAdmin2();tt('تم الحذف ✓','success');}
+if(g&&g.units){g.units=g.units.filter(u=>u.id!==uid);saveG();markDirty();rH();uG2();renderAdmin2();tt('تم الحذف ✓','success');}
 });
 }
 function cx(){
@@ -1008,7 +1031,7 @@ try{
 const j=JSON.parse(e.target.result);
 if(!j||!Array.isArray(j.grades)||!j.grades.length){tt('ملف غير صالح','error');return;}
 D.grades=j.grades;
-saveG();rH();uG2();renderAdmin2();loadCache();tt('تم استيراد المحتوى ✓','success');
+saveG();markDirty();rH();uG2();renderAdmin2();loadCache();tt('تم استيراد المحتوى ✓','success');
 }catch(err){tt('ملف غير صالح','error');}
 };
 r.readAsText(f);ev.target.value='';
@@ -1133,7 +1156,7 @@ function dW2(word){
 if(!ad)return;
 showConfirm(`حذف "${word}" من كل الصفوف؟`,'',()=>{
 D.grades.forEach(g=>{if(g.units)g.units.forEach(u=>{if(u.words)u.words=u.words.filter(w=>w.word!==word);});});
-saveG();rB();rH();tt('تم الحذف ✓','success');
+saveG();markDirty();rB();rH();tt('تم الحذف ✓','success');
 });
 }
 
@@ -1287,6 +1310,7 @@ const all=us().filter(u=>!uid||u.id!==uid);
 su(all);
 if(U){U.xp=0;U.qz=0;U.doneWords={};U.td=null;localStorage.setItem('emu',JSON.stringify(U));}
 try{localStorage.removeItem('em_last_content');}catch(e){}
+clearDirty();
 mergeContent();
 tt('تمت إعادة التعيين ✓','success');
 });
