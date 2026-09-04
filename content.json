@@ -874,7 +874,411 @@
       "id": 10,
       "name": "الصف العاشر",
       "icon": "⭐",
-      "units": []
+      "units": [
+        {
+          "id": 1,
+          "name": "الوحدة الأولى: العودة إلى المدرسة",
+          "icon": "🏫",
+          "words": [
+            {
+              "id": 1,
+              "word": "summer holiday",
+              "translation": "العطلة الصيفية",
+              "done": false,
+              "cat": "n",
+              "en_s": "When the summer holiday is over, most students start to think of the new school year.",
+              "ar_s": "عند انتهاء الإجازة الصيفية، يبدأ معظم الطلاب بالتفكير في العام الدراسي الجديد."
+            },
+            {
+              "id": 2,
+              "word": "school year",
+              "translation": "العام الدراسي",
+              "done": false,
+              "cat": "n",
+              "en_s": "When the summer holiday is over, most students start to think of the new school year.",
+              "ar_s": "عند انتهاء الإجازة الصيفية، يبدأ معظم الطلاب بالتفكير في العام الدراسي الجديد."
+            },
+            {
+              "id": 3,
+              "word": "eager",
+              "translation": "متحمس",
+              "done": false,
+              "cat": "adj",
+              "en_s": "Some of them are eager to know their new teachers and meet their classmates to tell them about their summer holidays, while others are more worried about the new year.",
+              "ar_s": "بعضهم متحمسون لمعرفة معلميهم الجدد ومقابلة زملائهم ليقصّوا عليهم عطلهم الصيفية، بينما يشعر آخرون بقلق أكبر تجاه العام الجديد."
+            },
+            {
+              "id": 4,
+              "word": "classmates",
+              "translation": "زملاء الصف",
+              "done": false,
+              "cat": "n",
+              "en_s": "Some of them are eager to know their new teachers and meet their classmates to tell them about their summer holidays, while others are more worried about the new year.",
+              "ar_s": "بعضهم متحمسون لمعرفة معلميهم الجدد ومقابلة زملائهم ليقصّوا عليهم عطلهم الصيفية، بينما يشعر آخرون بقلق أكبر تجاه العام الجديد."
+            },
+            {
+              "id": 5,
+              "word": "worried",
+              "translation": "قلق",
+              "done": false,
+              "cat": "adj",
+              "en_s": "Some of them are eager to know their new teachers and meet their classmates to tell them about their summer holidays, while others are more worried about the new year.",
+              "ar_s": "بعضهم متحمسون لمعرفة معلميهم الجدد ومقابلة زملائهم ليقصّوا عليهم عطلهم الصيفية، بينما يشعر آخرون بقلق أكبر تجاه العام الجديد."
+            },
+            {
+              "id": 6,
+              "word": "tips",
+              "translation": "نصائح",
+              "done": false,
+              "cat": "n",
+              "en_s": "However, there are some tips for a smooth school year start that might help the students overcome the stress and organize their study environment.",
+              "ar_s": "ومع ذلك، هناك بعض النصائح لبداية عام دراسي سلسة قد تساعد الطلاب على التغلب على التوتر وتنظيم بيئة الدراسة الخاصة بهم."
+            },
+            {
+              "id": 7,
+              "word": "smooth",
+              "translation": "سهل وسلس",
+              "done": false,
+              "cat": "adj",
+              "en_s": "However, there are some tips for a smooth school year start that might help the students overcome the stress and organize their study environment.",
+              "ar_s": "ومع ذلك، هناك بعض النصائح لبداية عام دراسي سلسة قد تساعد الطلاب على التغلب على التوتر وتنظيم بيئة الدراسة الخاصة بهم."
+            },
+            {
+              "id": 8,
+              "word": "overcome",
+              "translation": "يتغلب على",
+              "done": false,
+              "cat": "v",
+              "en_s": "However, there are some tips for a smooth school year start that might help the students overcome the stress and organize their study environment.",
+              "ar_s": "ومع ذلك، هناك بعض النصائح لبداية عام دراسي سلسة قد تساعد الطلاب على التغلب على التوتر وتنظيم بيئة الدراسة الخاصة بهم."
+            },
+            {
+              "id": 9,
+              "word": "stress",
+              "translation": "التوتر",
+              "done": false,
+              "cat": "n",
+              "en_s": "However, there are some tips for a smooth school year start that might help the students overcome the stress and organize their study environment.",
+              "ar_s": "ومع ذلك، هناك بعض النصائح لبداية عام دراسي سلسة قد تساعد الطلاب على التغلب على التوتر وتنظيم بيئة الدراسة الخاصة بهم."
+            },
+            {
+              "id": 10,
+              "word": "organize",
+              "translation": "ينظم",
+              "done": false,
+              "cat": "v",
+              "en_s": "However, there are some tips for a smooth school year start that might help the students overcome the stress and organize their study environment.",
+              "ar_s": "ومع ذلك، هناك بعض النصائح لبداية عام دراسي سلسة قد تساعد الطلاب على التغلب على التوتر وتنظيم بيئة الدراسة الخاصة بهم."
+            },
+            {
+              "id": 11,
+              "word": "study environment",
+              "translation": "بيئة الدراسة",
+              "done": false,
+              "cat": "n",
+              "en_s": "However, there are some tips for a smooth school year start that might help the students overcome the stress and organize their study environment.",
+              "ar_s": "ومع ذلك، هناك بعض النصائح لبداية عام دراسي سلسة قد تساعد الطلاب على التغلب على التوتر وتنظيم بيئة الدراسة الخاصة بهم."
+            },
+            {
+              "id": 12,
+              "word": "lifestyle",
+              "translation": "نمط الحياة",
+              "done": false,
+              "cat": "n",
+              "en_s": "First of all, students should reconnect with a healthy lifestyle.",
+              "ar_s": "أولاً وقبل كل شيء، يجب على الطلاب إعادة التواصل مع نمط حياة صحي."
+            },
+            {
+              "id": 13,
+              "word": "reconnect",
+              "translation": "يعيد التواصل",
+              "done": false,
+              "cat": "v",
+              "en_s": "First of all, students should reconnect with a healthy lifestyle.",
+              "ar_s": "أولاً وقبل كل شيء، يجب على الطلاب إعادة التواصل مع نمط حياة صحي."
+            },
+            {
+              "id": 14,
+              "word": "healthy",
+              "translation": "صحي",
+              "done": false,
+              "cat": "adj",
+              "en_s": "First of all, students should reconnect with a healthy lifestyle.",
+              "ar_s": "أولاً وقبل كل شيء، يجب على الطلاب إعادة التواصل مع نمط حياة صحي."
+            },
+            {
+              "id": 15,
+              "word": "regular",
+              "translation": "منتظم",
+              "done": false,
+              "cat": "adj",
+              "en_s": "It requires them to get used to having regular and enough hours of sleep and eating healthy food.",
+              "ar_s": "وهذا يتطلب منهم التعود على ساعات نوم منتظمة وكافية وتناول طعام صحي."
+            },
+            {
+              "id": 16,
+              "word": "enough",
+              "translation": "كافٍ",
+              "done": false,
+              "cat": "adj",
+              "en_s": "It requires them to get used to having regular and enough hours of sleep and eating healthy food.",
+              "ar_s": "وهذا يتطلب منهم التعود على ساعات نوم منتظمة وكافية وتناول طعام صحي."
+            },
+            {
+              "id": 17,
+              "word": "sleep",
+              "translation": "النوم",
+              "done": false,
+              "cat": "n",
+              "en_s": "It requires them to get used to having regular and enough hours of sleep and eating healthy food.",
+              "ar_s": "وهذا يتطلب منهم التعود على ساعات نوم منتظمة وكافية وتناول طعام صحي."
+            },
+            {
+              "id": 18,
+              "word": "adaptation",
+              "translation": "التكيف",
+              "done": false,
+              "cat": "n",
+              "en_s": "This, of course, needs several days of adaptation, so it is essential to start adapting with this new routine a few days before school.",
+              "ar_s": "وهذا بالطبع يحتاج عدة أيام من التكيف، لذا من الضروري البدء بالتكيف مع هذا الروتين الجديد قبل المدرسة ببضعة أيام."
+            },
+            {
+              "id": 19,
+              "word": "essential",
+              "translation": "ضروري",
+              "done": false,
+              "cat": "adj",
+              "en_s": "This, of course, needs several days of adaptation, so it is essential to start adapting with this new routine a few days before school.",
+              "ar_s": "وهذا بالطبع يحتاج عدة أيام من التكيف، لذا من الضروري البدء بالتكيف مع هذا الروتين الجديد قبل المدرسة ببضعة أيام."
+            },
+            {
+              "id": 20,
+              "word": "routine",
+              "translation": "الروتين",
+              "done": false,
+              "cat": "n",
+              "en_s": "This, of course, needs several days of adaptation, so it is essential to start adapting with this new routine a few days before school.",
+              "ar_s": "وهذا بالطبع يحتاج عدة أيام من التكيف، لذا من الضروري البدء بالتكيف مع هذا الروتين الجديد قبل المدرسة ببضعة أيام."
+            },
+            {
+              "id": 21,
+              "word": "resources",
+              "translation": "مصادر",
+              "done": false,
+              "cat": "n",
+              "en_s": "Also, they should buy study resources available for their grade.",
+              "ar_s": "كما ينبغي عليهم شراء مصادر الدراسة المتاحة لصفهم."
+            },
+            {
+              "id": 22,
+              "word": "homework",
+              "translation": "الواجب المدرسي",
+              "done": false,
+              "cat": "n",
+              "en_s": "This will help them tremendously do their homework well.",
+              "ar_s": "وهذا سيساعدهم كثيراً على أداء واجباتهم المدرسية بشكل جيد."
+            },
+            {
+              "id": 23,
+              "word": "dictionary",
+              "translation": "قاموس",
+              "done": false,
+              "cat": "n",
+              "en_s": "Having a good dictionary, an encyclopedia, educational software and other things are certainly very beneficial for any student.",
+              "ar_s": "إن امتلاك قاموس جيد وموسوعة وبرمجيات تعليمية وأشياء أخرى مفيد جداً بالتأكيد لأي طالب."
+            },
+            {
+              "id": 24,
+              "word": "encyclopedia",
+              "translation": "موسوعة",
+              "done": false,
+              "cat": "n",
+              "en_s": "Having a good dictionary, an encyclopedia, educational software and other things are certainly very beneficial for any student.",
+              "ar_s": "إن امتلاك قاموس جيد وموسوعة وبرمجيات تعليمية وأشياء أخرى مفيد جداً بالتأكيد لأي طالب."
+            },
+            {
+              "id": 25,
+              "word": "educational software",
+              "translation": "برمجيات تعليمية",
+              "done": false,
+              "cat": "n",
+              "en_s": "Having a good dictionary, an encyclopedia, educational software and other things are certainly very beneficial for any student.",
+              "ar_s": "إن امتلاك قاموس جيد وموسوعة وبرمجيات تعليمية وأشياء أخرى مفيد جداً بالتأكيد لأي طالب."
+            },
+            {
+              "id": 26,
+              "word": "beneficial",
+              "translation": "مفيد",
+              "done": false,
+              "cat": "adj",
+              "en_s": "Having a good dictionary, an encyclopedia, educational software and other things are certainly very beneficial for any student.",
+              "ar_s": "إن امتلاك قاموس جيد وموسوعة وبرمجيات تعليمية وأشياء أخرى مفيد جداً بالتأكيد لأي طالب."
+            },
+            {
+              "id": 27,
+              "word": "pleasant",
+              "translation": "مريح ولطيف",
+              "done": false,
+              "cat": "adj",
+              "en_s": "Secondly, creating a pleasant study environment a few days before school starts is a must.",
+              "ar_s": "ثانياً، خلق بيئة دراسة مريحة قبل بدء المدرسة ببضعة أيام أمر ضروري."
+            },
+            {
+              "id": 28,
+              "word": "tidy-up",
+              "translation": "الترتيب والتنظيف",
+              "done": false,
+              "cat": "n",
+              "en_s": "A student should do a tidy-up of the desk and the shelves, sort and throw away the relics of the past year.",
+              "ar_s": "يجب على الطالب ترتيب المكتب والرفوف، وفرز ما تبقى من العام الماضي والتخلص منه."
+            },
+            {
+              "id": 29,
+              "word": "shelves",
+              "translation": "أرفف",
+              "done": false,
+              "cat": "n",
+              "en_s": "A student should do a tidy-up of the desk and the shelves, sort and throw away the relics of the past year.",
+              "ar_s": "يجب على الطالب ترتيب المكتب والرفوف، وفرز ما تبقى من العام الماضي والتخلص منه."
+            },
+            {
+              "id": 30,
+              "word": "relics",
+              "translation": "بقايا",
+              "done": false,
+              "cat": "n",
+              "en_s": "A student should do a tidy-up of the desk and the shelves, sort and throw away the relics of the past year.",
+              "ar_s": "يجب على الطالب ترتيب المكتب والرفوف، وفرز ما تبقى من العام الماضي والتخلص منه."
+            },
+            {
+              "id": 31,
+              "word": "donate",
+              "translation": "يتبرع بـ",
+              "done": false,
+              "cat": "v",
+              "en_s": "Moreover, he can donate his old books, pens and school things if they are still usable.",
+              "ar_s": "علاوة على ذلك، يمكنه التبرع بكتبه وأقلامه وأدواته المدرسية القديمة إذا كانت ما تزال صالحة للاستخدام."
+            },
+            {
+              "id": 32,
+              "word": "comfortable",
+              "translation": "مريح",
+              "done": false,
+              "cat": "adj",
+              "en_s": "He should not forget to clean up his desk and make it a comfortable place to do homework.",
+              "ar_s": "يجب ألا ينسى تنظيف مكتبه وجعله مكاناً مريحاً لأداء الواجبات المدرسية."
+            },
+            {
+              "id": 33,
+              "word": "workplace",
+              "translation": "مكان العمل",
+              "done": false,
+              "cat": "n",
+              "en_s": "A workplace should be a quiet well-lit corner where it feels good.",
+              "ar_s": "يجب أن يكون مكان الدراسة ركناً هادئاً جيد الإضاءة يشعر فيه المرء بالراحة."
+            },
+            {
+              "id": 34,
+              "word": "fears",
+              "translation": "مخاوف",
+              "done": false,
+              "cat": "n",
+              "en_s": "Finally, it is very important for students to talk to their parents about their fears and worries about the new school year.",
+              "ar_s": "أخيراً، من المهم جداً أن يتحدث الطلاب مع والديهم عن مخاوفهم وقلقهم بشأن العام الدراسي الجديد."
+            },
+            {
+              "id": 35,
+              "word": "worries",
+              "translation": "قلق",
+              "done": false,
+              "cat": "n",
+              "en_s": "Finally, it is very important for students to talk to their parents about their fears and worries about the new school year.",
+              "ar_s": "أخيراً، من المهم جداً أن يتحدث الطلاب مع والديهم عن مخاوفهم وقلقهم بشأن العام الدراسي الجديد."
+            },
+            {
+              "id": 36,
+              "word": "anxious",
+              "translation": "قلق",
+              "done": false,
+              "cat": "adj",
+              "en_s": "If someone feels anxious, his parents will surely find a way to help him get over these fears and gain more confidence.",
+              "ar_s": "إذا شعر أحدهم بالقلق، فسيجد والداه بالتأكيد طريقة لمساعدته على تجاوز هذه المخاوف واكتساب المزيد من الثقة."
+            },
+            {
+              "id": 37,
+              "word": "confidence",
+              "translation": "الثقة",
+              "done": false,
+              "cat": "n",
+              "en_s": "If someone feels anxious, his parents will surely find a way to help him get over these fears and gain more confidence.",
+              "ar_s": "إذا شعر أحدهم بالقلق، فسيجد والداه بالتأكيد طريقة لمساعدته على تجاوز هذه المخاوف واكتساب المزيد من الثقة."
+            },
+            {
+              "id": 38,
+              "word": "abilities",
+              "translation": "قدرات",
+              "done": false,
+              "cat": "n",
+              "en_s": "Parents will certainly teach their children how to believe in their abilities, how to behave in different situations with their classmates and teachers, how to solve their problems and how to make progress.",
+              "ar_s": "سيعلم الوالدان أطفالهم بالتأكيد كيف يؤمنون بقدراتهم، وكيف يتصرفون في المواقف المختلفة مع زملائهم ومعلميهم، وكيف يحلون مشاكلهم وكيف يحققون التقدم."
+            },
+            {
+              "id": 39,
+              "word": "behave",
+              "translation": "يتصرف",
+              "done": false,
+              "cat": "v",
+              "en_s": "Parents will certainly teach their children how to believe in their abilities, how to behave in different situations with their classmates and teachers, how to solve their problems and how to make progress.",
+              "ar_s": "سيعلم الوالدان أطفالهم بالتأكيد كيف يؤمنون بقدراتهم، وكيف يتصرفون في المواقف المختلفة مع زملائهم ومعلميهم، وكيف يحلون مشاكلهم وكيف يحققون التقدم."
+            },
+            {
+              "id": 40,
+              "word": "situations",
+              "translation": "مواقف",
+              "done": false,
+              "cat": "n",
+              "en_s": "Parents will certainly teach their children how to believe in their abilities, how to behave in different situations with their classmates and teachers, how to solve their problems and how to make progress.",
+              "ar_s": "سيعلم الوالدان أطفالهم بالتأكيد كيف يؤمنون بقدراتهم، وكيف يتصرفون في المواقف المختلفة مع زملائهم ومعلميهم، وكيف يحلون مشاكلهم وكيف يحققون التقدم."
+            },
+            {
+              "id": 41,
+              "word": "solve",
+              "translation": "يحل",
+              "done": false,
+              "cat": "v",
+              "en_s": "Parents will certainly teach their children how to believe in their abilities, how to behave in different situations with their classmates and teachers, how to solve their problems and how to make progress.",
+              "ar_s": "سيعلم الوالدان أطفالهم بالتأكيد كيف يؤمنون بقدراتهم، وكيف يتصرفون في المواقف المختلفة مع زملائهم ومعلميهم، وكيف يحلون مشاكلهم وكيف يحققون التقدم."
+            },
+            {
+              "id": 42,
+              "word": "progress",
+              "translation": "تقدم",
+              "done": false,
+              "cat": "n",
+              "en_s": "Parents will certainly teach their children how to believe in their abilities, how to behave in different situations with their classmates and teachers, how to solve their problems and how to make progress.",
+              "ar_s": "سيعلم الوالدان أطفالهم بالتأكيد كيف يؤمنون بقدراتهم، وكيف يتصرفون في المواقف المختلفة مع زملائهم ومعلميهم، وكيف يحلون مشاكلهم وكيف يحققون التقدم."
+            },
+            {
+              "id": 43,
+              "word": "self-confidence",
+              "translation": "الثقة بالنفس",
+              "done": false,
+              "cat": "n",
+              "en_s": "It is also essential that you develop self-confidence and believe in your abilities and in your own potential.",
+              "ar_s": "ومن الضروري أيضاً أن تنمي ثقتك بنفسك وتؤمن بقدراتك وإمكاناتك الخاصة."
+            },
+            {
+              "id": 44,
+              "word": "potential",
+              "translation": "الإمكانات",
+              "done": false,
+              "cat": "n",
+              "en_s": "It is also essential that you develop self-confidence and believe in your abilities and in your own potential.",
+              "ar_s": "ومن الضروري أيضاً أن تنمي ثقتك بنفسك وتؤمن بقدراتك وإمكاناتك الخاصة."
+            }
+          ]
+        }
+      ]
     },
     {
       "id": 11,
