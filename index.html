@@ -693,7 +693,33 @@ if(id==='exercises')rEx();
 const CONTENT_URL='content.json';
 async function mergeContent(){
 try{
-if(isDirty()){loadCache();return;}
+if(isDirty()){
+  loadCache();
+  // أبقِ التعديلات المحلية لكن حدّث جُمل النص (en_s/ar_s) للكلمات الموجودة محلياً من الخادم
+  try{
+    const res=await fetch(CONTENT_URL,{cache:'no-store'});
+    if(!res.ok)throw 0;
+    const j=await res.json();
+    if(j&&Array.isArray(j.grades)){
+      j.grades.forEach(gs=>{
+        if(!gs.units)return;
+        const lg=D.grades.find(x=>x.id===gs.id);
+        if(!lg||!lg.units)return;
+        gs.units.forEach(us=>{
+          if(!us.words)return;
+          const lu=lg.units.find(x=>x.id===us.id);
+          if(!lu||!lu.words)return;
+          us.words.forEach(ws=>{
+            const lw=lu.words.find(x=>String(x.id)===String(ws.id));
+            if(lw&&(!lw.en_s||!lw.ar_s)&&ws.en_s&&ws.ar_s){lw.en_s=ws.en_s;lw.ar_s=ws.ar_s;}
+          });
+        });
+      });
+      saveG();
+    }
+  }catch(e){}
+  return;
+}
 const res=await fetch(CONTENT_URL,{cache:'no-store'});
 if(!res.ok)throw 0;
 const j=await res.json();
