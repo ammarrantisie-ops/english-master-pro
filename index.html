@@ -131,6 +131,38 @@ body{font-family:'Tajawal',sans-serif;background:var(--bg);color:var(--t);min-he
 .wbbg{padding:2px 8px;background:var(--bl);border-radius:20px;font-size:9px;color:var(--td);white-space:nowrap}
 .wbd{background:none;border:none;color:var(--no);font-size:14px;cursor:pointer;padding:4px}
 
+.ac{display:flex;gap:10px;padding:0 16px;margin-bottom:16px}
+.acard{flex:1;border-radius:var(--r);padding:18px 10px;text-align:center;font-size:13px;font-weight:800;cursor:pointer;color:#fff;border:none;font-family:inherit;box-shadow:0 8px 24px rgba(0,0,0,.25)}
+.acard:active{transform:scale(.97)}
+.acard .aci{font-size:30px;display:block;margin-bottom:6px}
+.acard .acs{display:block;font-size:10px;font-weight:600;opacity:.85;margin-top:4px}
+
+.esl{margin:10px 16px 0}
+.exc{flex:1;display:flex;align-items:center;gap:10px;padding:12px;background:var(--bc);border-radius:var(--rs);border:1px solid var(--bd);cursor:pointer;margin-bottom:10px}
+.exc:active{transform:scale(.97)}
+.exi{width:42px;height:42px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+.exn{font-weight:700;font-size:12px}.exd{font-size:10px;color:var(--td);line-height:1.5;margin-top:2px}
+
+.tcq{font-size:14px;font-weight:700}
+.top{width:100%;padding:13px 16px;background:var(--bc);border:2px solid var(--bd);border-radius:var(--rs);font-size:14px;font-weight:600;cursor:pointer;font-family:inherit;color:var(--t);text-align:right;margin-bottom:8px;transition:all .15s}
+.top:active{transform:scale(.98)}
+.top.correct{border-color:var(--ok);background:rgba(0,230,118,0.12)}
+.top.wrong{border-color:var(--no);background:rgba(255,82,82,0.12)}
+.tfi{width:100%;padding:12px 14px;background:var(--bl);border:2px solid var(--bd);border-radius:var(--rs);color:var(--t);font-size:15px;font-family:inherit;text-align:center}
+.tfi:focus{outline:none;border-color:var(--p)}
+.tcheck{width:100%;margin-top:10px;padding:13px;background:var(--g1);color:#fff;border:none;border-radius:var(--rs);font-size:14px;font-weight:700;cursor:pointer;font-family:inherit}
+
+.tcl{padding:0 16px;display:flex;flex-direction:column;gap:8px}
+.tci{background:var(--bc);border-radius:var(--rs);padding:10px 12px;border:1px solid var(--bd);font-size:12px;line-height:1.7}
+.tci.ok{border-color:rgba(0,230,118,.5)}
+.tci.no{border-color:rgba(255,82,82,.5)}
+.tcw{font-weight:700}
+.tca{color:var(--td)}.tcc{color:var(--ok);font-weight:700}.tcw2{color:var(--no);font-weight:700}
+.tta{width:100%;min-height:190px;padding:12px;background:var(--bl);border:2px solid var(--bd);border-radius:var(--rs);color:var(--t);font-size:12px;font-family:inherit;resize:vertical}
+.tta:focus{outline:none;border-color:var(--p)}
+.tn{font-size:15px;font-weight:800}.tb{display:inline-block;padding:2px 8px;border-radius:20px;background:var(--bl);font-size:10px;color:var(--td);margin-top:4px}
+.tbt{padding:6px 14px;background:var(--g2);border:none;border-radius:50px;font-size:11px;font-weight:800;color:#fff;cursor:pointer;font-family:inherit}
+
 .ab{padding:14px 16px}
 .at{display:flex;gap:6px;margin-bottom:14px;flex-wrap:wrap}
 .atb{flex:1;min-width:calc(50% - 3px);padding:10px;background:var(--bc);border:2px solid var(--bd);border-radius:var(--rs);color:var(--td);font-size:12px;font-weight:600;cursor:pointer;font-family:inherit;text-align:center}
@@ -271,6 +303,10 @@ body{font-family:'Tajawal',sans-serif;background:var(--bg);color:var(--t);min-he
 <div class="qt" id="qtt"></div>
 <div class="qa" id="qaa"></div>
 </div>
+<div class="ac">
+<div class="acard" style="background:var(--g4)" onclick="go('exercises')"><span class="aci">📝</span>تمارين<span class="acs">جمل وكلمات بأساليب متنوعة</span></div>
+<div class="acard" style="background:var(--g2)" onclick="go('tests')"><span class="aci">🧪</span>اختبارات<span class="acs">اختبارات المعلم</span></div>
+</div>
 <div class="stc">
 <div class="si"><div class="sn" id="st">0</div><div class="sl">الكل</div></div>
 <div class="si"><div class="sn" id="sl">0</div><div class="sl">تم</div></div>
@@ -298,7 +334,7 @@ body{font-family:'Tajawal',sans-serif;background:var(--bg);color:var(--t);min-he
 <div class="fcc" onclick="flip()">
 <div class="fc" id="fc">
 <div class="cf cff"><div class="cfl">English</div><div class="cfw" id="cw">word</div><button class="cfs" onclick="event.stopPropagation();spk()">🔊</button></div>
-<div class="cf cfb"><div class="cfl">الترجمة</div><div class="cft" id="ct">ترجمة</div></div>
+<div class="cf cfb"><div class="cfl">الترجمة</div><div class="cft" id="ct">ترجمة</div><div class="cfe" id="ce" style="font-size:12px;opacity:.9;margin-top:10px;padding:8px 12px;background:rgba(255,255,255,0.15);border-radius:10px;line-height:1.7"></div></div>
 </div>
 </div>
 <div class="la">
@@ -340,6 +376,106 @@ body{font-family:'Tajawal',sans-serif;background:var(--bg);color:var(--t);min-he
 </div>
 </div>
 
+<!-- EXERCISES HUB -->
+<div id="exercises" class="scr">
+<div class="wbh">
+<h2>📝 التمارين</h2>
+<p style="font-size:11px;color:var(--td);margin-top:4px">تدرب على الكلمات داخل جمل إنجليزية بسيطة</p>
+</div>
+<div class="gf esl"><select class="fs" id="eSel" onchange="rEx()"><option value="all">كل الصفوف</option></select></div>
+<div class="ul" style="padding-top:8px">
+<div class="ut" onclick="xStart(1)" style="cursor:pointer"><div class="ui2" style="background:var(--g1);display:flex;align-items:center;justify-content:center">🅰️</div><div class="uit"><div class="uitn">اختر الجملة الصحيحة</div><div class="uitm">أي جملة تستخدم الكلمة بشكل صحيح؟</div></div><div class="ua2"><span>←</span></div></div>
+<div class="ut" onclick="xStart(2)" style="cursor:pointer"><div class="ui2" style="background:var(--g3);display:flex;align-items:center;justify-content:center">🗣️</div><div class="uit"><div class="uitn">ترجمة الجملة</div><div class="uitm">ما معنى هذه الجملة العربية؟</div></div><div class="ua2"><span>←</span></div></div>
+<div class="ut" onclick="xStart(3)" style="cursor:pointer"><div class="ui2" style="background:var(--g2);display:flex;align-items:center;justify-content:center">✏️</div><div class="uit"><div class="uitn">أكمل الجملة</div><div class="uitm">اختر الكلمة الناقصة المناسبة</div></div><div class="ua2"><span>←</span></div></div>
+</div>
+<nav class="bn">
+<button class="ni" onclick="go('home')"><span class="nii">🏠</span><span>الرئيسية</span></button>
+<button class="ni" onclick="go('bank')"><span class="nii">📖</span><span>الكلمات</span></button>
+<button class="ni active" onclick="go('exercises')"><span class="nii">📝</span><span>تمارين</span></button>
+<button class="ni" onclick="go('profile')"><span class="nii">👤</span><span>الملف</span></button>
+</nav>
+</div>
+
+<!-- EXERCISE PLAY -->
+<div id="extest" class="scr">
+<div class="lh">
+<button class="bb" onclick="go('exercises')">←</button>
+<div class="pc"><div class="pf" id="xp"></div></div>
+<span class="pt" id="xt">1/1</span>
+</div>
+<div class="qb">
+<div class="qq" id="xqq"></div>
+<div class="qo" id="xoo"></div>
+<div id="xfin" class="tf hidden" style="width:100%"><input class="tfi" id="xfinI" placeholder="اكتب الكلمة" onkeydown="if(event.key==='Enter')xCheckFill()"></div>
+<div class="qfb hidden" id="xfb"><div class="fbi" id="xfbI">✓</div><div class="fbt" id="xfbT"></div></div>
+</div>
+</div>
+
+<!-- EXERCISE RESULT -->
+<div id="xres" class="scr">
+<div class="rb">
+<div class="ri" id="xri">🎉</div>
+<h2 class="rtt" id="xrt">أحسنت!</h2>
+<div class="rsr"><span class="rbg" id="xrs">0</span><span class="rst">/ نهاية</span></div>
+<div class="rm" id="xrm"></div>
+<div class="rxp" id="xrxp">+50 XP</div>
+<div class="rbs">
+<button class="bp" onclick="xRetry()">إعادة</button>
+<button class="bs" onclick="go('exercises')">التمارين</button>
+</div>
+</div>
+</div>
+
+<!-- TESTS HUB -->
+<div id="tests" class="scr">
+<div class="wbh">
+<h2>🧪 اختبارات المعلم</h2>
+<p style="font-size:11px;color:var(--td);margin-top:4px">اختبارات يجهّزها معلمك — أجب وكرر لتحسين نتيجتك</p>
+</div>
+<div class="gf esl"><select class="fs" id="tSel" onchange="rTests()"><option value="all">كل الصفوف</option></select></div>
+<div class="ul" id="tlist" style="padding-top:8px"></div>
+<nav class="bn">
+<button class="ni" onclick="go('home')"><span class="nii">🏠</span><span>الرئيسية</span></button>
+<button class="ni" onclick="go('bank')"><span class="nii">📖</span><span>الكلمات</span></button>
+<button class="ni active" onclick="go('tests')"><span class="nii">🧪</span><span>اختبارات</span></button>
+<button class="ni" onclick="go('profile')"><span class="nii">👤</span><span>الملف</span></button>
+</nav>
+</div>
+
+<!-- TEST PLAY -->
+<div id="ttest" class="scr">
+<div class="lh">
+<button class="bb" onclick="go('tests')">←</button>
+<div class="pc"><div class="pf" id="tp"></div></div>
+<span class="pt" id="tt2">1/1</span>
+</div>
+<div class="qb">
+<div class="qq" id="tqq" style="text-align:right"></div>
+<div class="qo" id="too"></div>
+<div id="tfin" class="tf hidden" style="width:100%"><input class="tfi" id="tfinI" placeholder="اكتب الإجابة" onkeydown="if(event.key==='Enter')tCheckFill()"></div>
+<div class="qfb hidden" id="tfb"><div class="fbi" id="tfbI">✓</div><div class="fbt" id="tfbT"></div></div>
+</div>
+</div>
+
+<!-- TEST RESULT / CORRECTIONS -->
+<div id="tres" class="scr">
+<div class="wbh">
+<h2 id="tresh">🏁 النتيجة</h2>
+</div>
+<div style="padding:20px 16px;text-align:center">
+<div class="ri" id="tri">🎉</div>
+<div class="rsr" style="justify-content:center"><span class="rbg" id="trs">0</span><span class="rst" id="trtot">/ 0</span></div>
+<div class="rm" id="trm"></div>
+<div class="rxp" id="trxp"></div>
+</div>
+<div class="sh"><h2 style="font-size:13px">📋 التصحيح والإجابات</h2></div>
+<div class="tcl" id="tcl"></div>
+<div style="padding:16px">
+<button class="bp" onclick="tRetry()" style="width:100%;margin-bottom:8px">🔄 إعادة الاختبار</button>
+<button class="bs" onclick="go('tests')" style="width:100%">الاختبارات</button>
+</div>
+</div>
+
 <!-- BANK -->
 <div id="bank" class="scr">
 <div class="wbh"><h2>📖 بنك الكلمات</h2><input type="text" class="wbs" placeholder="🔍 بحث..." oninput="rB()"></div>
@@ -370,13 +506,20 @@ body{font-family:'Tajawal',sans-serif;background:var(--bg);color:var(--t);min-he
 <button class="atb" onclick="sT('file',this)">📄 رفع ملف</button>
 <button class="atb" onclick="sT('addUnit',this)">📦 وحدة</button>
 <button class="atb" onclick="sT('admin2',this)">⚙️ إدارة الصفوف</button>
+<button class="atb" onclick="sT('tests',this)">🧪 اختبارات</button>
 </div>
 <div id="tm" class="af">
 <div class="fg"><label class="fl">اختر الصف</label><select class="fs" id="aG" onchange="uUS()"></select></div>
 <div class="fg"><label class="fl">اختر الوحدة</label><select class="fs" id="aU"><option value="">-- اختر وحدة --</option></select></div>
 <div class="fg"><label class="fl">الكلمة بالإنجليزي</label><input class="fi" id="ae" placeholder="example"></div>
 <div class="fg"><label class="fl">الترجمة بالعربي</label><input class="fi" id="aa" placeholder="مثال"></div>
-<button class="bp" onclick="aW()">➕ إضافة الكلمة</button>
+<div class="fg"><label class="fl">جملة مثال بالإنجليزي (اختياري)</label><input class="fi" id="ae2" placeholder="I see an apple every day."></div>
+<div class="fg"><label class="fl">معنى الجملة بالعربي (اختياري)</label><input class="fi" id="aa2" placeholder="أرى تفاحة كل يوم."></div>
+<div class="la" style="max-width:none;gap:8px">
+<button class="bp" onclick="aW()" style="flex:1">➕ إضافة الكلمة</button>
+<button class="bp" style="flex:1;background:var(--g3)" onclick="autoSentAll()">🤖 توليد جمل تلقائي</button>
+</div>
+<p style="font-size:10px;color:var(--td);margin-top:8px;line-height:1.6">إن تُركت الجملة فارغة، سيولّد التطبيق جملة بسيطة تلقائياً. زر "توليد جمل تلقائي" يضيف/يعيد توليد الجمل لجميع الكلمات (يعمل بدون إنترنت).</p>
 </div>
 <div id="tf" class="af hidden">
 <div class="fg"><label class="fl">اختر الصف</label><select class="fs" id="fG" onchange="uFU()"></select></div>
@@ -412,6 +555,27 @@ body{font-family:'Tajawal',sans-serif;background:var(--bg);color:var(--t);min-he
 <input type="file" id="fiBox" accept=".json" onchange="impJson(event)" style="display:none">
 </div>
 <p style="font-size:10px;color:var(--td);margin-top:10px;line-height:1.7">بعد تعديل المحتوى: نزّل <b>content.json</b> وارفعه في المستودع على GitHub ليتحدّث لدى جميع الطلاب فور فتح التطبيق.</p>
+</div>
+<div id="tte" class="af hidden">
+<div class="fg"><label class="fl">🧪 اختبارات المعلم الحالية (<span id="tcCount">0</span>)</label></div>
+<div id="ttList" style="font-size:12px;margin-bottom:10px"></div>
+<div class="fg"><label class="fl">لصق اختبارات جاهزة (صيغة JSON)</label></div>
+<div class="uz-h" style="margin-bottom:8px">
+<strong>الصيغة:</strong> مصفوفة اختبارات. كل اختبار فيه:<br>
+<code>{ "id": 1, "title": "اختبار الوحدة 1", "grade": 1, "questions": [...] }</code><br>
+كل سؤال:<br>
+<code>{ "q": "السؤال", "type": "mc", "options": ["أ","ب","ج","د"], "answer": 0 }</code><br>
+<code>{ "q": "صحيح أم خطأ؟", "type": "tf", "answer": true }</code><br>
+<code>{ "q": "اكمل جملة...", "type": "fill", "answer": "am", "explanation": "شرح اختياري" }</code><br>
+<em>يدعم الأسئلة المتعددة (mc) ✓ / خطأ (tf) ✗ / إكمال (fill) ✏️</em>
+</div>
+<textarea class="tta" id="tIn" placeholder='[{"id":1,"title":"اختبار الوحدة 1","grade":1,"questions":[{"q":"ما معنى apple؟","type":"mc","options":["تفاحة","كتاب","قطة","طاولة"],"answer":0}]}]'></textarea>
+<div class="la" style="max-width:none;gap:8px;flex-wrap:wrap">
+<button class="bp" onclick="tAddIn()" style="flex:1">➕ إضافة/استبدال من النص</button>
+<button class="bp" style="flex:1;background:var(--g3)" onclick="tTpl()">📋 نموذج جاهز</button>
+<button class="bp" style="flex:1;background:var(--g2)" onclick="tClear()">🗑️ حذف الكل</button>
+</div>
+<p style="font-size:10px;color:var(--td);margin-top:8px;line-height:1.6">💡 أسرع طريقة: اطلب من الذكاء الاصطناعي "ولّد لي اختباراً بالصيغة أعلاه حول..."، انسخ الإجابة والصقها هنا، ثم اضغط إضافة — وبعدها <b>نزّل content.json</b> وارفعه على GitHub ليصل للطلاب فوراً.</p>
 </div>
 </div>
 </div>
@@ -486,9 +650,11 @@ const su=u=>localStorage.setItem(DBU,JSON.stringify(u));
 const GN=['الصف الأول','الصف الثاني','الصف الثالث','الصف الرابع','الصف الخامس','الصف السادس','الصف السابع','الصف الثامن','الصف التاسع','الصف العاشر','الصف الحادي عشر','الصف الثاني عشر'];
 const GI=['🌱','🌿','🌳','🌻','🌺','🌸','🍀','🍁','🌾','⭐','🏆','🎓'];
 
-let D={grades:[],xp:0,qz:0};
+let D={grades:[],xp:0,qz:0,tests:[]};
 let U=null,ad=false,ci=0,cu=null,cg=null,uw=[],qw=[],qi=0,qs=0;
 let cCb=null;
+let xq=[],xi=0,xs=0,xm=0,xresC=null;
+let tq=null,ti=0,ts=0,tcur=null,tresA=[],tmpOptions=[];
 
 const Q=[{t:"العلم نور والجهل ظلام",a:"مثل عربي"},{t:"من جد وجد ومن زرع حصد",a:"مثل عربي"},{t:"Knowledge is power",a:"فرنسيس بيكن"},{t:"Practice makes perfect",a:"مثل إنجليزي"},{t:"كل كلمة جديدة تعلمها خطوة نحو المستقبل",a:"Unknown"},{t:"ابدأ صغيراً واحلم كبيراً",a:"Unknown"},{t:"لا تحقر نفسك فأنت أقوى مما تتخيل",a:"Unknown"},{t:"المرء يكبر بعلمه لا بعمره",a:"مثل عربي"},{t:"A journey of a thousand miles begins with a step",a:"لاو تزو"},{t:"Learning is a treasure",a:"مثل صيني"}];
 
@@ -582,6 +748,8 @@ if(id==='home')rH();
 if(id==='bank')rB2();
 if(id==='add')uAP();
 if(id==='profile')uProf();
+if(id==='exercises')rEx();
+if(id==='tests')rTests();
 }
 
 // محتوى مشترك (كلمات/وحدات) يُسحب من رابط مركزي ثابت (GitHub Pages)
@@ -613,7 +781,9 @@ if(ow)w.done=!!ow.done;
 });
 }
 D.grades=j.grades;
+if(Array.isArray(j.tests)){D.tests=j.tests;}else if(!D.tests)D.tests=[];
 localStorage.setItem('em_grades',JSON.stringify(D.grades));
+localStorage.setItem('em_tests',JSON.stringify(D.tests));
 localStorage.setItem('em_last_content',JSON.stringify(j));
 loadCache();
 }
@@ -644,6 +814,7 @@ function listenData(){
 ensureGrades();
 try{D.xp=+localStorage.getItem('em_xp')||0;}catch(e){}
 try{D.qz=+localStorage.getItem('em_qz')||0;}catch(e){}
+try{const t=JSON.parse(localStorage.getItem('em_tests'));if(Array.isArray(t))D.tests=t;}catch(e){}
 mergeContent();
 loadCache();
 }
@@ -740,6 +911,7 @@ g.units.forEach(u=>{sel.innerHTML+=`<option value="${u.id}">${u.icon||'📦'} ${
 function aW(){
 if(!ad){tt('فقط المعلم','error');return;}
 const en=document.getElementById('ae').value.trim(),ar=document.getElementById('aa').value.trim();
+const en2=document.getElementById('ae2').value.trim(),ar2=document.getElementById('aa2').value.trim();
 const gid=+document.getElementById('aG').value,uid=+document.getElementById('aU').value;
 if(!en||!ar){tt('ملء كل الحقول','error');return;}
 const g=D.grades.find(x=>x.id===gid);if(!g){tt('اختر الصف','error');return;}
@@ -747,9 +919,75 @@ if(!g.units)g.units=[];
 const u=g.units.find(x=>x.id===uid);if(!u){tt('اختر الوحدة','error');return;}
 if(!u.words)u.words=[];
 if(u.words.find(w=>w.word.toLowerCase()===en.toLowerCase())){tt('موجودة بالفعل','error');return;}
-u.words.push({id:Date.now(),word:en,translation:ar,done:false});
-saveG();document.getElementById('ae').value='';document.getElementById('aa').value='';
+const nu={id:Date.now(),word:en,translation:ar,done:false};
+if(en2)nu.en_s=en2;if(ar2)nu.ar_s=ar2;
+else{const a=autoEx(nu);nu.en_s=a[0];nu.ar_s=a[1];}
+u.words.push(nu);
+saveG();document.getElementById('ae').value='';document.getElementById('aa').value='';document.getElementById('ae2').value='';document.getElementById('aa2').value='';
 tt('تمت الإضافة ✓','success');uUS();
+}
+
+function autoSentAll(){
+if(!ad){tt('فقط المعلم','error');return;}
+let c=0;
+D.grades.forEach(g=>{if(!g.units)return;g.units.forEach(u=>{if(!u.words)return;u.words.forEach(w=>{
+const a=autoEx(w);
+if(!w.en_s||!w.ar_s){w.en_s=a[0];w.ar_s=a[1];c++;}
+});});});
+saveG();
+tt('تم توليد/إصلاح جمل '+c+' كلمة ✓','success');
+}
+
+function renderTestAdmin(){
+const el=document.getElementById('ttList');if(!el)return;
+document.getElementById('tcCount').textContent=(D.tests||[]).length;
+el.innerHTML='';
+(D.tests||[]).forEach(t=>{
+const n=t.questions?t.questions.length:0;
+el.innerHTML+=`<div style="display:flex;align-items:center;gap:6px;padding:5px 0;border-bottom:1px dashed var(--bd)">
+<span style="flex:1">🧪 ${t.title||'بدون عنوان'} <span style="color:var(--td)">(${n} سؤال)</span></span>
+<button class="wbd" onclick="tDel(${t.id})">🗑️</button></div>`;
+});
+}
+
+function tDel(id){
+if(!ad)return;
+showConfirm(`حذف هذا الاختبار؟`,'',()=>{
+D.tests=(D.tests||[]).filter(t=>t.id!==id);saveT();renderTestAdmin();tt('تم الحذف ✓','success');
+});
+}
+function tAddIn(){
+if(!ad){tt('فقط المعلم','error');return;}
+const txt=document.getElementById('tIn').value.trim();
+if(!txt){tt('الصق النص أولاً','error');return;}
+let j=null;
+try{j=JSON.parse(txt);}catch(e){tt('صيغة JSON غير صحيحة','error');return;}
+const arr=Array.isArray(j)?j:[j];
+if(!arr.length){tt('لا يوجد اختبارات','error');return;}
+let ok=0,skip=0;
+arr.forEach(t=>{
+if(!t||!t.id||!Array.isArray(t.questions)||!t.questions.length){skip++;return;}
+if(!D.tests)D.tests=[];
+const i=D.tests.findIndex(x=>x.id===t.id);
+if(i>=0)D.tests[i]=t;else D.tests.push(t);
+ok++;
+});
+saveT();renderTestAdmin();
+tt('أُضيف '+ok+' اختبار ✓'+(skip?' (تخطي '+skip+')':''),'success');
+document.getElementById('tIn').value='';
+}
+function tTpl(){
+const tpl=[{id:1,title:'اختبار الوحدة الأولى: كلمات أساسية',grade:1,questions:[
+{q:'ما معنى apple؟',type:'mc',options:['تفاحة','كتاب','قطة','طاولة'],answer:0},
+{q:'cat تعني كلب',type:'tf',answer:false,explanation:'صحيح cat = قطة'},
+{q:'أكمل: I ___ a student.',type:'fill',answer:'am'}
+]}];
+document.getElementById('tIn').value=JSON.stringify(tpl,null,1);
+tt('نموذج جاهز، عدّله ثم أضفه ✓','success');
+}
+function tClear(){
+if(!ad)return;
+showConfirm('حذف جميع الاختبارات؟','',()=>{D.tests=[];saveT();renderTestAdmin();tt('تم الحذف ✓','success');});
 }
 
 function uF(e){
@@ -769,8 +1007,10 @@ reader.onload=ev=>{
 const lines=ev.target.result.split('\n').filter(l=>l.trim());
 let c=0,skip=0;
 lines.forEach(l=>{const p=l.split('|').map(x=>x.trim());
-if(p.length>=2&&p[0]&&p[1]&&!u.words.find(w=>w.word.toLowerCase()===p[0].toLowerCase())){
-u.words.push({id:Date.now()+c,word:p[0],translation:p[1],done:false});c++;
+if(p.length>=1&&p[0]&&!u.words.find(w=>w.word.toLowerCase()===p[0].toLowerCase())){
+const nu={id:Date.now()+c,word:p[0],translation:p[1]||p[0],done:false};
+const a=autoEx(nu);nu.en_s=a[0];nu.ar_s=a[1];
+u.words.push(nu);c++;
 }else skip++;
 });
 saveG();tt(`تمت إضافة ${c} كلمة ✓${skip?' (تخطي '+skip+')':''}`,'success');uUS();
@@ -813,7 +1053,9 @@ document.getElementById('tm').classList.toggle('hidden',t!=='manual');
 document.getElementById('tf').classList.toggle('hidden',t!=='file');
 document.getElementById('tu').classList.toggle('hidden',t!=='addUnit');
 document.getElementById('tadmin2').classList.toggle('hidden',t!=='admin2');
+document.getElementById('tte').classList.toggle('hidden',t!=='tests');
 if(t==='admin2')renderAdmin2();
+if(t==='tests')renderTestAdmin();
 }
 
 function renderAdmin2(){
@@ -882,7 +1124,7 @@ if(g&&g.units){g.units=g.units.filter(u=>u.id!==uid);saveG();rH();uG2();renderAd
 });
 }
 function cx(){
-const d=JSON.stringify({grades:D.grades},null,2);
+const d=JSON.stringify({version:1,updated:new Date().toISOString().split('T')[0],grades:D.grades,tests:D.tests||[]},null,2);
 const b=new Blob([d],{type:'application/json'});
 const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='content.json';a.click();
 tt('تم تنزيل content.json ✓','success');
@@ -895,7 +1137,8 @@ try{
 const j=JSON.parse(e.target.result);
 if(!j||!Array.isArray(j.grades)||!j.grades.length){tt('ملف غير صالح','error');return;}
 D.grades=j.grades;
-saveG();rH();uG2();renderAdmin2();loadCache();tt('تم استيراد المحتوى ✓','success');
+if(Array.isArray(j.tests))D.tests=j.tests;
+saveG();saveT();rH();uG2();renderAdmin2();loadCache();tt('تم استيراد المحتوى ✓','success');
 }catch(err){tt('ملف غير صالح','error');}
 };
 r.readAsText(f);ev.target.value='';
@@ -923,6 +1166,8 @@ if(ci>=uw.length){sQ();return;}
 const w=uw[ci];
 document.getElementById('cw').textContent=w.word;
 document.getElementById('ct').textContent=w.translation;
+const ex=getEx(w);
+document.getElementById('ce').textContent=`${ex.en}\n${ex.ar}`;
 document.getElementById('lp').style.width=Math.round(ci/uw.length*100)+'%';
 document.getElementById('lt').textContent=`${ci+1}/${uw.length}`;
 document.getElementById('fc').classList.remove('flipped');
@@ -1022,6 +1267,232 @@ saveG();rB();rH();tt('تم الحذف ✓','success');
 });
 }
 
+// ===== الجمل الأمثلة: مولّد + جلب =====
+function aO(v){return /^[aeiou]/i.test(v)?'an':'a';}
+function autoEx(w){
+const v=w.word,ar=w.translation||'';
+const tmps=[
+['I see the '+v+' every morning.','أرى '+ar+' كل صباح.'],
+['Today we have a new '+v+'.','لدينا اليوم '+ar+' جديد.'],
+['My friend and I talk about the '+v+'.','أنا وصديقي نتحدث عن '+ar+'.'],
+['The '+v+' is important to us.','إن '+ar+' مهم بالنسبة لنا.'],
+['This is '+aO(v)+' '+v+'.','هذا هو '+ar+'.'],
+];
+return tmps[Math.floor(Math.random()*tmps.length)];
+}
+function getEx(w){
+if(!w)return {en:'...',ar:'...'};
+const en=(w.en_s&&w.en_s.trim())?w.en_s.trim():null;
+const ar=(w.ar_s&&w.ar_s.trim())?w.ar_s.trim():null;
+if(en&&ar)return {en:en,ar:ar};
+const a=autoEx(w);
+return {en:en||a[0],ar:ar||a[1]};
+}
+function saveT(){try{localStorage.setItem('em_tests',JSON.stringify(D.tests));}catch(e){}}
+function allWords(gradeId){
+const out=[];
+D.grades.forEach(g=>{if(gradeId!=='all'&&g.id!==+gradeId)return;
+if(!g.units)return;g.units.forEach(u=>{if(!u.words)return;
+u.words.forEach(w=>{out.push({...w,gn:g.name,un:u.name,ui:u.icon,gid:g.id});});});});
+return out;
+}
+function fillSel(selId,gradeFn){
+const el=document.getElementById(selId);if(!el)return;
+const cv=el.value;el.innerHTML='<option value="all">كل الصفوف</option>';
+D.grades.forEach(g=>{const t=g.units?g.units.reduce((a,u)=>a+(u.words?u.words.length:0),0):0;
+if(t>0)el.innerHTML+=`<option value="${g.id}">${g.icon} ${g.name} (${t})</option>`;});
+el.value=cv;if(gradeFn)gradeFn();
+}
+
+// ===== قسم التمارين =====
+function rEx(){fillSel('eSel');}
+function xStart(mode){
+xm=mode;
+const gv=document.getElementById('eSel').value;
+const pool=allWords(gv).filter(w=>w.word&&w.translation);
+if(pool.length<4){tt('تحتاج 4 كلمات على الأقل','error');return;}
+const sl=(pool.sort(()=>Math.random()-0.5));
+xq=sl.slice(0,Math.min(10,pool.length));xi=0;xs=0;
+go('extest');xQQ();
+}
+function xQQ(){
+if(xi>=xq.length){xFinish();return;}
+const w=xq[xi];
+document.getElementById('xp').style.width=Math.round(xi/xq.length*100)+'%';
+document.getElementById('xt').textContent=`${xi+1}/${xq.length}`;
+const c=document.getElementById('xoo');c.innerHTML='';
+const fb=document.getElementById('xfb');fb.classList.add('hidden');
+document.getElementById('xfin').classList.add('hidden');
+const qb=document.getElementById('xqq');
+if(xm===1){
+const ex=getEx(w).en;
+const q=`«${w.word}» — أي جملة تستخدم الكلمة بشكل صحيح؟`;
+qb.textContent=q;
+const wrong=(xq.filter(o=>o.id!==w.id).map(o=>getEx(o).en));
+const opts=[ex].concat(wrong.sort(()=>Math.random()-0.5).slice(0,3)).sort(()=>Math.random()-0.5);
+opts.forEach(s=>{const b=document.createElement('button');b.className='qop';b.textContent=s;b.onclick=()=>xPick(s,ex);c.appendChild(b);});
+}else if(xm===2){
+const ex=getEx(w);
+qb.textContent='🇬🇧 '+ex.en;
+const wrong=(xq.filter(o=>o.id!==w.id).map(o=>getEx(o).ar));
+const opts=[ex.ar].concat(wrong.sort(()=>Math.random()-0.5).slice(0,3)).sort(()=>Math.random()-0.5);
+opts.forEach(s=>{const b=document.createElement('button');b.className='qop';b.textContent=s;b.onclick=()=>xPick(s,ex.ar);c.appendChild(b);});
+}else{
+const ex=getEx(w).en;
+const blank=ex.replace(new RegExp('('+w.word.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+')','i'),'____');
+qb.textContent='✏️ أكمل: '+blank;
+document.getElementById('xfin').classList.remove('hidden');
+const wrong=(xq.filter(o=>o.id!==w.id).map(o=>o.word));
+const opts=[w.word].concat(wrong.sort(()=>Math.random()-0.5).slice(0,3)).sort(()=>Math.random()-0.5);
+opts.forEach(v=>{const b=document.createElement('button');b.className='qop';b.textContent=v;b.onclick=()=>xPick(v,w.word);c.appendChild(b);});
+}
+}
+function xPick(sel,correct){
+const c=document.getElementById('xoo');
+[...c.querySelectorAll('.qop')].forEach(b=>{b.classList.add('disabled');if(b.textContent===correct)b.classList.add('correct');if(b.textContent===sel&&sel!==correct)b.classList.add('wrong');});
+const fb=document.getElementById('xfb');
+const ok=sel===correct;
+fb.className='qfb '+(ok?'correct':'wrong');
+document.getElementById('xfbI').textContent=ok?'✓':'✗';
+document.getElementById('xfbT').textContent=ok?'أحسنت!':'الصحيح: '+correct;
+if(ok){xs++;if(U){U.xp+=2;addLog('ok');syncUser();}}
+else if(U){addLog('no');}
+setTimeout(()=>{xi++;xQQ();},1300);
+}
+function xCheckFill(){
+const w=xq[xi];const v=document.getElementById('xfinI').value.trim();
+if(!v){tt('اكتب الجملة','error');return;}
+const ok=v.toLowerCase()===w.word.toLowerCase();
+const fb=document.getElementById('xfb');
+fb.className='qfb '+(ok?'correct':'wrong');
+document.getElementById('xfbI').textContent=ok?'✓':'✗';
+document.getElementById('xfbT').textContent=ok?'أحسنت!':'الصحيح: '+w.word;
+if(ok){xs++;if(U){U.xp+=2;addLog('ok');syncUser();}}
+else if(U){addLog('no');}
+setTimeout(()=>{document.getElementById('xfinI').value='';xi++;xQQ();},1300);
+}
+function xFinish(){
+go('xres');
+const p=Math.round(xs/totalQuest()*100);
+document.getElementById('xrs').textContent=xs;
+document.getElementById('xri').textContent=p>=80?'🎉':p>=50?'👍':'💪';
+document.getElementById('xrt').textContent=p>=80?'أحسنت!':p>=50?'جيد!':'راجع الجمل وعد مرة أخرى!';
+document.getElementById('xrm').textContent=`${p}% إجابات صحيحة`;
+document.getElementById('xrxp').textContent='+'+xs*2+' XP';
+}
+function totalQuest(){return xq.length||1;}
+function xRetry(){xQQ();}
+
+// ===== قسم اختبارات المعلم =====
+function rTests(){
+fillSel('tSel');
+const el=document.getElementById('tlist');el.innerHTML='';
+const fv=document.getElementById('tSel').value;
+const list=(D.tests||[]).filter(t=>fv==='all'||String(t.grade)===fv||!t.grade);
+if(!list.length){el.innerHTML='<p style="text-align:center;color:var(--td);padding:40px;font-size:13px">لا توجد اختبارات بعد. سينشرها معلمك قريباً.</p>';return;}
+list.forEach(t=>{
+const n=t.questions?t.questions.length:0;
+const best=U&&U.tests&&U.tests[t.id]!=null?U.tests[t.id]:null;
+const d=document.createElement('div');d.className='ut';
+d.innerHTML=`<div class="ui2" style="background:var(--g2);display:flex;align-items:center;justify-content:center">🧪</div>
+<div class="uit"><div class="uitn">${t.title||'اختبار'}</div><div class="uitm">${n} سؤال${best!=null?' | أفضل نتيجة: '+best+'/'+n:''}</div></div>
+<div class="ua2">${best!=null?'⭐':'▶️'}</div>`;
+d.onclick=()=>tStart(t);
+el.appendChild(d);
+});
+}
+function tStart(t){
+if(!t||!Array.isArray(t.questions)||!t.questions.length){tt('اختبار فارغ','error');return;}
+tq=t;ti=0;ts=0;tresA=[];
+go('ttest');tQQ();
+}
+function tQQ(){
+if(ti>=tq.questions.length){tFinish();return;}
+const q=tq.questions[ti];tcur=q;
+document.getElementById('tp').style.width=Math.round(ti/tq.questions.length*100)+'%';
+document.getElementById('tt2').textContent=`${ti+1}/${tq.questions.length}`;
+const fb=document.getElementById('tfb');fb.classList.add('hidden');
+document.getElementById('tfin').classList.add('hidden');
+const c=document.getElementById('too');c.innerHTML='';
+document.getElementById('tqq').textContent=q.q||'';
+const type=q.type||'mc';
+if(type==='tf'){
+const ok=!!q.answer;
+[['صحيح',true],['خطأ',false]].forEach(([lab,val])=>{
+const b=document.createElement('button');b.className='qop';
+b.textContent=lab==='صحيح'?'✔️ صحيح':'✖️ خطأ';
+b.onclick=()=>tPick(val===ok,val);
+c.appendChild(b);
+});
+}else if(type==='fill'){
+document.getElementById('tfin').classList.remove('hidden');
+}else{
+const opts=Array.isArray(q.options)?q.options:[];
+tmpOptions=opts;
+opts.forEach((o,i)=>{
+const b=document.createElement('button');b.className='qop';b.textContent=o;
+b.onclick=()=>tPick(i===q.answer,i);c.appendChild(b);
+});
+}
+}
+function tPick(ok,picked){
+qfbFb('tfb',ok,tcur);
+if(ok){ts++;if(U){U.xp+=5;addLog('ok');syncUser();}}
+else if(U){addLog('no');}
+tresA.push({q:tcur,ok:ok,picked:picked});
+setTimeout(()=>{ti++;tQQ();},1300);
+}
+function tCheckFill(){
+const q=tcur;const v=document.getElementById('tfinI').value.trim();
+if(!v){tt('اكتب الإجابة','error');return;}
+const ok=v.toLowerCase()===String(q.answer).toLowerCase();
+qfbFb('tfb',ok,q);
+if(ok){ts++;if(U){U.xp+=5;addLog('ok');syncUser();}}
+else if(U){addLog('no');}
+tresA.push({q:q,ok:ok,picked:v});
+setTimeout(()=>{document.getElementById('tfinI').value='';ti++;tQQ();},1300);
+}
+function fmtAns(q){
+if(q.type==='tf')return q.answer?'صحيح':'خطأ';
+const p=Array.isArray(q.options)&&q.answer!=null?q.options[q.answer]:null;
+return p!=null?p:q.answer;
+}
+function qfbFb(id,ok,q){
+const fb=document.getElementById(id);
+fb.className='qfb '+(ok?'correct':'wrong');
+document.getElementById(id+'I').textContent=ok?'✓':'✗';
+document.getElementById(id+'T').textContent=ok?'أحسنت!':'الصحيح: '+fmtAns(q);
+}
+function tFinish(){
+go('tres');
+const tot=tq.questions.length;
+document.getElementById('trs').textContent=ts;
+document.getElementById('trtot').textContent='/ '+tot;
+const p=Math.round(ts/tot*100);
+document.getElementById('tri').textContent=p>=80?'🎉':p>=50?'👍':'💪';
+document.getElementById('trm').textContent=p>=80?'عمل رائع!':p>=50?'جيد!':'حاول مرة أخرى!';
+document.getElementById('trxp').textContent='+'+ts*5+' XP';
+document.getElementById('tresh').textContent='🏁 '+ (tq.title||'النتيجة');
+const cl=document.getElementById('tcl');cl.innerHTML='';
+tresA.forEach((r,idx)=>{
+const pr=r.q.question||r.q.q||'سؤال';
+const ans=fmtAns(r.q);
+const d=document.createElement('div');d.className='tci '+(r.ok?'ok':'no');
+d.innerHTML=`<div class="tcw">${idx+1}. ${pr}</div>
+<div class="tca">إجابتك: <span class="${r.ok?'tcc':'tcw2'}">${r.q.type==='tf'?(r.picked===true?'صحيح':'خطأ'):(r.picked==null?'—':r.picked)}</span></div>
+${r.ok?'':`<div class="tca">الصحيح: <span class="tcc">${ans}</span></div>`}
+${r.q.explanation?`<div class="tca">💡 ${r.q.explanation}</div>`:''}`;
+cl.appendChild(d);
+});
+if(U){
+const best=U.tests||{};
+if(best[tq.id]==null||ts>best[tq.id]){U.tests=best;U.tests[tq.id]=ts;syncUser();}
+}
+}
+function tRetry(){
+if(tq&&tq.questions)tStart(tq);
+}
+
 function ex(){
 const d=JSON.stringify(D);const b=new Blob([d],{type:'application/json'});
 const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='english-master-backup.json';a.click();
@@ -1032,9 +1503,9 @@ function rst(){
 if(!ad)return;
 showConfirm('إعادة تعيين كل شيء؟','سيُحذف التقدم المحفوظ على هذا الجهاز. المحتوى المشترك سيعود تلقائياً من ملف المعلم عند فتح التطبيق.',()=>{
 const uid=U?U.id:null;
-D={grades:[],xp:0,qz:0};
+D={grades:[],xp:0,qz:0,tests:[]};
 for(let i=0;i<12;i++)D.grades.push({id:i+1,name:GN[i],icon:GI[i],units:[]});
-saveG();saveXp();saveQz();
+saveG();saveXp();saveQz();saveT();
 const all=us().filter(u=>!uid||u.id!==uid);
 su(all);
 if(U){U.xp=0;U.qz=0;U.doneWords={};U.td=null;localStorage.setItem('emu',JSON.stringify(U));}
