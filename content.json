@@ -17,256 +17,256 @@
               "word": "apple",
               "translation": "تفاحة",
               "done": false,
-              "en_s": "The apple is important to us.",
-              "ar_s": "إن تفاحة مهم بالنسبة لنا."
+              "en_s": "I eat an apple every day.",
+              "ar_s": "آكل تفاحة كل يوم."
             },
             {
               "id": 2,
               "word": "book",
               "translation": "كتاب",
               "done": false,
-              "en_s": "I see the book every morning.",
-              "ar_s": "أرى كتاب كل صباح."
+              "en_s": "I read a book at home.",
+              "ar_s": "أقرأ كتاباً في البيت."
             },
             {
               "id": 3,
               "word": "cat",
               "translation": "قطة",
               "done": false,
-              "en_s": "I see the cat every morning.",
-              "ar_s": "أرى قطة كل صباح."
+              "en_s": "The cat drinks milk.",
+              "ar_s": "القطة تشرب الحليب."
             },
             {
               "id": 4,
               "word": "dog",
               "translation": "كلب",
               "done": false,
-              "en_s": "This is a dog.",
-              "ar_s": "هذا هو كلب."
+              "en_s": "The dog runs in the park.",
+              "ar_s": "الكلب يجري في الحديقة."
             },
             {
               "id": 5,
               "word": "house",
               "translation": "منزل",
               "done": false,
-              "en_s": "This is a house.",
-              "ar_s": "هذا هو منزل."
+              "en_s": "We live in a big house.",
+              "ar_s": "نسكن في منزل كبير."
             },
             {
               "id": 6,
               "word": "water",
               "translation": "ماء",
               "done": false,
-              "en_s": "I see the water every morning.",
-              "ar_s": "أرى ماء كل صباح."
+              "en_s": "I drink water every day.",
+              "ar_s": "أشرب الماء كل يوم."
             },
             {
               "id": 7,
               "word": "school",
               "translation": "مدرسة",
               "done": false,
-              "en_s": "This is a school.",
-              "ar_s": "هذا هو مدرسة."
+              "en_s": "I go to school in the morning.",
+              "ar_s": "أذهب إلى المدرسة في الصباح."
             },
             {
               "id": 8,
               "word": "teacher",
               "translation": "معلم",
               "done": false,
-              "en_s": "The teacher is important to us.",
-              "ar_s": "إن معلم مهم بالنسبة لنا."
+              "en_s": "My teacher writes on the board.",
+              "ar_s": "معلمي يكتب على السبورة."
             },
             {
               "id": 9,
               "word": "student",
               "translation": "طالب",
               "done": false,
-              "en_s": "The student is important to us.",
-              "ar_s": "إن طالب مهم بالنسبة لنا."
+              "en_s": "The student reads a book.",
+              "ar_s": "الطالب يقرأ كتاباً."
             },
             {
               "id": 10,
               "word": "friend",
               "translation": "صديق",
               "done": false,
-              "en_s": "My friend and I talk about the friend.",
-              "ar_s": "أنا وصديقي نتحدث عن صديق."
+              "en_s": "My friend plays with me.",
+              "ar_s": "صديقي يلعب معي."
             },
             {
               "id": 11,
               "word": "family",
               "translation": "عائلة",
               "done": false,
-              "en_s": "My friend and I talk about the family.",
-              "ar_s": "أنا وصديقي نتحدث عن عائلة."
+              "en_s": "I eat dinner with my family.",
+              "ar_s": "أتناول العشاء مع عائلتي."
             },
             {
               "id": 12,
               "word": "food",
               "translation": "طعام",
               "done": false,
-              "en_s": "This is a food.",
-              "ar_s": "هذا هو طعام."
+              "en_s": "The food is very good.",
+              "ar_s": "الطعام جيد جداً."
             },
             {
               "id": 13,
               "word": "morning",
               "translation": "صباح",
               "done": false,
-              "en_s": "The morning is important to us.",
-              "ar_s": "إن صباح مهم بالنسبة لنا."
+              "en_s": "I say hello every morning.",
+              "ar_s": "أقول مرحباً كل صباح."
             },
             {
               "id": 14,
               "word": "night",
               "translation": "ليل",
               "done": false,
-              "en_s": "I see the night every morning.",
-              "ar_s": "أرى ليل كل صباح."
+              "en_s": "The moon is big at night.",
+              "ar_s": "القمر كبير في الليل."
             },
             {
               "id": 15,
               "word": "big",
               "translation": "كبير",
               "done": false,
-              "en_s": "My friend and I talk about the big.",
-              "ar_s": "أنا وصديقي نتحدث عن كبير."
+              "en_s": "My house is big.",
+              "ar_s": "منزلي كبير."
             },
             {
               "id": 16,
               "word": "small",
               "translation": "صغير",
               "done": false,
-              "en_s": "The small is important to us.",
-              "ar_s": "إن صغير مهم بالنسبة لنا."
+              "en_s": "The cat is small.",
+              "ar_s": "القطة صغيرة."
             },
             {
               "id": 17,
               "word": "happy",
               "translation": "سعيد",
               "done": false,
-              "en_s": "This is a happy.",
-              "ar_s": "هذا هو سعيد."
+              "en_s": "I am happy today.",
+              "ar_s": "أنا سعيد اليوم."
             },
             {
               "id": 18,
               "word": "run",
               "translation": "يجري",
               "done": false,
-              "en_s": "The run is important to us.",
-              "ar_s": "إن يجري مهم بالنسبة لنا."
+              "en_s": "I run every morning.",
+              "ar_s": "أجري كل صباح."
             },
             {
               "id": 19,
               "word": "eat",
               "translation": "يأكل",
               "done": false,
-              "en_s": "My friend and I talk about the eat.",
-              "ar_s": "أنا وصديقي نتحدث عن يأكل."
+              "en_s": "I eat fruit every day.",
+              "ar_s": "آكل الفاكهة كل يوم."
             },
             {
               "id": 20,
               "word": "drink",
               "translation": "يشرب",
               "done": false,
-              "en_s": "I see the drink every morning.",
-              "ar_s": "أرى يشرب كل صباح."
+              "en_s": "I drink juice.",
+              "ar_s": "أشرب العصير."
             },
             {
               "id": 21,
               "word": "read",
               "translation": "يقرأ",
               "done": false,
-              "en_s": "Today we have a new read.",
-              "ar_s": "لدينا اليوم يقرأ جديد."
+              "en_s": "I read a story at night.",
+              "ar_s": "أقرأ قصة في الليل."
             },
             {
               "id": 22,
               "word": "write",
               "translation": "يكتب",
               "done": false,
-              "en_s": "This is a write.",
-              "ar_s": "هذا هو يكتب."
+              "en_s": "I write my name.",
+              "ar_s": "أكتب اسمي."
             },
             {
               "id": 23,
               "word": "play",
               "translation": "يلعب",
               "done": false,
-              "en_s": "I see the play every morning.",
-              "ar_s": "أرى يلعب كل صباح."
+              "en_s": "I play with my friend.",
+              "ar_s": "ألعب مع صديقي."
             },
             {
               "id": 24,
               "word": "red",
               "translation": "أحمر",
               "done": false,
-              "en_s": "I see the red every morning.",
-              "ar_s": "أرى أحمر كل صباح."
+              "en_s": "This rose is red.",
+              "ar_s": "هذه الوردة حمراء."
             },
             {
               "id": 25,
               "word": "blue",
               "translation": "أزرق",
               "done": false,
-              "en_s": "I see the blue every morning.",
-              "ar_s": "أرى أزرق كل صباح."
+              "en_s": "The sky is blue.",
+              "ar_s": "السماء زرقاء."
             },
             {
               "id": 26,
               "word": "yellow",
               "translation": "أصفر",
               "done": false,
-              "en_s": "I see the yellow every morning.",
-              "ar_s": "أرى أصفر كل صباح."
+              "en_s": "The sun is yellow.",
+              "ar_s": "الشمس صفراء."
             },
             {
               "id": 27,
               "word": "sun",
               "translation": "شمس",
               "done": false,
-              "en_s": "I see the sun every morning.",
-              "ar_s": "أرى شمس كل صباح."
+              "en_s": "The sun is hot.",
+              "ar_s": "الشمس حارة."
             },
             {
               "id": 28,
               "word": "moon",
               "translation": "قمر",
               "done": false,
-              "en_s": "I see the moon every morning.",
-              "ar_s": "أرى قمر كل صباح."
+              "en_s": "The moon is white.",
+              "ar_s": "القمر أبيض."
             },
             {
               "id": 29,
               "word": "car",
               "translation": "سيارة",
               "done": false,
-              "en_s": "Today we have a new car.",
-              "ar_s": "لدينا اليوم سيارة جديد."
+              "en_s": "My father has a car.",
+              "ar_s": "عند والدي سيارة."
             },
             {
               "id": 30,
               "word": "bird",
               "translation": "عصفور",
               "done": false,
-              "en_s": "My friend and I talk about the bird.",
-              "ar_s": "أنا وصديقي نتحدث عن عصفور."
+              "en_s": "The bird can fly.",
+              "ar_s": "العصفور يستطيع الطيران."
             },
             {
               "id": 31,
               "word": "fish",
               "translation": "سمكة",
               "done": false,
-              "en_s": "This is a fish.",
-              "ar_s": "هذا هو سمكة."
+              "en_s": "The fish swims in water.",
+              "ar_s": "السمكة تسبح في الماء."
             },
             {
               "id": 32,
               "word": "tree",
               "translation": "شجرة",
               "done": false,
-              "en_s": "Today we have a new tree.",
-              "ar_s": "لدينا اليوم شجرة جديد."
+              "en_s": "The tree is very tall.",
+              "ar_s": "الشجرة طويلة جداً."
             }
           ]
         },
@@ -280,160 +280,160 @@
               "word": "mother",
               "translation": "أم",
               "done": false,
-              "en_s": "The mother is important to us.",
-              "ar_s": "إن أم مهم بالنسبة لنا."
+              "en_s": "My mother cooks food.",
+              "ar_s": "أمي تطبخ الطعام."
             },
             {
               "id": 2,
               "word": "father",
               "translation": "أب",
               "done": false,
-              "en_s": "This is a father.",
-              "ar_s": "هذا هو أب."
+              "en_s": "My father works in the morning.",
+              "ar_s": "أبي يعمل في الصباح."
             },
             {
               "id": 3,
               "word": "brother",
               "translation": "أخ",
               "done": false,
-              "en_s": "This is a brother.",
-              "ar_s": "هذا هو أخ."
+              "en_s": "My brother plays with me.",
+              "ar_s": "أخي يلعب معي."
             },
             {
               "id": 4,
               "word": "sister",
               "translation": "أخت",
               "done": false,
-              "en_s": "This is a sister.",
-              "ar_s": "هذا هو أخت."
+              "en_s": "My sister reads a book.",
+              "ar_s": "أختي تقرأ كتاباً."
             },
             {
               "id": 5,
               "word": "grandmother",
               "translation": "جدة",
               "done": false,
-              "en_s": "This is a grandmother.",
-              "ar_s": "هذا هو جدة."
+              "en_s": "My grandmother helps me.",
+              "ar_s": "جدتي تساعدني."
             },
             {
               "id": 6,
               "word": "grandfather",
               "translation": "جد",
               "done": false,
-              "en_s": "This is a grandfather.",
-              "ar_s": "هذا هو جد."
+              "en_s": "My grandfather tells stories.",
+              "ar_s": "جدي يحكي قصصاً."
             },
             {
               "id": 7,
               "word": "boy",
               "translation": "ولد",
               "done": false,
-              "en_s": "My friend and I talk about the boy.",
-              "ar_s": "أنا وصديقي نتحدث عن ولد."
+              "en_s": "The boy runs in the park.",
+              "ar_s": "الولد يجري في الحديقة."
             },
             {
               "id": 8,
               "word": "girl",
               "translation": "بنت",
               "done": false,
-              "en_s": "The girl is important to us.",
-              "ar_s": "إن بنت مهم بالنسبة لنا."
+              "en_s": "The girl has a blue bag.",
+              "ar_s": "البنت لديها حقيبة زرقاء."
             },
             {
               "id": 9,
               "word": "man",
               "translation": "رجل",
               "done": false,
-              "en_s": "I see the man every morning.",
-              "ar_s": "أرى رجل كل صباح."
+              "en_s": "The man is my teacher.",
+              "ar_s": "الرجل هو معلمي."
             },
             {
               "id": 10,
               "word": "woman",
               "translation": "امرأة",
               "done": false,
-              "en_s": "Today we have a new woman.",
-              "ar_s": "لدينا اليوم امرأة جديد."
+              "en_s": "The woman is my mother.",
+              "ar_s": "المرأة هي أمي."
             },
             {
               "id": 11,
               "word": "eye",
               "translation": "عين",
               "done": false,
-              "en_s": "I see the eye every morning.",
-              "ar_s": "أرى عين كل صباح."
+              "en_s": "I have two eyes.",
+              "ar_s": "لدي عينان."
             },
             {
               "id": 12,
               "word": "ear",
               "translation": "أذن",
               "done": false,
-              "en_s": "This is an ear.",
-              "ar_s": "هذا هو أذن."
+              "en_s": "I have two ears.",
+              "ar_s": "لدي أذنان."
             },
             {
               "id": 13,
               "word": "hand",
               "translation": "يد",
               "done": false,
-              "en_s": "The hand is important to us.",
-              "ar_s": "إن يد مهم بالنسبة لنا."
+              "en_s": "I write with my hand.",
+              "ar_s": "أكتب بيدي."
             },
             {
               "id": 14,
               "word": "foot",
               "translation": "قدم",
               "done": false,
-              "en_s": "Today we have a new foot.",
-              "ar_s": "لدينا اليوم قدم جديد."
+              "en_s": "My foot is small.",
+              "ar_s": "قدمي صغيرة."
             },
             {
               "id": 15,
               "word": "head",
               "translation": "رأس",
               "done": false,
-              "en_s": "Today we have a new head.",
-              "ar_s": "لدينا اليوم رأس جديد."
+              "en_s": "My head is small.",
+              "ar_s": "رأسي صغير."
             },
             {
               "id": 16,
               "word": "nose",
               "translation": "أنف",
               "done": false,
-              "en_s": "I see the nose every morning.",
-              "ar_s": "أرى أنف كل صباح."
+              "en_s": "My nose is small.",
+              "ar_s": "أنفي صغير."
             },
             {
               "id": 17,
               "word": "mouth",
               "translation": "فم",
               "done": false,
-              "en_s": "I see the mouth every morning.",
-              "ar_s": "أرى فم كل صباح."
+              "en_s": "I open my mouth.",
+              "ar_s": "أفتح فمي."
             },
             {
               "id": 18,
               "word": "door",
               "translation": "باب",
               "done": false,
-              "en_s": "I see the door every morning.",
-              "ar_s": "أرى باب كل صباح."
+              "en_s": "I open the door.",
+              "ar_s": "أفتح الباب."
             },
             {
               "id": 19,
               "word": "chair",
               "translation": "كرسي",
               "done": false,
-              "en_s": "I see the chair every morning.",
-              "ar_s": "أرى كرسي كل صباح."
+              "en_s": "The chair is yellow.",
+              "ar_s": "الكرسي أصفر."
             },
             {
               "id": 20,
               "word": "table",
               "translation": "طاولة",
               "done": false,
-              "en_s": "My friend and I talk about the table.",
-              "ar_s": "أنا وصديقي نتحدث عن طاولة."
+              "en_s": "The book is on the table.",
+              "ar_s": "الكتاب على الطاولة."
             }
           ]
         },
@@ -447,80 +447,80 @@
               "word": "one",
               "translation": "واحد",
               "done": false,
-              "en_s": "This is an one.",
-              "ar_s": "هذا هو واحد."
+              "en_s": "I have one cat.",
+              "ar_s": "لدي قطة واحدة."
             },
             {
               "id": 2,
               "word": "two",
               "translation": "اثنان",
               "done": false,
-              "en_s": "My friend and I talk about the two.",
-              "ar_s": "أنا وصديقي نتحدث عن اثنان."
+              "en_s": "I have two hands.",
+              "ar_s": "لدي يدان."
             },
             {
               "id": 3,
               "word": "three",
               "translation": "ثلاثة",
               "done": false,
-              "en_s": "My friend and I talk about the three.",
-              "ar_s": "أنا وصديقي نتحدث عن ثلاثة."
+              "en_s": "I have three books.",
+              "ar_s": "لدي ثلاثة كتب."
             },
             {
               "id": 4,
               "word": "four",
               "translation": "أربعة",
               "done": false,
-              "en_s": "The four is important to us.",
-              "ar_s": "إن أربعة مهم بالنسبة لنا."
+              "en_s": "The dog has four feet.",
+              "ar_s": "الكلب له أربع أرجل."
             },
             {
               "id": 5,
               "word": "five",
               "translation": "خمسة",
               "done": false,
-              "en_s": "The five is important to us.",
-              "ar_s": "إن خمسة مهم بالنسبة لنا."
+              "en_s": "I see five birds.",
+              "ar_s": "أرى خمسة عصافير."
             },
             {
               "id": 6,
               "word": "six",
               "translation": "ستة",
               "done": false,
-              "en_s": "Today we have a new six.",
-              "ar_s": "لدينا اليوم ستة جديد."
+              "en_s": "We have six chairs.",
+              "ar_s": "لدينا ستة كراسٍ."
             },
             {
               "id": 7,
               "word": "seven",
               "translation": "سبعة",
               "done": false,
-              "en_s": "I see the seven every morning.",
-              "ar_s": "أرى سبعة كل صباح."
+              "en_s": "There are seven days in a week.",
+              "ar_s": "هناك سبعة أيام في الأسبوع."
             },
             {
               "id": 8,
               "word": "eight",
               "translation": "ثمانية",
               "done": false,
-              "en_s": "I see the eight every morning.",
-              "ar_s": "أرى ثمانية كل صباح."
+              "en_s": "A spider has eight legs.",
+              "ar_s": "العنكبوت له ثماني أرجل."
             },
             {
               "id": 9,
               "word": "nine",
               "translation": "تسعة",
               "done": false,
-              "en_s": "Today we have a new nine.",
-              "ar_s": "لدينا اليوم تسعة جديد."
+              "en_s": "I have nine books.",
+              "ar_s": "لدي تسعة كتب."
             },
             {
               "id": 10,
               "word": "ten",
               "translation": "عشرة",
               "done": false,
-              "en_s": "The ten is important to us.",
-              "ar_s": "إن عشرة مهم بالنسبة لنا."
+              "en_s": "I have ten fingers.",
+              "ar_s": "لدي عشرة أصابع."
             }
           ]
         }
@@ -591,57 +591,6 @@
       "name": "الصف الثاني عشر",
       "icon": "🎓",
       "units": []
-    }
-  ],
-  "tests": [
-    {
-      "id": 1,
-      "title": "اختبار: كلمات الوحدة الأولى",
-      "grade": 1,
-      "questions": [
-        {
-          "q": "ما معنى \"apple\"؟",
-          "type": "mc",
-          "options": [
-            "تفاحة",
-            "كتاب",
-            "قطة",
-            "طاولة"
-          ],
-          "answer": 0,
-          "explanation": "apple تعني تفاحة"
-        },
-        {
-          "q": "\"cat\" تعني كلب",
-          "type": "tf",
-          "answer": false,
-          "explanation": "cat تعني قطة، وليس كلباً"
-        },
-        {
-          "q": "أكمل: I ___ a student.",
-          "type": "fill",
-          "answer": "am",
-          "explanation": "نستخدم am مع I"
-        },
-        {
-          "q": "ما معنى \"book\"؟",
-          "type": "mc",
-          "options": [
-            "قلم",
-            "كتاب",
-            "باب",
-            "شمس"
-          ],
-          "answer": 1,
-          "explanation": "book تعني كتاب"
-        },
-        {
-          "q": "\"house\" تعني منزل",
-          "type": "tf",
-          "answer": true,
-          "explanation": "صحيح، house = منزل"
-        }
-      ]
     }
   ]
 }
