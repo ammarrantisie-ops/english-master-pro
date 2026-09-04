@@ -1,0 +1,1070 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>English Master Pro</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--p:#6C63FF;--s:#00D2FF;--ok:#00E676;--no:#FF5252;--warn:#FECA57;--bg:#0A0E21;--bc:#151B30;--bl:#1E2746;--t:#FFFFFF;--td:#8892B0;--bd:#2A3358;--r:20px;--rs:12px;--g1:linear-gradient(135deg,#6C63FF,#00D2FF);--g2:linear-gradient(135deg,#FF6B6B,#FECA57);--g3:linear-gradient(135deg,#00E676,#00D2FF);--g4:linear-gradient(135deg,#BB86FC,#FF80AB);--g5:linear-gradient(135deg,#FFAB40,#FF6B6B);--g6:linear-gradient(135deg,#448AFF,#00B0FF)}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{font-family:'Tajawal',sans-serif;background:var(--bg);color:var(--t);min-height:100vh;overflow-x:hidden;max-width:480px;margin:0 auto}
+.bg{position:fixed;top:0;left:0;width:100%;height:100%;z-index:-1;overflow:hidden}
+.bg::before{content:'';position:absolute;width:400px;height:400px;background:radial-gradient(circle,rgba(108,99,255,0.12),transparent 70%);top:-100px;right:-100px;animation:fl 20s ease-in-out infinite}
+.bg::after{content:'';position:absolute;width:300px;height:300px;background:radial-gradient(circle,rgba(0,210,255,0.08),transparent 70%);bottom:-50px;left:-50px;animation:fl 15s ease-in-out infinite reverse}
+@keyframes fl{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(30px,-30px) scale(1.1)}}
+
+.sp{position:fixed;top:0;left:0;width:100%;height:100%;background:var(--bg);display:flex;align-items:center;justify-content:center;z-index:9999;flex-direction:column;gap:20px}
+.sp.hide{animation:spo .6s ease forwards}
+@keyframes spo{to{opacity:0;transform:scale(1.05);pointer-events:none}}
+.sp-logo{width:100px;height:100px;background:var(--g1);border-radius:28px;display:flex;align-items:center;justify-content:center;font-size:52px;box-shadow:0 20px 60px rgba(108,99,255,0.35);animation:spp 2s ease infinite}
+@keyframes spp{0%,100%{transform:scale(1)}50%{transform:scale(1.04)}}
+.sp-title{font-size:26px;font-weight:900;background:var(--g1);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.sp-sub{font-size:12px;color:var(--td)}
+.sp-bar{width:140px;height:3px;background:var(--bl);border-radius:2px;overflow:hidden;margin-top:10px}
+.sp-bar>div{width:0;height:100%;background:var(--g1);border-radius:2px;animation:spl 2s ease forwards}
+@keyframes spl{to{width:100%}}
+
+.app{display:none;min-height:100vh}.app.active{display:block}
+.scr{display:none;min-height:100vh;padding-bottom:90px;animation:sci .35s ease}.scr.active{display:block}
+@keyframes sci{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+.bn{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:480px;background:var(--bc);border-top:1px solid var(--bd);display:flex;justify-content:space-around;padding:6px 0 8px;z-index:100}
+.ni{display:flex;flex-direction:column;align-items:center;gap:2px;background:none;border:none;color:var(--td);font-size:10px;cursor:pointer;padding:6px 12px;font-family:inherit;border-radius:var(--rs);transition:color .2s}
+.ni.active{color:var(--p)}.nii{font-size:20px}
+
+.hd{padding:16px 20px;display:flex;justify-content:space-between;align-items:center}
+.uc{display:flex;align-items:center;gap:10px;cursor:pointer}
+.ua{width:44px;height:44px;background:var(--g1);border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:22px;box-shadow:0 4px 16px rgba(108,99,255,0.25)}
+.uname{font-size:14px;font-weight:700}.urole{font-size:10px;color:var(--td)}
+.hs{display:flex;gap:6px}
+.hst{padding:6px 10px;background:var(--bc);border-radius:var(--rs);border:1px solid var(--bd);display:flex;align-items:center;gap:5px;font-size:12px;font-weight:700}
+
+.qc{background:var(--bc);border-radius:var(--r);padding:18px;margin:0 16px 16px;border:1px solid var(--bd);position:relative;overflow:hidden}
+.qc::before{content:'"';position:absolute;top:-12px;right:8px;font-size:70px;color:var(--p);opacity:.08;font-family:serif}
+.ql{font-size:9px;font-weight:700;color:var(--p);text-transform:uppercase;letter-spacing:2px;margin-bottom:6px}
+.qt{font-size:14px;font-weight:600;line-height:1.6;margin-bottom:6px}
+.qa{font-size:11px;color:var(--td)}
+.qr{position:absolute;top:14px;left:14px;background:var(--bl);border:none;width:30px;height:30px;border-radius:50%;color:var(--td);font-size:13px;cursor:pointer}
+
+.stc{background:var(--g1);border-radius:var(--r);padding:18px;margin:0 16px 16px;display:flex;justify-content:space-around;box-shadow:0 8px 24px rgba(108,99,255,0.25)}
+.si{text-align:center}.sn{font-size:24px;font-weight:900}.sl{font-size:10px;opacity:.8}
+
+.gf{padding:0 16px;margin-bottom:10px}.gf label{font-size:12px;font-weight:700;color:var(--p);display:block;margin-bottom:5px}
+.fs{width:100%;padding:10px 14px;background:var(--bl);border:2px solid var(--bd);border-radius:var(--rs);color:var(--t);font-size:13px;font-family:inherit;appearance:none}
+.fs:focus{outline:none;border-color:var(--p)}
+
+.sh{display:flex;justify-content:space-between;align-items:center;padding:0 16px;margin-bottom:10px}
+.sh h2{font-size:17px;font-weight:800}
+
+.ul{padding:0 16px;display:flex;flex-direction:column;gap:10px}
+.ut{background:var(--bc);border-radius:var(--r);padding:14px;display:flex;align-items:center;gap:12px;border:1px solid var(--bd);cursor:pointer;transition:all .15s;position:relative;overflow:hidden}
+.ut:active{transform:scale(.98)}
+.ut::before{content:'';position:absolute;top:0;right:0;width:4px;height:100%;border-radius:0 4px 4px 0}
+.ui2{width:48px;height:48px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
+.uit{flex:1}.uitn{font-weight:700;font-size:13px;margin-bottom:2px}.uitm{font-size:10px;color:var(--td)}
+.up{width:100%;height:4px;background:var(--bl);border-radius:2px;margin-top:6px;overflow:hidden}
+.upf{height:100%;border-radius:2px;transition:width .4s}
+.ua2{color:var(--td);font-size:14px;display:flex;flex-direction:column;gap:4px;align-items:center}
+.udb{background:none;border:none;color:var(--no);font-size:14px;cursor:pointer;padding:2px}
+
+.lh{display:flex;align-items:center;gap:10px;padding:14px 16px}
+.bb{width:40px;height:40px;background:var(--bc);border:1px solid var(--bd);border-radius:12px;color:var(--t);font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.pc{flex:1;height:6px;background:var(--bl);border-radius:3px;overflow:hidden;border:1px solid var(--bd)}
+.pf{height:100%;background:var(--g1);border-radius:3px;transition:width .4s}
+.pt{font-size:12px;font-weight:700;color:var(--td)}
+.lb{padding:20px 16px;display:flex;flex-direction:column;align-items:center}
+.fcc{width:100%;max-width:300px;height:260px;perspective:1000px;margin-bottom:20px;cursor:pointer}
+.fc{width:100%;height:100%;position:relative;transition:transform .5s cubic-bezier(.4,0,.2,1);transform-style:preserve-3d}
+.fc.flipped{transform:rotateY(180deg)}
+.cf{position:absolute;width:100%;height:100%;backface-visibility:hidden;border-radius:var(--r);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px;text-align:center}
+.cff{background:var(--g1);box-shadow:0 16px 48px rgba(108,99,255,0.35)}
+.cfb{background:var(--g4);transform:rotateY(180deg);box-shadow:0 16px 48px rgba(187,134,252,0.35)}
+.cfl{font-size:10px;opacity:.8;margin-bottom:6px;text-transform:uppercase;letter-spacing:2px}
+.cfw{font-size:30px;font-weight:900;margin-bottom:14px}
+.cft{font-size:26px;font-weight:800}
+.cfs{width:50px;height:50px;background:rgba(255,255,255,0.2);border:none;border-radius:50%;font-size:22px;cursor:pointer}
+.la{display:flex;gap:12px;width:100%;max-width:300px}
+.ba{flex:1;padding:13px;border:none;border-radius:var(--rs);font-size:14px;font-weight:700;cursor:pointer;font-family:inherit}
+.ba:active{transform:scale(.96)}
+.bok{background:var(--ok);color:#000}.bno{background:var(--no);color:white}
+
+.qb{padding:20px 16px;display:flex;flex-direction:column;align-items:center}
+.qq{width:100%;padding:18px;background:var(--bc);border-radius:var(--r);border:1px solid var(--bd);text-align:center;font-size:17px;font-weight:700;margin-bottom:20px}
+.qo{width:100%;display:flex;flex-direction:column;gap:10px}
+.qop{width:100%;padding:13px 16px;background:var(--bc);border:2px solid var(--bd);border-radius:var(--rs);font-size:14px;font-weight:600;cursor:pointer;font-family:inherit;color:var(--t);text-align:center;transition:all .15s}
+.qop:active{transform:scale(.98)}
+.qop.correct{border-color:var(--ok);background:rgba(0,230,118,0.12)}
+.qop.wrong{border-color:var(--no);background:rgba(255,82,82,0.12)}
+.qop.disabled{pointer-events:none;opacity:.5}
+.qfb{position:fixed;bottom:90px;left:50%;transform:translateX(-50%);width:88%;max-width:420px;padding:14px;border-radius:var(--rs);display:flex;align-items:center;gap:10px;z-index:50;animation:fbi .25s ease}
+.qfb.correct{background:var(--ok);color:#000}.qfb.wrong{background:var(--no);color:white}
+@keyframes fbi{from{transform:translateX(-50%) translateY(100%);opacity:0}to{transform:translateX(-50%) translateY(0);opacity:1}}
+.fbi{font-size:24px;font-weight:900}.fbt{font-size:15px;font-weight:700}
+
+.rb{padding:50px 16px;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:calc(100vh - 100px)}
+.ri{font-size:72px;animation:rbn 1s ease infinite}
+@keyframes rbn{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+.rtt{font-size:26px;font-weight:900;margin:14px 0}
+.rsr{display:flex;align-items:baseline;gap:4px;margin-bottom:6px}
+.rbg{font-size:56px;font-weight:900;background:var(--g1);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.rst{font-size:18px;color:var(--td)}
+.rm{font-size:13px;color:var(--td);margin-bottom:10px}
+.rxp{padding:6px 18px;background:var(--g5);border-radius:50px;font-weight:700;font-size:13px;margin-bottom:28px}
+.rbs{display:flex;flex-direction:column;gap:10px;width:100%;max-width:260px}
+.bp{width:100%;padding:13px;background:var(--g1);color:white;border:none;border-radius:var(--rs);font-size:14px;font-weight:700;cursor:pointer;font-family:inherit;box-shadow:0 4px 16px rgba(108,99,255,0.25)}
+.bs{width:100%;padding:13px;background:var(--bc);color:var(--t);border:1px solid var(--bd);border-radius:var(--rs);font-size:14px;font-weight:700;cursor:pointer;font-family:inherit}
+
+.wbh{padding:14px 16px;background:var(--bc);border-bottom:1px solid var(--bd)}
+.wbh h2{font-size:17px;margin-bottom:10px}
+.wbs{width:100%;padding:10px 14px;background:var(--bl);border:2px solid var(--bd);border-radius:var(--rs);color:var(--t);font-size:13px;font-family:inherit}
+.wbs:focus{outline:none;border-color:var(--p)}
+.wbf{display:flex;gap:6px;padding:10px 16px;overflow-x:auto;-webkit-overflow-scrolling:touch}
+.wbf::-webkit-scrollbar{display:none}
+.wbf button{flex-shrink:0;padding:5px 12px;background:var(--bc);border:2px solid var(--bd);border-radius:50px;color:var(--td);font-size:11px;font-weight:600;cursor:pointer;font-family:inherit}
+.wbf button.active{background:var(--p);border-color:var(--p);color:white}
+.wbl{padding:0 16px}
+.wbi{display:flex;align-items:center;gap:8px;padding:10px;background:var(--bc);border-radius:var(--rs);margin-bottom:6px;border:1px solid var(--bd)}
+.wbsp{width:38px;height:38px;background:var(--g1);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:16px;cursor:pointer;flex-shrink:0}
+.wbif{flex:1}.wbw{font-weight:700;font-size:13px}.wba{font-size:11px;color:var(--td)}
+.wbbg{padding:2px 8px;background:var(--bl);border-radius:20px;font-size:9px;color:var(--td);white-space:nowrap}
+.wbd{background:none;border:none;color:var(--no);font-size:14px;cursor:pointer;padding:4px}
+
+.ab{padding:14px 16px}
+.at{display:flex;gap:6px;margin-bottom:14px;flex-wrap:wrap}
+.atb{flex:1;min-width:calc(50% - 3px);padding:10px;background:var(--bc);border:2px solid var(--bd);border-radius:var(--rs);color:var(--td);font-size:12px;font-weight:600;cursor:pointer;font-family:inherit;text-align:center}
+.atb.active{background:var(--p);border-color:var(--p);color:white}
+.af{background:var(--bc);border-radius:var(--r);padding:18px;border:1px solid var(--bd)}
+.fg{margin-bottom:14px}.fl{display:block;font-size:11px;font-weight:600;color:var(--td);margin-bottom:5px}
+.fi{width:100%;padding:10px 12px;background:var(--bl);border:2px solid var(--bd);border-radius:var(--rs);color:var(--t);font-size:13px;font-family:inherit}
+.fi:focus{outline:none;border-color:var(--p)}
+.uz{border:2px dashed var(--bd);border-radius:var(--r);padding:28px 14px;text-align:center;cursor:pointer;transition:all .2s}
+.uz:active{border-color:var(--p)}
+.uz-i{font-size:40px;margin-bottom:8px}.uz-t{font-size:12px;color:var(--td)}
+.uz-h{margin-top:12px;padding:10px;background:var(--bl);border-radius:var(--rs);font-size:10px;color:var(--td);text-align:right;line-height:1.6}
+.uz-h code{color:var(--p);background:var(--bg);padding:1px 5px;border-radius:3px}
+
+.ph{text-align:center;padding:28px 16px;background:var(--g1);margin:0 16px 16px;border-radius:var(--r);position:relative;overflow:hidden}
+.pav{width:72px;height:72px;background:rgba(255,255,255,0.2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:36px;margin:0 auto 10px;border:3px solid rgba(255,255,255,0.3)}
+.pnm{font-size:20px;font-weight:900}.prole{font-size:11px;opacity:.8;margin-top:3px}
+.ps{display:flex;justify-content:space-around;margin:0 16px 14px;padding:14px;background:var(--bc);border-radius:var(--r);border:1px solid var(--bd)}
+.psi{text-align:center}.psn{font-size:22px;font-weight:900;background:var(--g1);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}.psl{font-size:9px;color:var(--td)}
+.psec{margin:0 16px 10px;padding:14px;background:var(--bc);border-radius:var(--r);border:1px solid var(--bd)}
+.psec h4{font-size:13px;margin-bottom:10px}
+.pit{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid var(--bd);cursor:pointer;font-size:12px}
+.pit:last-child{border-bottom:none}
+.wab{display:flex;align-items:center;justify-content:center;gap:6px;width:100%;padding:12px;background:#25D366;color:white;border:none;border-radius:var(--rs);font-size:14px;font-weight:700;cursor:pointer;font-family:inherit;margin-top:6px}
+
+.toast{position:fixed;bottom:100px;left:50%;transform:translateX(-50%);padding:10px 20px;border-radius:var(--rs);font-size:12px;font-weight:700;z-index:300;animation:ti .25s ease;box-shadow:0 6px 24px rgba(0,0,0,0.4)}
+.toast.success{background:var(--ok);color:#000}.toast.error{background:var(--no);color:white}
+@keyframes ti{from{transform:translateX(-50%) translateY(16px);opacity:0}to{transform:translateX(-50%) translateY(0);opacity:1}}
+
+.modal{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.55);display:flex;align-items:center;justify-content:center;z-index:200;padding:20px;backdrop-filter:blur(3px)}
+.modal-box{background:var(--bc);border-radius:var(--r);padding:22px;width:100%;animation:mi .25s ease;border:1px solid var(--bd);max-height:85vh;overflow-y:auto}
+@keyframes mi{from{transform:scale(.92);opacity:0}to{transform:scale(1);opacity:1}}
+.mh{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}.mh h3{font-size:17px}
+.mc{width:32px;height:32px;background:var(--bl);border:none;border-radius:50%;color:var(--t);font-size:14px;cursor:pointer}
+.hidden{display:none!important}
+
+.auth-screen{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:30px 20px;gap:20px}
+.auth-logo{width:90px;height:90px;background:var(--g1);border-radius:24px;display:flex;align-items:center;justify-content:center;font-size:46px;box-shadow:0 16px 48px rgba(108,99,255,0.3)}
+.auth-title{font-size:24px;font-weight:900;background:var(--g1);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.auth-sub{font-size:12px;color:var(--td);text-align:center;margin-top:-10px}
+.auth-card{width:100%;background:var(--bc);border-radius:var(--r);padding:24px;border:1px solid var(--bd)}
+.auth-card .fg{margin-bottom:14px}
+.auth-card .fl{font-size:12px;font-weight:600;color:var(--td);margin-bottom:5px;display:block}
+.auth-card .fi{width:100%;padding:12px;background:var(--bl);border:2px solid var(--bd);border-radius:var(--rs);color:var(--t);font-size:14px;font-family:inherit}
+.auth-card .fi:focus{outline:none;border-color:var(--p)}
+.auth-btn{width:100%;padding:14px;background:var(--g1);color:white;border:none;border-radius:var(--rs);font-size:15px;font-weight:700;cursor:pointer;font-family:inherit;box-shadow:0 4px 16px rgba(108,99,255,0.25);margin-top:4px}
+.auth-alt{text-align:center;font-size:12px;color:var(--td);margin-top:4px}
+.auth-alt a{color:var(--p);text-decoration:none;font-weight:700;cursor:pointer}
+.auth-teacher{padding:10px;background:var(--bl);border-radius:var(--rs);display:flex;align-items:center;gap:10px;cursor:pointer;border:1px solid var(--bd)}
+.auth-teacher-ti{width:36px;height:36px;background:var(--g2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px}
+.auth-teacher-n{font-weight:700;font-size:12px}.auth-teacher-r{font-size:10px;color:var(--td)}
+
+.confirm-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.55);display:flex;align-items:center;justify-content:center;z-index:250;padding:20px;backdrop-filter:blur(3px)}
+.confirm-box{background:var(--bc);border-radius:var(--r);padding:24px;width:100%;text-align:center;border:1px solid var(--bd);animation:mi .25s ease}
+.confirm-box p{font-size:15px;font-weight:700;margin-bottom:6px}
+.confirm-box small{font-size:11px;color:var(--td);display:block;margin-bottom:16px}
+.confirm-btns{display:flex;gap:10px}
+.confirm-btns button{flex:1;padding:12px;border:none;border-radius:var(--rs);font-size:14px;font-weight:700;cursor:pointer;font-family:inherit}
+.c-cancel{background:var(--bl);color:var(--t);border:1px solid var(--bd)!important}
+.c-danger{background:var(--no);color:white}
+.c-ok{background:var(--g1);color:white}
+</style>
+</head>
+<body>
+<div class="bg"></div>
+
+<!-- SPLASH -->
+<div id="splash" class="sp">
+<div class="sp-logo">📚</div>
+<div class="sp-title">English Master Pro</div>
+<div class="sp-sub">تعلم المفردات الإنجليزية بأسلوب احترافي</div>
+<div class="sp-bar"><div></div></div>
+</div>
+
+<!-- AUTH -->
+<div id="auth" class="hidden">
+<div class="auth-screen">
+<div class="auth-logo">📚</div>
+<div class="auth-title">English Master Pro</div>
+<div class="auth-sub">تعلم المفردات الإنجليزية بأسلوب احترافي</div>
+
+<!-- Login -->
+<div id="authLogin" class="auth-card">
+<div class="fg"><label class="fl">الاسم</label><input class="fi" id="li_name" placeholder="اسمك"></div>
+<div class="fg"><label class="fl">كلمة المرور</label><input class="fi" id="li_pass" type="password" placeholder="••••" onkeydown="if(event.key==='Enter')doLogin()"></div>
+<button class="auth-btn" onclick="doLogin()">تسجيل دخول</button>
+<div class="auth-alt">ما عندك حساب؟ <a onclick="showRegister()">سجّل الآن</a></div>
+<div class="auth-teacher" onclick="showAdminLogin()" style="margin-top:12px">
+<div class="auth-teacher-ti">👨‍🏫</div>
+<div><div class="auth-teacher-n">عمار الرنتيسي</div><div class="auth-teacher-r">دخول المعلم (أدمن)</div></div>
+</div>
+</div>
+
+<!-- Register -->
+<div id="authRegister" class="auth-card hidden">
+<div class="fg"><label class="fl">الاسم الكامل</label><input class="fi" id="rg_name" placeholder="اسمك الكامل"></div>
+<div class="fg"><label class="fl">الصف الدراسي</label><select class="fs" id="rg_grade"></select></div>
+<div class="fg"><label class="fl">كلمة المرور</label><input class="fi" id="rg_pass" type="password" placeholder="اختر كلمة مرور"></div>
+<div class="fg"><label class="fl">تأكيد كلمة المرور</label><input class="fi" id="rg_pass2" type="password" placeholder="أعد كتابة كلمة المرور" onkeydown="if(event.key==='Enter')doRegister()"></div>
+<button class="auth-btn" onclick="doRegister()">إنشاء حساب</button>
+<div class="auth-alt">عندك حساب؟ <a onclick="showLogin()">سجّل دخول</a></div>
+</div>
+
+<!-- Admin Login -->
+<div id="authAdmin" class="auth-card hidden">
+<div class="fg"><label class="fl">كلمة مرور المعلم</label><input class="fi" id="adm_pass" type="password" placeholder="••••" onkeydown="if(event.key==='Enter')doAdminLogin()"></div>
+<button class="auth-btn" onclick="doAdminLogin()">دخول المعلم</button>
+<div class="auth-alt"><a onclick="showLogin()">← رجوع لتسجيل الدخول</a></div>
+</div>
+</div>
+</div>
+
+<!-- APP -->
+<div id="app" class="app">
+<!-- HOME -->
+<div id="home" class="scr active">
+<div class="hd">
+<div class="uc" onclick="go('profile')">
+<div class="ua" id="homeAvatar">📚</div>
+<div><div class="uname" id="homeName">طالب</div><div class="urole" id="homeRole">طالب</div></div>
+</div>
+<div class="hs">
+<div class="hst"><span>🔥</span><span id="hst">0</span></div>
+<div class="hst"><span>⭐</span><span id="hxp">0</span></div>
+</div>
+</div>
+<div class="qc">
+<button class="qr" onclick="nq()">🔄</button>
+<div class="ql">💡 اقتباس اليوم</div>
+<div class="qt" id="qtt"></div>
+<div class="qa" id="qaa"></div>
+</div>
+<div class="stc">
+<div class="si"><div class="sn" id="st">0</div><div class="sl">الكل</div></div>
+<div class="si"><div class="sn" id="sl">0</div><div class="sl">تم</div></div>
+<div class="si"><div class="sn" id="sq">0</div><div class="sl">اختبارات</div></div>
+</div>
+<div class="gf"><label>📚 اختر الصف:</label><select class="fs" id="gSel" onchange="rH()"><option value="all">كل الصفوف</option></select></div>
+<div class="sh"><h2>📚 الوحدات</h2></div>
+<div class="ul" id="uc2"></div>
+<nav class="bn">
+<button class="ni active" onclick="go('home')"><span class="nii">🏠</span><span>الرئيسية</span></button>
+<button class="ni" onclick="go('bank')"><span class="nii">📖</span><span>الكلمات</span></button>
+<button class="ni" onclick="go('add')"><span class="nii">➕</span><span>إضافة</span></button>
+<button class="ni" onclick="go('profile')"><span class="nii">👤</span><span>الملف</span></button>
+</nav>
+</div>
+
+<!-- LEARN -->
+<div id="learn" class="scr">
+<div class="lh">
+<button class="bb" onclick="go('home')">←</button>
+<div class="pc"><div class="pf" id="lp"></div></div>
+<span class="pt" id="lt">1/1</span>
+</div>
+<div class="lb">
+<div class="fcc" onclick="flip()">
+<div class="fc" id="fc">
+<div class="cf cff"><div class="cfl">English</div><div class="cfw" id="cw">word</div><button class="cfs" onclick="event.stopPropagation();spk()">🔊</button></div>
+<div class="cf cfb"><div class="cfl">الترجمة</div><div class="cft" id="ct">ترجمة</div></div>
+</div>
+</div>
+<div class="la">
+<button class="ba bok" onclick="mk(true)">أعرفها ✓</button>
+<button class="ba bno" onclick="mk(false)">لا أعرفها ✗</button>
+</div>
+</div>
+</div>
+
+<!-- QUIZ -->
+<div id="quiz" class="scr">
+<div class="lh">
+<button class="bb" onclick="go('home')">←</button>
+<div class="pc"><div class="pf" id="qp"></div></div>
+<span class="pt" id="qt2">1/1</span>
+</div>
+<div class="qb">
+<div class="qq" id="qqq"></div>
+<div class="qo" id="qoo"></div>
+</div>
+<div class="qfb hidden" id="qfb">
+<div class="fbi" id="fbi">✓</div>
+<div class="fbt" id="fbt"></div>
+</div>
+</div>
+
+<!-- RESULT -->
+<div id="result" class="scr">
+<div class="rb">
+<div class="ri" id="ri">🎉</div>
+<h2 class="rtt" id="rtt">عمل رائع!</h2>
+<div class="rsr"><span class="rbg" id="rs">0</span><span class="rst">/ 10</span></div>
+<div class="rm" id="rm"></div>
+<div class="rxp" id="rxp">+50 XP</div>
+<div class="rbs">
+<button class="bp" onclick="retry()">إعادة</button>
+<button class="bs" onclick="go('home')">الرئيسية</button>
+</div>
+</div>
+</div>
+
+<!-- BANK -->
+<div id="bank" class="scr">
+<div class="wbh"><h2>📖 بنك الكلمات</h2><input type="text" class="wbs" placeholder="🔍 بحث..." oninput="rB()"></div>
+<div class="gf" style="margin:10px 16px 0"><select class="fs" id="bSel" onchange="rB()"><option value="all">كل الصفوف</option></select></div>
+<div class="wbf" id="wbf"></div>
+<div class="wbl" id="wbl"></div>
+<nav class="bn">
+<button class="ni" onclick="go('home')"><span class="nii">🏠</span><span>الرئيسية</span></button>
+<button class="ni active" onclick="go('bank')"><span class="nii">📖</span><span>الكلمات</span></button>
+<button class="ni" onclick="go('add')"><span class="nii">➕</span><span>إضافة</span></button>
+<button class="ni" onclick="go('profile')"><span class="nii">👤</span><span>الملف</span></button>
+</nav>
+</div>
+
+<!-- ADD (Admin) -->
+<div id="add" class="scr">
+<div class="wbh"><h2>➕ إدارة المحتوى</h2></div>
+<div id="adminLock" style="padding:50px 20px;text-align:center">
+<p style="font-size:44px;margin-bottom:14px">🔒</p>
+<p style="font-size:16px;font-weight:700;margin-bottom:6px">محتوى محمي</p>
+<p style="color:var(--td);font-size:12px;margin-bottom:16px">فقط المعلم يمكنه إضافة وتعديل المحتوى</p>
+<button class="bs" onclick="showAdminLogin()">🔐 تسجيل دخول المعلم</button>
+</div>
+<div id="adminPanel" class="hidden">
+<div class="ab">
+<div class="at">
+<button class="atb active" onclick="sT('manual',this)">✏️ يدوية</button>
+<button class="atb" onclick="sT('file',this)">📄 رفع ملف</button>
+<button class="atb" onclick="sT('addUnit',this)">📦 وحدة</button>
+<button class="atb" onclick="sT('admin2',this)">⚙️ إدارة الصفوف</button>
+</div>
+<div id="tm" class="af">
+<div class="fg"><label class="fl">اختر الصف</label><select class="fs" id="aG" onchange="uUS()"></select></div>
+<div class="fg"><label class="fl">اختر الوحدة</label><select class="fs" id="aU"><option value="">-- اختر وحدة --</option></select></div>
+<div class="fg"><label class="fl">الكلمة بالإنجليزي</label><input class="fi" id="ae" placeholder="example"></div>
+<div class="fg"><label class="fl">الترجمة بالعربي</label><input class="fi" id="aa" placeholder="مثال"></div>
+<button class="bp" onclick="aW()">➕ إضافة الكلمة</button>
+</div>
+<div id="tf" class="af hidden">
+<div class="fg"><label class="fl">اختر الصف</label><select class="fs" id="fG" onchange="uFU()"></select></div>
+<div class="fg"><label class="fl">اختر الوحدة</label><select class="fs" id="fU"><option value="">-- اختر وحدة --</option></select></div>
+<div class="uz" onclick="document.getElementById('fi2').click()">
+<div class="uz-i">📁</div>
+<div class="uz-t">اضغط لاختيار ملف (txt/csv)</div>
+<input type="file" id="fi2" accept=".txt,.csv,.html" onchange="uF(event)" style="display:none">
+</div>
+<div class="uz-h">
+<strong>صيغة الملف:</strong> كلمة واحدة في كل سطر<br>
+<code>word | translation</code><br>
+<strong>أمثلة:</strong><br>
+<code>recognize | التعرف على</code><br>
+<code>achievement | إنجاز</code>
+</div>
+</div>
+<div id="tu" class="af hidden">
+<div class="fg"><label class="fl">اختر الصف</label><select class="fs" id="uG"></select></div>
+<div class="fg"><label class="fl">اسم الوحدة</label><input class="fi" id="un2" placeholder="الوحدة الأولى: حياة المدرسة"></div>
+<div class="fg"><label class="fl">أيقونة</label><input class="fi" id="uI" placeholder="📚" maxlength="2"></div>
+<button class="bp" onclick="aUN()">➕ إضافة الوحدة</button>
+</div>
+<div id="tadmin2" class="af hidden">
+<div class="fg"><label class="fl">إدارة الصفوف والوحدات والكلمات</label></div>
+<div id="admGradeList"></div>
+<div class="fg"><label class="fl">إضافة صف جديد</label><input class="fi" id="agName" placeholder="اسم الصف الجديد"></div>
+<button class="bp" onclick="addGrade2()">➕ إضافة صف</button>
+<div class="fg" style="margin-top:14px"><label class="fl">استيراد / تصدير المحتوى</label></div>
+<div class="la" style="max-width:none;gap:8px;flex-wrap:wrap">
+<button class="bp" onclick="cx()" style="flex:1">⬇️ تنزيل content.json</button>
+<button class="bp" style="flex:1;background:var(--g3)" onclick="document.getElementById('fiBox').click()">⬆️ رفع content.json</button>
+<input type="file" id="fiBox" accept=".json" onchange="impJson(event)" style="display:none">
+</div>
+<p style="font-size:10px;color:var(--td);margin-top:10px;line-height:1.7">بعد تعديل المحتوى: نزّل <b>content.json</b> وارفعه في المستودع على GitHub ليتحدّث لدى جميع الطلاب فور فتح التطبيق.</p>
+</div>
+</div>
+</div>
+<nav class="bn">
+<button class="ni" onclick="go('home')"><span class="nii">🏠</span><span>الرئيسية</span></button>
+<button class="ni" onclick="go('bank')"><span class="nii">📖</span><span>الكلمات</span></button>
+<button class="ni active" onclick="go('add')"><span class="nii">➕</span><span>إضافة</span></button>
+<button class="ni" onclick="go('profile')"><span class="nii">👤</span><span>الملف</span></button>
+</nav>
+</div>
+
+<!-- PROFILE -->
+<div id="profile" class="scr">
+<div class="ph">
+<div class="pav" id="profAvatar">📚</div>
+<div class="pnm" id="profName">طالب</div>
+<div class="prole" id="profRole">طالب</div>
+</div>
+<div class="ps">
+<div class="psi"><div class="psn" id="pxp">0</div><div class="psl">XP</div></div>
+<div class="psi"><div class="psn" id="pw">0</div><div class="psl">كلمات</div></div>
+<div class="psi"><div class="psn" id="pq">0</div><div class="psl">اختبارات</div></div>
+</div>
+<div class="psec">
+<h4>📊 تقريري اليوم</h4>
+<div class="pit" onclick="sendReport()"><span>📤 إرسال تقرير تقدمي للمعلم</span><span>←</span></div>
+<p style="font-size:10px;color:var(--td);margin-top:8px;line-height:1.6">زر واحد يفتح واتساب المعلم برسالة جاهزة تتضمن عدد كلمات اليوم والنتيجة والنقاط. يمكنك إرساله مرة كل 24 ساعة.</p>
+</div>
+<div class="psec">
+<h4>📲 تواصل مع المعلم</h4>
+<a href="https://wa.me/963949119294" target="_blank" style="text-decoration:none"><button class="wab">💬 واتساب: 0949119294</button></a>
+</div>
+<div class="psec" id="adminSec" style="display:none">
+<h4>🔐 لوحة تحكم المعلم</h4>
+<div class="pit" onclick="ex()"><span>📥 تصدير البيانات</span><span>←</span></div>
+<div class="pit" onclick="rst()"><span>🔄 إعادة تعيين كل شيء</span><span>←</span></div>
+</div>
+<div class="psec">
+<h4>ℹ️ حول التطبيق</h4>
+<div class="pit"><span>English Master Pro</span><span>v4.0</span></div>
+<div class="pit"><span>تصميم</span><span>عمار الرنتيسي</span></div>
+</div>
+<div class="psec">
+<button class="bs" onclick="doLogout()" style="width:100%;color:var(--no);border-color:var(--no)">🚪 تسجيل الخروج</button>
+</div>
+<nav class="bn">
+<button class="ni" onclick="go('home')"><span class="nii">🏠</span><span>الرئيسية</span></button>
+<button class="ni" onclick="go('bank')"><span class="nii">📖</span><span>الكلمات</span></button>
+<button class="ni" onclick="go('add')"><span class="nii">➕</span><span>إضافة</span></button>
+<button class="ni active" onclick="go('profile')"><span class="nii">👤</span><span>الملف</span></button>
+</nav>
+</div>
+</div>
+
+<div id="toast" class="toast hidden"></div>
+<div id="confirmEl" class="confirm-overlay hidden">
+<div class="confirm-box">
+<p id="cMsg"></p>
+<small id="cSub"></small>
+<div class="confirm-btns">
+<button class="c-cancel" onclick="cCancel()">إلغاء</button>
+<button class="c-danger" id="cOk" onclick="cOk()">حذف</button>
+</div>
+</div>
+</div>
+
+<script>
+/* التطبيق يعمل محلياً بالكامل على جهاز الطالب — بدون سيرفر وبدون إنترنت. */
+const DBG='em_grades',DBX='em_xp',DBQ='em_qz',DBU='em_users',DBU2='em_u';
+const us=()=>{try{return JSON.parse(localStorage.getItem(DBU))||[];}catch(e){return[];}};
+const su=u=>localStorage.setItem(DBU,JSON.stringify(u));
+const GN=['الصف الأول','الصف الثاني','الصف الثالث','الصف الرابع','الصف الخامس','الصف السادس','الصف السابع','الصف الثامن','الصف التاسع','الصف العاشر','الصف الحادي عشر','الصف الثاني عشر'];
+const GI=['🌱','🌿','🌳','🌻','🌺','🌸','🍀','🍁','🌾','⭐','🏆','🎓'];
+
+let D={grades:[],xp:0,qz:0};
+let U=null,ad=false,ci=0,cu=null,cg=null,uw=[],qw=[],qi=0,qs=0;
+let cCb=null;
+
+const Q=[{t:"العلم نور والجهل ظلام",a:"مثل عربي"},{t:"من جد وجد ومن زرع حصد",a:"مثل عربي"},{t:"Knowledge is power",a:"فرنسيس بيكن"},{t:"Practice makes perfect",a:"مثل إنجليزي"},{t:"كل كلمة جديدة تعلمها خطوة نحو المستقبل",a:"Unknown"},{t:"ابدأ صغيراً واحلم كبيراً",a:"Unknown"},{t:"لا تحقر نفسك فأنت أقوى مما تتخيل",a:"Unknown"},{t:"المرء يكبر بعلمه لا بعمره",a:"مثل عربي"},{t:"A journey of a thousand miles begins with a step",a:"لاو تزو"},{t:"Learning is a treasure",a:"مثل صيني"}];
+
+document.addEventListener('DOMContentLoaded',()=>{
+listenData();
+const s=localStorage.getItem('emu');
+if(s){try{U=JSON.parse(s);}catch(e){U=null;}}
+const a=localStorage.getItem('em_ad');
+if(a==='true')ad=true;
+if('serviceWorker' in navigator&&location.protocol.indexOf('https')===0){
+try{
+navigator.serviceWorker.register('sw.js').catch(()=>{});
+}catch(e){}
+}
+setTimeout(()=>{
+document.getElementById('splash').classList.add('hide');
+if(U||ad){showApp();}else{showAuth();}
+},2000);
+});
+
+function showAuth(){document.getElementById('auth').classList.remove('hidden');document.getElementById('app').classList.remove('active');}
+function showApp(){document.getElementById('auth').classList.add('hidden');document.getElementById('app').classList.add('active');rH();nq();uAP();uProf();}
+function showLogin(){document.getElementById('authLogin').classList.remove('hidden');document.getElementById('authRegister').classList.add('hidden');document.getElementById('authAdmin').classList.add('hidden');}
+function showRegister(){
+document.getElementById('authLogin').classList.add('hidden');
+document.getElementById('authRegister').classList.remove('hidden');
+document.getElementById('authAdmin').classList.add('hidden');
+const s=document.getElementById('rg_grade');s.innerHTML='';
+D.grades.forEach(g=>{s.innerHTML+=`<option value="${g.id}">${g.icon} ${g.name}</option>`;});
+}
+function showAdminLogin(){document.getElementById('authLogin').classList.add('hidden');document.getElementById('authRegister').classList.add('hidden');document.getElementById('authAdmin').classList.remove('hidden');}
+
+function doLogin(){
+const name=document.getElementById('li_name').value.trim();
+const pass=document.getElementById('li_pass').value.trim();
+if(!name||!pass){tt('ملء كل الحقول','error');return;}
+const all=us();
+const found=all.find(u=>u.name.toLowerCase()===name.toLowerCase());
+if(!found){tt('الحساب غير موجود','error');return;}
+if(found.password!==pass){tt('كلمة المرور خاطئة','error');return;}
+U=found;localStorage.setItem('emu',JSON.stringify(U));
+tt(`مرحباً ${U.name}! ✓`,'success');showApp();
+}
+
+function doRegister(){
+const name=document.getElementById('rg_name').value.trim();
+const grade=+document.getElementById('rg_grade').value;
+const pass=document.getElementById('rg_pass').value.trim();
+const pass2=document.getElementById('rg_pass2').value.trim();
+if(!name||!pass){tt('ملء كل الحقول','error');return;}
+if(pass!==pass2){tt('كلمتا المرور غير متطابقتين','error');return;}
+if(pass.length<4){tt('كلمة المرور 4 أحرف على الأقل','error');return;}
+const all=us();
+if(all.some(u=>u.name.toLowerCase()===name.toLowerCase())){tt('الاسم مستخدم بالفعل','error');return;}
+const nu={id:Date.now(),name:name,grade:grade,password:pass,xp:0,qz:0,doneWords:{},log:[]};
+all.push(nu);su(all);
+U=nu;localStorage.setItem('emu',JSON.stringify(U));
+tt(`مرحباً ${name}! ✓`,'success');showApp();
+}
+
+function doAdminLogin(){
+const pass=document.getElementById('adm_pass').value.trim();
+if(pass==='admin123'){
+ad=true;localStorage.setItem('em_ad','true');
+tt('مرحباً أستاذ عمار! ✓','success');showApp();
+}else tt('كلمة المرور خاطئة','error');
+}
+
+function doLogout(){
+ad=false;U=null;
+localStorage.removeItem('em_ad');localStorage.removeItem('emu');
+tt('تم الخروج','success');showAuth();
+}
+
+function syncUser(){
+if(!U)return;
+const all=us();
+const i=all.findIndex(u=>u.id===U.id);
+const saved={...U,password:U.password||'x',log:U.log||[]};
+if(i>=0)all[i]=saved;else all.push(saved);
+su(all);localStorage.setItem('emu',JSON.stringify(U));
+}
+
+function go(id){
+document.querySelectorAll('.scr').forEach(s=>s.classList.remove('active'));
+document.getElementById(id).classList.add('active');
+if(id==='home')rH();
+if(id==='bank')rB2();
+if(id==='add')uAP();
+if(id==='profile')uProf();
+}
+
+// محتوى مشترك (كلمات/وحدات) يُسحب من رابط مركزي ثابت (GitHub Pages)
+// حتى تظهر إضافات المعلم فوراً عند فتح الطالب التطبيق. بدون إنترنت يُستخدم آخر نسخة مخزنة.
+const CONTENT_URL='content.json';
+async function mergeContent(){
+try{
+const res=await fetch(CONTENT_URL,{cache:'no-store'});
+if(!res.ok)throw 0;
+const j=await res.json();
+if(j&&Array.isArray(j.grades)&&j.grades.length){
+D.grades=j.grades;
+const oldProgress=localStorage.getItem('em_progress')?JSON.parse(localStorage.getItem('em_progress')):null;
+if(oldProgress&&oldProgress.grades){
+// الحفاظ على علامة "done" في الوحدات/الكلمات المطابقة
+D.grades.forEach(g=>{
+const og=oldProgress.grades.find(x=>x.id===g.id);
+if(og&&g.units){g.units.forEach(u=>{const ou=og.units?og.units.find(x=>x.id===u.id):null;if(ou&&u.words){u.words.forEach(w=>{const ow=ou.words?ou.words.find(x=>String(x.id)===String(w.id)):null;if(ow)w.done=!!ow.done;});}});}
+});
+}
+localStorage.setItem('em_grades',JSON.stringify(D.grades));
+localStorage.setItem('em_last_content',JSON.stringify(j));
+loadCache();
+}
+}catch(e){}
+}
+function loadCache(){
+const lc=localStorage.getItem('em_grades');
+if(lc){try{D.grades=JSON.parse(lc);}catch(e){}}
+rH();uG2();uSt();
+}
+function saveG(){localStorage.setItem('em_grades',JSON.stringify(D.grades));}
+function saveXp(){localStorage.setItem('em_xp',String(D.xp));}
+function saveQz(){localStorage.setItem('em_qz',String(D.qz));}
+
+function ensureGrades(){
+if(!D.grades||!D.grades.length){
+const old=localStorage.getItem(DBG);
+if(old){try{D.grades=JSON.parse(old);}catch(e){}}
+}
+if(!D.grades||!D.grades.length){
+D.grades=[];
+for(let i=0;i<12;i++)D.grades.push({id:i+1,name:GN[i],icon:GI[i],units:[]});
+localStorage.setItem(DBG,JSON.stringify(D.grades));
+}
+}
+
+function listenData(){
+ensureGrades();
+try{D.xp=+localStorage.getItem('em_xp')||0;}catch(e){}
+try{D.qz=+localStorage.getItem('em_qz')||0;}catch(e){}
+mergeContent();
+loadCache();
+}
+
+function rH(){
+const sel=document.getElementById('gSel');const cv=sel.value;
+sel.innerHTML='<option value="all">كل الصفوف</option>';
+D.grades.forEach(g=>{
+const t=g.units?g.units.reduce((a,u)=>a+(u.words?u.words.length:0),0):0;
+if(t>0)sel.innerHTML+=`<option value="${g.id}">${g.icon} ${g.name} (${t})</option>`;
+});
+sel.value=cv;
+const fv=sel.value;
+const c=document.getElementById('uc2');c.innerHTML='';
+let units=[];
+if(fv==='all'){
+D.grades.forEach(g=>{if(g.units)g.units.forEach(u=>{units.push({...u,gradeId:g.id,gradeIcon:g.icon,gradeName:g.name});});});
+}else{
+const g=D.grades.find(x=>x.id===+fv);
+if(g&&g.units)units=g.units.map(u=>({...u,gradeId:g.id,gradeIcon:g.icon,gradeName:g.name}));
+}
+if(!units.length){c.innerHTML='<p style="text-align:center;color:var(--td);padding:30px;font-size:13px">لا توجد وحدات بعد</p>';return;}
+const gs=['var(--g1)','var(--g2)','var(--g3)','var(--g4)','var(--g5)','var(--g6)'];
+units.forEach((u,i)=>{
+const total=u.words?u.words.length:0;
+const done=u.words?u.words.filter(w=>w.done).length:0;
+const p=total?Math.round(done/total*100):0;
+const gr=gs[i%gs.length];
+const d=document.createElement('div');d.className='ut';
+let delHTML='';
+if(ad)delHTML=`<button class="udb" onclick="event.stopPropagation();delUnit(${u.gradeId},${u.id},'${u.name.replace(/'/g,"\\'")}')">🗑️</button>`;
+d.innerHTML=`<div class="ui2" style="background:${gr}">${u.icon||'📚'}</div>
+<div class="uit"><div class="uitn">${u.name}</div><div class="uitm">${u.gradeIcon} ${u.gradeName} | ${total} كلمة | ${done} تمت</div>
+<div class="up"><div class="upf" style="width:${p}%;background:${gr}"></div></div></div>
+<div class="ua2">${delHTML}<span>←</span></div>`;
+d.onclick=()=>sL(u.gradeId,u.id);
+c.appendChild(d);
+});
+uSt();
+}
+
+function uSt(){
+let tw=0,lw=0;
+D.grades.forEach(g=>{if(g.units)g.units.forEach(u=>{if(u.words){tw+=u.words.length;lw+=u.words.filter(w=>w.done).length;}});});
+const ux=U?U.xp:0;
+const lq=U?U.qz:0;
+document.getElementById('st').textContent=tw;
+document.getElementById('sl').textContent=lw;
+document.getElementById('sq').textContent=D.qz;
+document.getElementById('hxp').textContent=ux;
+document.getElementById('hst').textContent=Math.floor(ux/50);
+document.getElementById('pxp').textContent=ux;
+document.getElementById('pw').textContent=lw;
+document.getElementById('pq').textContent=lq;
+}
+
+function uProf(){
+if(!U&&!ad)return;
+const n=ad?'عمار الرنتيسي':U.name;
+const r=ad?'معلم (أدمن)':'طالب';
+const av=ad?'👨‍🏫':'📚';
+document.getElementById('homeName').textContent=n;
+document.getElementById('homeRole').textContent=r;
+document.getElementById('homeAvatar').textContent=av;
+document.getElementById('profName').textContent=n;
+document.getElementById('profRole').textContent=r;
+document.getElementById('profAvatar').textContent=av;
+document.getElementById('adminSec').style.display=ad?'block':'none';
+}
+
+function nq(){const q=Q[Math.floor(Math.random()*Q.length)];document.getElementById('qtt').textContent=q.t;document.getElementById('qaa').textContent='— '+q.a;}
+
+function uG2(){
+[aG,fG,uG].forEach(sel=>{if(!sel)return;sel.innerHTML='';D.grades.forEach(g=>{sel.innerHTML+=`<option value="${g.id}">${g.icon} ${g.name}</option>`;});});
+uUS();uFU();
+}
+
+function uUS(){
+const gid=+document.getElementById('aG').value;
+const sel=document.getElementById('aU');sel.innerHTML='<option value="">-- اختر وحدة --</option>';
+const g=D.grades.find(x=>x.id===gid);
+if(!g||!g.units)return;
+g.units.forEach(u=>{const c=u.words?u.words.length:0;sel.innerHTML+=`<option value="${u.id}">${u.icon||'📦'} ${u.name} (${c})</option>`;});
+}
+
+function uFU(){
+const gid=+document.getElementById('fG').value;
+const sel=document.getElementById('fU');sel.innerHTML='<option value="">-- اختر وحدة --</option>';
+const g=D.grades.find(x=>x.id===gid);
+if(!g||!g.units)return;
+g.units.forEach(u=>{sel.innerHTML+=`<option value="${u.id}">${u.icon||'📦'} ${u.name}</option>`;});
+}
+
+function aW(){
+if(!ad){tt('فقط المعلم','error');return;}
+const en=document.getElementById('ae').value.trim(),ar=document.getElementById('aa').value.trim();
+const gid=+document.getElementById('aG').value,uid=+document.getElementById('aU').value;
+if(!en||!ar){tt('ملء كل الحقول','error');return;}
+const g=D.grades.find(x=>x.id===gid);if(!g){tt('اختر الصف','error');return;}
+if(!g.units)g.units=[];
+const u=g.units.find(x=>x.id===uid);if(!u){tt('اختر الوحدة','error');return;}
+if(!u.words)u.words=[];
+if(u.words.find(w=>w.word.toLowerCase()===en.toLowerCase())){tt('موجودة بالفعل','error');return;}
+u.words.push({id:Date.now(),word:en,translation:ar,done:false});
+saveG();document.getElementById('ae').value='';document.getElementById('aa').value='';
+tt('تمت الإضافة ✓','success');uUS();
+}
+
+function uF(e){
+if(!ad){tt('فقط المعلم','error');return;}
+const f=e.target.files[0];if(!f)return;
+const gid=+document.getElementById('fG').value,uid=+document.getElementById('fU').value;
+const g=D.grades.find(x=>x.id===gid);if(!g){tt('اختر الصف','error');return;}
+if(!g.units)g.units=[];
+let u=g.units.find(x=>x.id===uid);
+if(!u){
+if(g.units.length===0){u={id:Date.now(),name:'وحدة جديدة',icon:'📦',words:[]};g.units.push(u);uFU();}
+else{tt('اختر وحدة أولاً','error');return;}
+}
+if(!u.words)u.words=[];
+const reader=new FileReader();
+reader.onload=ev=>{
+const lines=ev.target.result.split('\n').filter(l=>l.trim());
+let c=0,skip=0;
+lines.forEach(l=>{const p=l.split('|').map(x=>x.trim());
+if(p.length>=2&&p[0]&&p[1]&&!u.words.find(w=>w.word.toLowerCase()===p[0].toLowerCase())){
+u.words.push({id:Date.now()+c,word:p[0],translation:p[1],done:false});c++;
+}else skip++;
+});
+saveG();tt(`تمت إضافة ${c} كلمة ✓${skip?' (تخطي '+skip+')':''}`,'success');uUS();
+};
+reader.readAsText(f);e.target.value='';
+}
+
+function aUN(){
+if(!ad){tt('فقط المعلم','error');return;}
+const gid=+document.getElementById('uG').value;
+const name=document.getElementById('un2').value.trim();
+const icon=document.getElementById('uI').value.trim()||'📦';
+if(!name){tt('أدخل اسم الوحدة','error');return;}
+const g=D.grades.find(x=>x.id===gid);if(!g){tt('اختر الصف','error');return;}
+if(!g.units)g.units=[];
+g.units.push({id:Date.now(),name,icon,words:[]});
+saveG();document.getElementById('un2').value='';document.getElementById('uI').value='';
+tt('تمت الإضافة ✓','success');uUS();uFU();
+}
+
+function delUnit(gid,uid,name){
+showConfirm(`حذف الوحدة "${name}"؟`,`سيتم حذف جميع الكلمات في هذه الوحدة`,()=>{
+const g=D.grades.find(x=>x.id===gid);
+if(g&&g.units){g.units=g.units.filter(u=>u.id!==uid);saveG();rH();tt('تم الحذف ✓','success');}
+});
+}
+
+function delGrade(gid,name){
+showConfirm(`حذف "${name}" بالكامل؟`,`سيتم حذف الوحدات والكلمات جميعها`,()=>{
+D.grades=D.grades.filter(g=>g.id!==gid);saveG();rH();uG2();renderAdmin2();tt('تم الحذف ✓','success');
+});
+}
+
+// ==== لوحة إدارة الصفوف/الوحدات/الكلمات (أدمن) ====
+function uAP(){document.getElementById('adminLock').classList.toggle('hidden',ad);document.getElementById('adminPanel').classList.toggle('hidden',!ad);if(ad){uG2();renderAdmin2();}}
+
+function sT(t,b){
+document.querySelectorAll('.atb').forEach(x=>x.classList.remove('active'));b.classList.add('active');
+document.getElementById('tm').classList.toggle('hidden',t!=='manual');
+document.getElementById('tf').classList.toggle('hidden',t!=='file');
+document.getElementById('tu').classList.toggle('hidden',t!=='addUnit');
+document.getElementById('tadmin2').classList.toggle('hidden',t!=='admin2');
+if(t==='admin2')renderAdmin2();
+}
+
+function renderAdmin2(){
+const el=document.getElementById('admGradeList');if(!el)return;
+el.innerHTML='';
+D.grades.forEach(g=>{
+const unitRows=(g.units||[]).map((u,i)=>{
+const wc=u.words?u.words.length:0;
+return `<div style="display:flex;align-items:center;gap:6px;padding:6px 0;border-bottom:1px dashed var(--bd)">
+<span style="flex:1;font-size:12px">${i+1}. ${u.icon||'📦'} ${u.name} <span style="color:var(--td)">(${wc})</span></span>
+<button class="wbd" onclick="editUnit2(${g.id},${u.id})" style="color:var(--p);font-size:12px">✏️</button>
+<button class="wbd" onclick="delUnit2(${g.id},${u.id},'${(u.name||'').replace(/'/g,"\\'")}')">🗑️</button>
+</div>`;
+}).join('');
+el.innerHTML+=`<div style="border:1px solid var(--bd);border-radius:12px;padding:10px;margin-bottom:10px;background:var(--bl)">
+<div style="display:flex;align-items:center;gap:8px;margin-bottom:6px">
+<span style="flex:1;font-weight:700;font-size:13px">${g.icon||'📚'} ${g.name}</span>
+<button class="wbd" onclick="editGradeName(${g.id},'${(g.name||'').replace(/'/g,"\\'")}')" style="color:var(--p);font-size:12px">✏️</button>
+<button class="wbd" onclick="addUnit3(${g.id})" style="color:var(--ok);font-size:12px">➕ وحدة</button>
+<button class="wbd" onclick="delGrade2(${g.id},'${(g.name||'').replace(/'/g,"\\'")}')">🗑️</button>
+</div>${unitRows||'<div style="font-size:11px;color:var(--td)">لا وحدات</div>'}</div>`;
+});
+}
+
+function addGrade2(){
+if(!ad){tt('فقط المعلم','error');return;}
+const name=document.getElementById('agName').value.trim();
+if(!name){tt('أدخل اسم الصف','error');return;}
+D.grades.push({id:Date.now(),name,icon:'📚',units:[]});
+saveG();document.getElementById('agName').value='';
+rH();uG2();renderAdmin2();tt('تمت إضافة الصف ✓','success');
+}
+function addUnit3(gid){
+if(!ad){tt('فقط المعلم','error');return;}
+const name=prompt('اسم الوحدة الجديدة:');
+if(!name)return;
+const g=D.grades.find(x=>x.id===gid);if(!g)return;
+if(!g.units)g.units=[];
+g.units.push({id:Date.now(),name,icon:'📦',words:[]});
+saveG();rH();uG2();renderAdmin2();tt('تمت إضافة الوحدة ✓','success');
+}
+function editGradeName(gid,old){
+if(!ad)return;
+const nm=prompt('اسم الصف الجديد:',old);
+if(!nm)return;
+const g=D.grades.find(x=>x.id===gid);if(!g)return;
+g.name=nm.trim();saveG();rH();uG2();renderAdmin2();tt('تم التعديل ✓','success');
+}
+function delGrade2(gid,name){
+delGrade(gid,name);
+}
+function editUnit2(gid,uid){
+if(!ad)return;
+const g=D.grades.find(x=>x.id===gid);if(!g)return;
+const u=(g.units||[]).find(x=>x.id===uid);if(!u)return;
+const nm=prompt('اسم الوحدة الجديد:',u.name||'');
+if(nm)u.name=nm.trim();
+const ic=prompt('أيقونة الوحدة:',u.icon||'📦');
+if(ic)u.icon=ic.trim()||'📦';
+saveG();rH();uG2();renderAdmin2();tt('تم التعديل ✓','success');
+}
+function delUnit2(gid,uid,name){
+showConfirm(`حذف الوحدة "${name}"؟`,`سيتم حذف جميع الكلمات في هذه الوحدة`,()=>{
+const g=D.grades.find(x=>x.id===gid);
+if(g&&g.units){g.units=g.units.filter(u=>u.id!==uid);saveG();rH();uG2();renderAdmin2();tt('تم الحذف ✓','success');}
+});
+}
+function cx(){
+const d=JSON.stringify({grades:D.grades},null,2);
+const b=new Blob([d],{type:'application/json'});
+const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='content.json';a.click();
+tt('تم تنزيل content.json ✓','success');
+}
+function impJson(ev){
+const f=ev.target.files[0];if(!f)return;
+const r=new FileReader();
+r.onload=e=>{
+try{
+const j=JSON.parse(e.target.result);
+if(!j||!Array.isArray(j.grades)||!j.grades.length){tt('ملف غير صالح','error');return;}
+D.grades=j.grades;
+saveG();rH();uG2();renderAdmin2();loadCache();tt('تم استيراد المحتوى ✓','success');
+}catch(err){tt('ملف غير صالح','error');}
+};
+r.readAsText(f);ev.target.value='';
+}
+
+function showConfirm(msg,sub,cb){
+document.getElementById('cMsg').textContent=msg;
+document.getElementById('cSub').textContent=sub;
+document.getElementById('confirmEl').classList.remove('hidden');
+cCb=cb;
+}
+function cOk(){document.getElementById('confirmEl').classList.add('hidden');if(cCb)cCb();cCb=null;}
+function cCancel(){document.getElementById('confirmEl').classList.add('hidden');cCb=null;}
+
+function sL(gid,uid){
+cg=D.grades.find(g=>g.id===gid);if(!cg)return;
+if(!cg.units)return;
+const u=cg.units.find(x=>x.id===uid);
+if(!u||!u.words||!u.words.length){tt('لا توجد كلمات','error');return;}
+cu=u;uw=u.words;ci=0;go('learn');sC();
+}
+
+function sC(){
+if(ci>=uw.length){sQ();return;}
+const w=uw[ci];
+document.getElementById('cw').textContent=w.word;
+document.getElementById('ct').textContent=w.translation;
+document.getElementById('lp').style.width=Math.round(ci/uw.length*100)+'%';
+document.getElementById('lt').textContent=`${ci+1}/${uw.length}`;
+document.getElementById('fc').classList.remove('flipped');
+}
+
+function flip(){document.getElementById('fc').classList.toggle('flipped');}
+function spk(){const u=new SpeechSynthesisUtterance(uw[ci].word);u.lang='en-US';u.rate=0.8;speechSynthesis.speak(u);}
+
+function mk(ok){
+const w=uw[ci];
+if(w){
+if(ok&&U){
+if(!U.doneWords)U.doneWords={};
+if(!U.doneWords[w.id]){U.doneWords[w.id]=true;U.xp+=10;addLog('new');syncUser();}
+}
+}
+ci++;sC();
+}
+
+function sQ(){qw=[...uw].sort(()=>Math.random()-0.5).slice(0,Math.min(10,uw.length));qi=0;qs=0;go('quiz');sQQ();}
+
+function sQQ(){
+if(qi>=qw.length){sR();return;}
+const w=qw[qi];
+document.getElementById('qqq').textContent=`ما ترجمة "${w.word}"؟`;
+document.getElementById('qp').style.width=Math.round(qi/qw.length*100)+'%';
+document.getElementById('qt2').textContent=`${qi+1}/${qw.length}`;
+const o=gO(w);const c=document.getElementById('qoo');c.innerHTML='';
+o.forEach(x=>{const b=document.createElement('button');b.className='qop';b.textContent=x;b.onclick=()=>cQ(x,w);c.appendChild(b);});
+document.getElementById('qfb').classList.add('hidden');
+}
+
+function gO(cw){
+const all=uw.filter(w=>w.id!==cw.id);const o=[cw.translation];
+const pool=all.map(w=>w.translation).filter(t=>!o.includes(t));
+while(o.length<4&&pool.length){const i=Math.floor(Math.random()*pool.length);o.push(pool.splice(i,1)[0]);}
+while(o.length<4)o.push('—');return o.sort(()=>Math.random()-0.5);
+}
+
+function cQ(sel,cw){
+const opts=document.querySelectorAll('.qop');const fb=document.getElementById('qfb');const ok=sel===cw.translation;
+opts.forEach(o=>{o.classList.add('disabled');if(o.textContent===cw.translation)o.classList.add('correct');});
+if(ok){qs++;if(U){U.xp+=5;addLog('ok');syncUser();}fb.className='qfb correct';document.getElementById('fbi').textContent='✓';document.getElementById('fbt').textContent='أحسنت!';}
+else{opts.forEach(o=>{if(o.textContent===sel)o.classList.add('wrong');});if(U)addLog('no');fb.className='qfb wrong';document.getElementById('fbi').textContent='✗';document.getElementById('fbt').textContent=`الصحيح: ${cw.translation}`;}
+setTimeout(()=>{qi++;sQQ();},1400);
+}
+
+function sR(){
+if(U){U.qz++;addLog('quiz');syncUser();}
+D.qz++;saveQz();
+go('result');
+const p=Math.round(qs/qw.length*100);
+document.getElementById('rs').textContent=qs;
+document.getElementById('ri').textContent=p>=80?'🎉':p>=50?'👍':'💪';
+document.getElementById('rtt').textContent=p>=80?'عمل رائع!':p>=50?'جيد!':'حاول مرة أخرى!';
+document.getElementById('rm').textContent=`${p}% إجابات صحيحة`;
+document.getElementById('rxp').textContent='+'+qs*5+' XP';
+}
+
+function retry(){sQ();}
+
+function rB2(){
+const bsel=document.getElementById('bSel');const cv=bsel.value;
+bsel.innerHTML='<option value="all">كل الصفوف</option>';
+D.grades.forEach(g=>{const t=g.units?g.units.reduce((a,u)=>a+(u.words?u.words.length:0),0):0;
+if(t>0)bsel.innerHTML+=`<option value="${g.id}">${g.icon} ${g.name} (${t})</option>`;
+});bsel.value=cv;rB();
+}
+
+function rB(){
+const c=document.getElementById('wbl');c.innerHTML='';
+const bv=document.getElementById('bSel').value;
+const s=document.querySelector('.wbs')?document.querySelector('.wbs').value.toLowerCase():'';
+let words=[];
+D.grades.forEach(g=>{if(bv!=='all'&&g.id!==+bv)return;if(!g.units)return;
+g.units.forEach(u=>{if(!u.words)return;u.words.forEach(w=>{
+if(!s||w.word.toLowerCase().includes(s)||w.translation.includes(s))
+words.push({...w,gn:g.name,un:u.name,ui:u.icon});});});});
+if(!words.length){c.innerHTML='<p style="text-align:center;color:var(--td);padding:40px;font-size:13px">لا توجد كلمات</p>';return;}
+words.forEach(w=>{
+const d=document.createElement('div');d.className='wbi';
+d.innerHTML=`<div class="wbsp" onclick="spW('${w.word.replace(/'/g,"\\'")}')">🔊</div>
+<div class="wbif"><div class="wbw">${w.word}</div><div class="wba">${w.translation}</div></div>
+<span class="wbbg">${w.ui||'📦'} ${w.un}</span>
+${ad?`<button class="wbd" onclick="event.stopPropagation();dW2('${w.word.replace(/'/g,"\\'")}')">🗑️</button>`:''}`;
+c.appendChild(d);
+});
+}
+
+function spW(w){const u=new SpeechSynthesisUtterance(w);u.lang='en-US';u.rate=0.8;speechSynthesis.speak(u);}
+
+function dW2(word){
+if(!ad)return;
+showConfirm(`حذف "${word}" من كل الصفوف؟`,'',()=>{
+D.grades.forEach(g=>{if(g.units)g.units.forEach(u=>{if(u.words)u.words=u.words.filter(w=>w.word!==word);});});
+saveG();rB();rH();tt('تم الحذف ✓','success');
+});
+}
+
+function ex(){
+const d=JSON.stringify(D);const b=new Blob([d],{type:'application/json'});
+const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='english-master-backup.json';a.click();
+tt('تم التصدير ✓','success');
+}
+
+function rst(){
+if(!ad)return;
+showConfirm('إعادة تعيين كل شيء؟','سيتم حذف كل الكلمات والوحدات من السحابة',()=>{
+D={grades:[],xp:0,qz:0};
+for(let i=0;i<12;i++)D.grades.push({id:i+1,name:GN[i],icon:GI[i],units:[]});
+saveG();saveXp();saveQz();tt('تمت إعادة التعيين ✓','success');
+});
+}
+
+// ==== تتبع التقدم اليومي + تقرير واتساب ====
+function todayStr(){const d=new Date();const p=n=>String(n).padStart(2,'0');return d.getFullYear()+'-'+p(d.getMonth()+1)+'-'+p(d.getDate());}
+
+function dayKey(){return todayStr();}
+
+function getDay(){if(!U)return null; if(!U.td){U.td={new:0,ok:0,no:0,quizzes:0,xp:0,date:dayKey()};} if(U.td.date!==dayKey()){U.td={new:0,ok:0,no:0,quizzes:0,xp:0,date:dayKey()};} return U.td;}
+
+function addLog(type){
+if(!U)return;
+const d=getDay();
+if(type==='new'){d.new++;d.xp+=10;}
+if(type==='ok'){d.ok++;d.xp+=5;}
+if(type==='no'){d.no++;}
+if(type==='quiz'){d.quizzes++;}
+todayIncr();
+}
+function todayIncr(){try{localStorage.setItem('em_today',dayKey());}catch(e){}}
+function lastSent(){
+const t=localStorage.getItem('em_last_report');return t?+t:0;
+}
+function canSendReport(){
+const t=lastSent();
+return !t||(Date.now()-t)>=24*60*60*1000;
+}
+function stars(n){return n>=100?'🌟':n>=80?'⭐':n>=50?'👍':'💪';}
+function sendReport(){
+if(!U){tt('سجّل الدخول أولاً','error');return;}
+const d=getDay();
+const gradeName=(D.grades.find(g=>g.id===U.grade)||{}).name||'غير محدد';
+const totalWords=U.doneWords?Object.keys(U.doneWords).length:0;
+const today=d?`- كلمات جديدة اليوم: ${d.new}
+- إجابات صحيحة اليوم: ${d.ok}
+- إجابات خاطئة اليوم: ${d.no}
+- اختبارات اليوم: ${d.quizzes}
+- XP اليوم: ${d.xp}`:'- لا يوجد نشاط اليوم بعد';
+const msg=`📊 *تقرير تقدم: ${U.name}*
+📚 الصف: ${gradeName}
+⭐ مجموع XP: ${U.xp}
+📖 الكلمات المتمكنة: ${totalWords}
+📝 الاختبارات: ${U.qz}
+🔥 اليوم: ${today}
+${stars(d&&d.ok+d.no>0?Math.round(d.ok/(d.ok+d.no)*100):0)}
+_تم الإرسال من تطبيق English Master Pro_`;
+const url='https://wa.me/963949119294?text='+encodeURIComponent(msg);
+localStorage.setItem('em_last_report',String(Date.now()));
+window.open(url,'_blank');
+tt('تم فتح واتساب مع تقريرك ✓','success');
+}
+
+function tt(t,tp='success'){const e=document.getElementById('toast');e.textContent=t;e.className=`toast ${tp}`;e.classList.remove('hidden');setTimeout(()=>e.classList.add('hidden'),2500);}
+</script>
+</body>
+</html>

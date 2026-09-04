@@ -1,0 +1,21 @@
+{
+  "name": "English Master Pro",
+  "short_name": "English Pro",
+  "description": "تعلّم المفردات الإنجليزية — أكاديمية عمار الرنتيسي",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0A0E21",
+  "theme_color": "#6C63FF",
+  "lang": "ar",
+  "dir": "rtl",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
