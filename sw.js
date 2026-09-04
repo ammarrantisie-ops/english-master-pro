@@ -6,7 +6,10 @@ const ASSETS = [
   './',
   './index.html',
   './content.json',
-  './manifest.webmanifest'
+  './manifest.webmanifest',
+  './icon-192.png',
+  './icon-512.png',
+  './icon.svg'
 ];
 
 self.addEventListener('install', (e) => {
