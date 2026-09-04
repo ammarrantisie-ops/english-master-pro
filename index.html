@@ -544,6 +544,9 @@ body{font-family:'Tajawal',sans-serif;background:var(--bg);color:var(--t);min-he
 <div class="psi"><div class="psn" id="pw">0</div><div class="psl">كلمات</div></div>
 <div class="psi"><div class="psn" id="pq">0</div><div class="psl">ممارسات</div></div>
 </div>
+<div class="psec" style="padding:10px">
+<button class="bs" onclick="doLogout()" style="width:100%;color:var(--no);border-color:var(--no)">🚪 تسجيل الخروج</button>
+</div>
 <div class="psec">
 <h4>📊 تقريري اليوم</h4>
 <div class="pit" onclick="sendReport()"><span>📤 إرسال تقرير تقدمي للمعلم</span><span>←</span></div>
@@ -562,9 +565,6 @@ body{font-family:'Tajawal',sans-serif;background:var(--bg);color:var(--t);min-he
 <h4>ℹ️ حول التطبيق</h4>
 <div class="pit"><span>English Master Pro</span><span>v4.0</span></div>
 <div class="pit"><span>تصميم</span><span>عمار الرنتيسي</span></div>
-</div>
-<div class="psec">
-<button class="bs" onclick="doLogout()" style="width:100%;color:var(--no);border-color:var(--no)">🚪 تسجيل الخروج</button>
 </div>
 <nav class="bn">
 <button class="ni" onclick="go('home')"><span class="nii">🏠</span><span>الرئيسية</span></button>
@@ -689,6 +689,7 @@ su(all);localStorage.setItem('emu',JSON.stringify(U));
 }
 
 function go(id){
+window.scrollTo(0,0);
 document.querySelectorAll('.scr').forEach(s=>s.classList.remove('active'));
 document.getElementById(id).classList.add('active');
 if(id==='home')rH();
