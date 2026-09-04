@@ -1,7 +1,7 @@
 /* English Master Pro — Service Worker
  * يجعل التطبيق يعمل بدون إنترنت بعد أول فتحة.
  * كما يخزّن content.json مؤقتاً ليظهر آخر محتوى عند عدم الاتصال. */
-const CACHE = 'emp-v8';
+const CACHE = 'emp-v9';
 const ASSETS = [
   './',
   './index.html',
