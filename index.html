@@ -1095,11 +1095,11 @@ const url='https://api.github.com/repos/'+GHR+'/contents/content.json';
 tt('جارٍ النشر للطلاب...','success');
 try{
 let sha=null;
-const cur=await fetch(url,{headers:{Authorization:'token '+t,Accept:'application/vnd.github.v3+json'}});
+const cur=await fetch(url,{headers:{Authorization:'Bearer '+t,Accept:'application/vnd.github.v3+json'}});
 if(cur.ok){const cj=await cur.json();sha=cj.sha;}
 const b={message:'تحديث المحتوى من التطبيق',content:enc};
 if(sha)b.sha=sha;
-const res=await fetch(url,{method:'PUT',headers:{Authorization:'token '+t,'Content-Type':'application/json',Accept:'application/vnd.github.v3+json'},body:JSON.stringify(b)});
+const res=await fetch(url,{method:'PUT',headers:{Authorization:'Bearer '+t,'Content-Type':'application/json',Accept:'application/vnd.github.v3+json'},body:JSON.stringify(b)});
 if(!res.ok)throw 0;
 clearDirty();saveG();rH();uG2();renderAdmin2();uAP();
 tt('تم نشر التعديلات للطلاب ✓','success');
