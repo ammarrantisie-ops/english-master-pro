@@ -494,17 +494,27 @@ body{font-family:'Tajawal',sans-serif;background:var(--bg);color:var(--t);min-he
 <button class="bp" onclick="aUN()">➕ إضافة الوحدة</button>
 </div>
 <div id="tadmin2" class="af hidden">
+<div id="pubBanner" class="hidden" style="background:var(--g1);border:1.5px dashed #e67e22;border-radius:12px;padding:10px 12px;margin-bottom:10px;font-size:12px;line-height:1.7">
+<div style="font-weight:700;color:#e67e22;margin-bottom:4px">⚠️ لديك تعديلات لم تصل للطلاب بعد</div>
+<div>حذفك وتعديلك محفوظ على جهازك فقط. الطلاب يقرؤون الملف المركزي على GitHub، فاضغط الزر الأخضر بالأسفل (<b>نشر للطلاب</b>) حتى يكون الحذف ظاهراً لديهم فوراً.</div>
+</div>
 <div class="fg"><label class="fl">إدارة الصفوف والوحدات والكلمات</label></div>
 <div id="admGradeList"></div>
 <div class="fg"><label class="fl">إضافة صف جديد</label><input class="fi" id="agName" placeholder="اسم الصف الجديد"></div>
 <button class="bp" onclick="addGrade2()">➕ إضافة صف</button>
+<div class="fg" style="margin-top:14px"><label class="fl">نشر التعديلات للطلاب (GitHub)</label></div>
+<div class="la" style="max-width:none;gap:8px;flex-wrap:wrap">
+<input class="fi" id="ghTok" placeholder="github_pat_... أو ghp_..." style="flex:1.5" value="" oninput=""/>
+<button class="bp" onclick="saveGhTok()" style="flex:0 0 auto">💾 حفظ الرمز</button>
+</div>
+<button class="bp" onclick="publishContent()" style="background:var(--ok);width:100%;margin-top:6px">🚀 نشر التعديلات للطلاب الآن</button>
 <div class="fg" style="margin-top:14px"><label class="fl">استيراد / تصدير المحتوى</label></div>
 <div class="la" style="max-width:none;gap:8px;flex-wrap:wrap">
 <button class="bp" onclick="cx()" style="flex:1">⬇️ تنزيل content.json</button>
 <button class="bp" style="flex:1;background:var(--g3)" onclick="document.getElementById('fiBox').click()">⬆️ رفع content.json</button>
 <input type="file" id="fiBox" accept=".json" onchange="impJson(event)" style="display:none">
 </div>
-<p style="font-size:10px;color:var(--td);margin-top:10px;line-height:1.7">بعد تعديل المحتوى: نزّل <b>content.json</b> وارفعه في المستودع على GitHub ليتحدّث لدى جميع الطلاب فور فتح التطبيق.</p>
+<p style="font-size:10px;color:var(--td);margin-top:10px;line-height:1.7">لإنشاء رمز GitHub: من حساب GitHub افتح <b>Settings ← Developer settings ← Personal access tokens ← Fine-grained tokens ← Generate</b>، امنح صلاحية <b>Contents: Read and write</b> للمستودع english-master-pro فقط.</p>
 <div class="la" style="max-width:none;gap:8px;flex-wrap:wrap;margin-top:6px">
 <button class="bp" onclick="resync()" style="background:var(--g2)">🔄 مزامنة المحتوى من الخادم الرسمي</button>
 </div>
@@ -980,6 +990,10 @@ if(t==='admin2')renderAdmin2();
 
 function renderAdmin2(){
 const el=document.getElementById('admGradeList');if(!el)return;
+const pb=document.getElementById('pubBanner');
+if(pb)pb.classList.toggle('hidden',!isDirty());
+const gt=document.getElementById('ghTok');
+if(gt&&!gt.value.trim())gt.value=ghTok();
 el.innerHTML='';
 D.grades.forEach(g=>{
 const unitRows=(g.units||[]).map((u,i)=>{
@@ -1063,6 +1077,35 @@ saveG();markDirty();rH();uG2();renderAdmin2();loadCache();tt('تم استيرا�
 r.readAsText(f);ev.target.value='';
 }
 
+// ==== نشر التعديلات مباشرة إلى GitHub ليصل الحذف/الإضافة لجميع الطلاب ====
+const GHR='ammarrantisie-ops/english-master-pro';
+const ghTok=()=>{try{return localStorage.getItem('em_gh')||'';}catch(e){return '';}};
+function saveGhTok(){
+const t=document.getElementById('ghTok').value.trim();
+try{localStorage.setItem('em_gh',t);}catch(e){}
+tt(t?'تم حفظ رمز GitHub ✓':'تم إفراغ الرمز','success');
+}
+async function publishContent(){
+if(!ad){tt('فقط المعلم','error');return;}
+const t=ghTok();
+if(!t){tt('ضع رمز GitHub أولاً','error');return;}
+const json=JSON.stringify({version:1,updated:new Date().toISOString().split('T')[0],grades:D.grades},null,2);
+const enc=btoa(unescape(encodeURIComponent(json)));
+const url='https://api.github.com/repos/'+GHR+'/contents/content.json';
+tt('جارٍ النشر للطلاب...','success');
+try{
+let sha=null;
+const cur=await fetch(url,{headers:{Authorization:'token '+t,Accept:'application/vnd.github.v3+json'}});
+if(cur.ok){const cj=await cur.json();sha=cj.sha;}
+const b={message:'تحديث المحتوى من التطبيق',content:enc};
+if(sha)b.sha=sha;
+const res=await fetch(url,{method:'PUT',headers:{Authorization:'token '+t,'Content-Type':'application/json',Accept:'application/vnd.github.v3+json'},body:JSON.stringify(b)});
+if(!res.ok)throw 0;
+clearDirty();saveG();rH();uG2();renderAdmin2();uAP();
+tt('تم نشر التعديلات للطلاب ✓','success');
+}catch(e){tt('فشل النشر: تحقق من الرمز والاتصال','error');}
+}
+
 function showConfirm(msg,sub,cb){
 document.getElementById('cMsg').textContent=msg;
 document.getElementById('cSub').textContent=sub;
@@ -1099,12 +1142,17 @@ if(w){
 if(ok&&U){
 if(!U.doneWords)U.doneWords={};
 if(!U.doneWords[w.id]){U.doneWords[w.id]=true;U.xp+=10;addLog('new');syncUser();}
+w.done=true;saveG();
 }
 }
 ci++;sC();
 }
 
-function sQ(){qw=[...uw].sort(()=>Math.random()-0.5).slice(0,Math.min(10,uw.length));qi=0;qs=0;go('quiz');sQQ();}
+function sQ(){
+const lw=uw.filter(w=>w.done);
+qw=[...(lw.length>=4?lw:[...uw])].sort(()=>Math.random()-0.5);
+qi=0;qs=0;go('quiz');sQQ();
+}
 
 function sQQ(){
 if(qi>=qw.length){sR();return;}
@@ -1255,7 +1303,8 @@ const learned=pool.filter(w=>w.done);
 if(learned.length>=4)pool=learned;
 if(pool.length<4){tt('تعلم 4 كلمات على الأقل أولاً','error');return;}
 const sl=pool.sort(()=>Math.random()-0.5);
-xq=sl.slice(0,Math.min(10,pool.length));
+const n=Math.max(4,Math.round(pool.length*0.7));
+xq=sl.slice(0,Math.min(n,pool.length));
 xm=null;xi=0;xs=0;
 go('extest');xQQ();
 }
