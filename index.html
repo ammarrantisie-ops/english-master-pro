@@ -29,7 +29,7 @@ body{font-family:'Tajawal',sans-serif;background:var(--bg);color:var(--t);min-he
 
 .app{display:none;min-height:100vh}.app.active{display:block}
 .scr{display:none;min-height:100vh;padding-bottom:90px;animation:sci .35s ease}.scr.active{display:block}
-@keyframes sci{from{opacity:0}to{opacity:1}}
+@keyframes sci{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
 .bn{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:480px;background:var(--bc);border-top:1px solid var(--bd);display:flex;justify-content:space-around;padding:6px 0 8px;z-index:100}
 .ni{display:flex;flex-direction:column;align-items:center;gap:2px;background:none;border:none;color:var(--td);font-size:10px;cursor:pointer;padding:6px 12px;font-family:inherit;border-radius:var(--rs);transition:color .2s}
 .ni.active{color:var(--p)}.nii{font-size:20px}
@@ -187,15 +187,6 @@ body{font-family:'Tajawal',sans-serif;background:var(--bg);color:var(--t);min-he
 .pit{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid var(--bd);cursor:pointer;font-size:12px}
 .pit:last-child{border-bottom:none}
 .wab{display:flex;align-items:center;justify-content:center;gap:6px;width:100%;padding:12px;background:#25D366;color:white;border:none;border-radius:var(--rs);font-size:14px;font-weight:700;cursor:pointer;font-family:inherit;margin-top:6px}
-#profile .ph{padding:14px 12px 10px;margin:8px 12px 8px;border-radius:var(--rs)}
-#profile .pav{width:42px;height:42px;font-size:22px;margin-bottom:5px;border-width:2px}
-#profile .pnm{font-size:16px}.prole{margin-top:2px;font-size:10px}
-#profile .ps{margin:0 12px 8px;padding:9px;border-radius:var(--rs)}
-#profile .psn{font-size:18px}.psl{font-size:8px}
-#profile .psec{margin:0 12px 8px;padding:9px 12px;border-radius:var(--rs)}
-#profile .psec h4{margin-bottom:7px;font-size:12px}
-#profile .pit{padding:7px 0;font-size:12px}
-#profile .wab{margin-top:0;padding:10px}
 .hb{text-align:center;font-size:13px;font-weight:800;background:var(--g1);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:0 16px 12px}
 
 .toast{position:fixed;bottom:100px;left:50%;transform:translateX(-50%);padding:10px 20px;border-radius:var(--rs);font-size:12px;font-weight:700;z-index:300;animation:ti .25s ease;box-shadow:0 6px 24px rgba(0,0,0,0.4)}
@@ -554,20 +545,27 @@ body{font-family:'Tajawal',sans-serif;background:var(--bg);color:var(--t);min-he
 <div class="psi"><div class="psn" id="pw">0</div><div class="psl">كلمات</div></div>
 <div class="psi"><div class="psn" id="pq">0</div><div class="psl">ممارسات</div></div>
 </div>
-<div class="psec" style="padding:8px">
+<div class="psec" style="padding:10px">
 <button class="bs" onclick="doLogout()" style="width:100%;color:var(--no);border-color:var(--no)">🚪 تسجيل الخروج</button>
 </div>
 <div class="psec">
-<h4>📊 تقاريري</h4>
-<div class="pit" onclick="sendReport()"><span>📤 إرسال تقريري للمعلم</span><span>←</span></div>
+<h4>📊 تقريري اليوم</h4>
+<div class="pit" onclick="sendReport()"><span>📤 إرسال تقرير تقدمي للمعلم</span><span>←</span></div>
+<p style="font-size:10px;color:var(--td);margin-top:8px;line-height:1.6">زر واحد يفتح واتساب المعلم برسالة جاهزة تتضمن عدد كلمات اليوم والنتيجة والنقاط. يمكنك إرساله مرة كل 24 ساعة.</p>
 </div>
-<div class="psec" style="padding:8px">
+<div class="psec">
+<h4>📲 تواصل مع المعلم</h4>
 <a href="https://wa.me/963949119294" target="_blank" style="text-decoration:none"><button class="wab">💬 واتساب: 0949119294</button></a>
 </div>
 <div class="psec" id="adminSec" style="display:none">
 <h4>🔐 لوحة تحكم المعلم</h4>
 <div class="pit" onclick="ex()"><span>📥 تصدير البيانات</span><span>←</span></div>
 <div class="pit" onclick="rst()"><span>🔄 إعادة تعيين كل شيء</span><span>←</span></div>
+</div>
+<div class="psec">
+<h4>ℹ️ حول التطبيق</h4>
+<div class="pit"><span>English Master Pro</span><span>v4.0</span></div>
+<div class="pit"><span>تصميم</span><span>عمار الرنتيسي</span></div>
 </div>
 <nav class="bn">
 <button class="ni" onclick="go('home')"><span class="nii">🏠</span><span>الرئيسية</span></button>
