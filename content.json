@@ -1,102 +1,472 @@
-﻿{
-    "version":  1,
-    "updated":  "2026-09-04",
-    "grades":  [
-                   {
-                       "id":  1,
-                       "name":  "الصف الأول",
-                       "icon":  "🌱",
-                       "units":  [
-
-                                 ]
-                   },
-                   {
-                       "id":  2,
-                       "name":  "الصف الثاني",
-                       "icon":  "🌿",
-                       "units":  [
-
-                                 ]
-                   },
-                   {
-                       "id":  3,
-                       "name":  "الصف الثالث",
-                       "icon":  "🌳",
-                       "units":  [
-
-                                 ]
-                   },
-                   {
-                       "id":  4,
-                       "name":  "الصف الرابع",
-                       "icon":  "🌻",
-                       "units":  [
-
-                                 ]
-                   },
-                   {
-                       "id":  5,
-                       "name":  "الصف الخامس",
-                       "icon":  "🌺",
-                       "units":  [
-
-                                 ]
-                   },
-                   {
-                       "id":  6,
-                       "name":  "الصف السادس",
-                       "icon":  "🌸",
-                       "units":  [
-
-                                 ]
-                   },
-                   {
-                       "id":  7,
-                       "name":  "الصف السابع",
-                       "icon":  "🍀",
-                       "units":  [
-
-                                 ]
-                   },
-                   {
-                       "id":  8,
-                       "name":  "الصف الثامن",
-                       "icon":  "🍁",
-                       "units":  [
-
-                                 ]
-                   },
-                   {
-                       "id":  9,
-                       "name":  "الصف التاسع",
-                       "icon":  "🌾",
-                       "units":  [
-
-                                 ]
-                   },
-                   {
-                       "id":  10,
-                       "name":  "الصف العاشر",
-                       "icon":  "⭐",
-                       "units":  [
-
-                                 ]
-                   },
-                   {
-                       "id":  11,
-                       "name":  "الصف الحادي عشر",
-                       "icon":  "🏆",
-                       "units":  [
-
-                                 ]
-                   },
-                   {
-                       "id":  12,
-                       "name":  "الصف الثاني عشر",
-                       "icon":  "🎓",
-                       "units":  [
-
-                                 ]
-                   }
-               ]
+{
+  "version": 1,
+  "updated": "2026-09-04",
+  "grades": [
+    {
+      "id": 1,
+      "name": "الصف الأول",
+      "icon": "🌱",
+      "units": [
+        {
+          "id": 1,
+          "name": "الوحدة الأولى: كلمات أساسية",
+          "icon": "📚",
+          "words": [
+            {
+              "id": 1,
+              "word": "apple",
+              "translation": "تفاحة",
+              "done": false
+            },
+            {
+              "id": 2,
+              "word": "book",
+              "translation": "كتاب",
+              "done": false
+            },
+            {
+              "id": 3,
+              "word": "cat",
+              "translation": "قطة",
+              "done": false
+            },
+            {
+              "id": 4,
+              "word": "dog",
+              "translation": "كلب",
+              "done": false
+            },
+            {
+              "id": 5,
+              "word": "house",
+              "translation": "منزل",
+              "done": false
+            },
+            {
+              "id": 6,
+              "word": "water",
+              "translation": "ماء",
+              "done": false
+            },
+            {
+              "id": 7,
+              "word": "school",
+              "translation": "مدرسة",
+              "done": false
+            },
+            {
+              "id": 8,
+              "word": "teacher",
+              "translation": "معلم",
+              "done": false
+            },
+            {
+              "id": 9,
+              "word": "student",
+              "translation": "طالب",
+              "done": false
+            },
+            {
+              "id": 10,
+              "word": "friend",
+              "translation": "صديق",
+              "done": false
+            },
+            {
+              "id": 11,
+              "word": "family",
+              "translation": "عائلة",
+              "done": false
+            },
+            {
+              "id": 12,
+              "word": "food",
+              "translation": "طعام",
+              "done": false
+            },
+            {
+              "id": 13,
+              "word": "morning",
+              "translation": "صباح",
+              "done": false
+            },
+            {
+              "id": 14,
+              "word": "night",
+              "translation": "ليل",
+              "done": false
+            },
+            {
+              "id": 15,
+              "word": "big",
+              "translation": "كبير",
+              "done": false
+            },
+            {
+              "id": 16,
+              "word": "small",
+              "translation": "صغير",
+              "done": false
+            },
+            {
+              "id": 17,
+              "word": "happy",
+              "translation": "سعيد",
+              "done": false
+            },
+            {
+              "id": 18,
+              "word": "run",
+              "translation": "يجري",
+              "done": false
+            },
+            {
+              "id": 19,
+              "word": "eat",
+              "translation": "يأكل",
+              "done": false
+            },
+            {
+              "id": 20,
+              "word": "drink",
+              "translation": "يشرب",
+              "done": false
+            },
+            {
+              "id": 21,
+              "word": "read",
+              "translation": "يقرأ",
+              "done": false
+            },
+            {
+              "id": 22,
+              "word": "write",
+              "translation": "يكتب",
+              "done": false
+            },
+            {
+              "id": 23,
+              "word": "play",
+              "translation": "يلعب",
+              "done": false
+            },
+            {
+              "id": 24,
+              "word": "red",
+              "translation": "أحمر",
+              "done": false
+            },
+            {
+              "id": 25,
+              "word": "blue",
+              "translation": "أزرق",
+              "done": false
+            },
+            {
+              "id": 26,
+              "word": "yellow",
+              "translation": "أصفر",
+              "done": false
+            },
+            {
+              "id": 27,
+              "word": "sun",
+              "translation": "شمس",
+              "done": false
+            },
+            {
+              "id": 28,
+              "word": "moon",
+              "translation": "قمر",
+              "done": false
+            },
+            {
+              "id": 29,
+              "word": "car",
+              "translation": "سيارة",
+              "done": false
+            },
+            {
+              "id": 30,
+              "word": "bird",
+              "translation": "عصفور",
+              "done": false
+            },
+            {
+              "id": 31,
+              "word": "fish",
+              "translation": "سمكة",
+              "done": false
+            },
+            {
+              "id": 32,
+              "word": "tree",
+              "translation": "شجرة",
+              "done": false
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "name": "الوحدة الثانية: العائلة والجسم",
+          "icon": "👨‍👩‍👧",
+          "words": [
+            {
+              "id": 1,
+              "word": "mother",
+              "translation": "أم",
+              "done": false
+            },
+            {
+              "id": 2,
+              "word": "father",
+              "translation": "أب",
+              "done": false
+            },
+            {
+              "id": 3,
+              "word": "brother",
+              "translation": "أخ",
+              "done": false
+            },
+            {
+              "id": 4,
+              "word": "sister",
+              "translation": "أخت",
+              "done": false
+            },
+            {
+              "id": 5,
+              "word": "grandmother",
+              "translation": "جدة",
+              "done": false
+            },
+            {
+              "id": 6,
+              "word": "grandfather",
+              "translation": "جد",
+              "done": false
+            },
+            {
+              "id": 7,
+              "word": "boy",
+              "translation": "ولد",
+              "done": false
+            },
+            {
+              "id": 8,
+              "word": "girl",
+              "translation": "بنت",
+              "done": false
+            },
+            {
+              "id": 9,
+              "word": "man",
+              "translation": "رجل",
+              "done": false
+            },
+            {
+              "id": 10,
+              "word": "woman",
+              "translation": "امرأة",
+              "done": false
+            },
+            {
+              "id": 11,
+              "word": "eye",
+              "translation": "عين",
+              "done": false
+            },
+            {
+              "id": 12,
+              "word": "ear",
+              "translation": "أذن",
+              "done": false
+            },
+            {
+              "id": 13,
+              "word": "hand",
+              "translation": "يد",
+              "done": false
+            },
+            {
+              "id": 14,
+              "word": "foot",
+              "translation": "قدم",
+              "done": false
+            },
+            {
+              "id": 15,
+              "word": "head",
+              "translation": "رأس",
+              "done": false
+            },
+            {
+              "id": 16,
+              "word": "nose",
+              "translation": "أنف",
+              "done": false
+            },
+            {
+              "id": 17,
+              "word": "mouth",
+              "translation": "فم",
+              "done": false
+            },
+            {
+              "id": 18,
+              "word": "door",
+              "translation": "باب",
+              "done": false
+            },
+            {
+              "id": 19,
+              "word": "chair",
+              "translation": "كرسي",
+              "done": false
+            },
+            {
+              "id": 20,
+              "word": "table",
+              "translation": "طاولة",
+              "done": false
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "name": "الوحدة الثالثة: الأرقام",
+          "icon": "🔢",
+          "words": [
+            {
+              "id": 1,
+              "word": "one",
+              "translation": "واحد",
+              "done": false
+            },
+            {
+              "id": 2,
+              "word": "two",
+              "translation": "اثنان",
+              "done": false
+            },
+            {
+              "id": 3,
+              "word": "three",
+              "translation": "ثلاثة",
+              "done": false
+            },
+            {
+              "id": 4,
+              "word": "four",
+              "translation": "أربعة",
+              "done": false
+            },
+            {
+              "id": 5,
+              "word": "five",
+              "translation": "خمسة",
+              "done": false
+            },
+            {
+              "id": 6,
+              "word": "six",
+              "translation": "ستة",
+              "done": false
+            },
+            {
+              "id": 7,
+              "word": "seven",
+              "translation": "سبعة",
+              "done": false
+            },
+            {
+              "id": 8,
+              "word": "eight",
+              "translation": "ثمانية",
+              "done": false
+            },
+            {
+              "id": 9,
+              "word": "nine",
+              "translation": "تسعة",
+              "done": false
+            },
+            {
+              "id": 10,
+              "word": "ten",
+              "translation": "عشرة",
+              "done": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "الصف الثاني",
+      "icon": "🌿",
+      "units": []
+    },
+    {
+      "id": 3,
+      "name": "الصف الثالث",
+      "icon": "🌳",
+      "units": []
+    },
+    {
+      "id": 4,
+      "name": "الصف الرابع",
+      "icon": "🌻",
+      "units": []
+    },
+    {
+      "id": 5,
+      "name": "الصف الخامس",
+      "icon": "🌺",
+      "units": []
+    },
+    {
+      "id": 6,
+      "name": "الصف السادس",
+      "icon": "🌸",
+      "units": []
+    },
+    {
+      "id": 7,
+      "name": "الصف السابع",
+      "icon": "🍀",
+      "units": []
+    },
+    {
+      "id": 8,
+      "name": "الصف الثامن",
+      "icon": "🍁",
+      "units": []
+    },
+    {
+      "id": 9,
+      "name": "الصف التاسع",
+      "icon": "🌾",
+      "units": []
+    },
+    {
+      "id": 10,
+      "name": "الصف العاشر",
+      "icon": "⭐",
+      "units": []
+    },
+    {
+      "id": 11,
+      "name": "الصف الحادي عشر",
+      "icon": "🏆",
+      "units": []
+    },
+    {
+      "id": 12,
+      "name": "الصف الثاني عشر",
+      "icon": "🎓",
+      "units": []
+    }
+  ]
 }

@@ -521,6 +521,9 @@ const all=us();
 const found=all.find(u=>u.name.toLowerCase()===name.toLowerCase());
 if(!found){tt('الحساب غير موجود','error');return;}
 if(found.password!==pass){tt('كلمة المرور خاطئة','error');return;}
+if(!found.td)found.td=null;
+if(!found.log)found.log=[];
+if(!found.doneWords)found.doneWords={};
 U=found;localStorage.setItem('emu',JSON.stringify(U));
 tt(`مرحباً ${U.name}! ✓`,'success');showApp();
 }
@@ -535,7 +538,7 @@ if(pass!==pass2){tt('كلمتا المرور غير متطابقتين','error')
 if(pass.length<4){tt('كلمة المرور 4 أحرف على الأقل','error');return;}
 const all=us();
 if(all.some(u=>u.name.toLowerCase()===name.toLowerCase())){tt('الاسم مستخدم بالفعل','error');return;}
-const nu={id:Date.now(),name:name,grade:grade,password:pass,xp:0,qz:0,doneWords:{},log:[]};
+const nu={id:Date.now(),name:name,grade:grade,password:pass,xp:0,qz:0,doneWords:{},log:[],td:null};
 all.push(nu);su(all);
 U=nu;localStorage.setItem('emu',JSON.stringify(U));
 tt(`مرحباً ${name}! ✓`,'success');showApp();
@@ -582,15 +585,26 @@ const res=await fetch(CONTENT_URL,{cache:'no-store'});
 if(!res.ok)throw 0;
 const j=await res.json();
 if(j&&Array.isArray(j.grades)&&j.grades.length){
-D.grades=j.grades;
-const oldProgress=localStorage.getItem('em_progress')?JSON.parse(localStorage.getItem('em_progress')):null;
-if(oldProgress&&oldProgress.grades){
-// الحفاظ على علامة "done" في الوحدات/الكلمات المطابقة
-D.grades.forEach(g=>{
-const og=oldProgress.grades.find(x=>x.id===g.id);
-if(og&&g.units){g.units.forEach(u=>{const ou=og.units?og.units.find(x=>x.id===u.id):null;if(ou&&u.words){u.words.forEach(w=>{const ow=ou.words?ou.words.find(x=>String(x.id)===String(w.id)):null;if(ow)w.done=!!ow.done;});}});}
+// الحفاظ على تقدم الطالب المحلي (علامات done) للكلمات المطابقة
+let prev=null;
+try{prev=JSON.parse(localStorage.getItem('em_grades'))||null;}catch(e){}
+if(Array.isArray(prev)){
+j.grades.forEach(g=>{
+const og=prev.find(x=>x.id===g.id);
+if(og&&g.units&&Array.isArray(og.units)){
+g.units.forEach(u=>{
+const ou=og.units.find(x=>x.id===u.id);
+if(ou&&u.words&&Array.isArray(ou.words)){
+u.words.forEach(w=>{
+const ow=ou.words.find(x=>String(x.id)===String(w.id));
+if(ow)w.done=!!ow.done;
 });
 }
+});
+}
+});
+}
+D.grades=j.grades;
 localStorage.setItem('em_grades',JSON.stringify(D.grades));
 localStorage.setItem('em_last_content',JSON.stringify(j));
 loadCache();
@@ -1008,10 +1022,17 @@ tt('تم التصدير ✓','success');
 
 function rst(){
 if(!ad)return;
-showConfirm('إعادة تعيين كل شيء؟','سيتم حذف كل الكلمات والوحدات من السحابة',()=>{
+showConfirm('إعادة تعيين كل شيء؟','سيُحذف التقدم المحفوظ على هذا الجهاز. المحتوى المشترك سيعود تلقائياً من ملف المعلم عند فتح التطبيق.',()=>{
+const uid=U?U.id:null;
 D={grades:[],xp:0,qz:0};
 for(let i=0;i<12;i++)D.grades.push({id:i+1,name:GN[i],icon:GI[i],units:[]});
-saveG();saveXp();saveQz();tt('تمت إعادة التعيين ✓','success');
+saveG();saveXp();saveQz();
+const all=us().filter(u=>!uid||u.id!==uid);
+su(all);
+if(U){U.xp=0;U.qz=0;U.doneWords={};U.td=null;localStorage.setItem('emu',JSON.stringify(U));}
+try{localStorage.removeItem('em_last_content');}catch(e){}
+mergeContent();
+tt('تمت إعادة التعيين ✓','success');
 });
 }
 
@@ -1032,8 +1053,9 @@ if(type==='quiz'){d.quizzes++;}
 todayIncr();
 }
 function todayIncr(){try{localStorage.setItem('em_today',dayKey());}catch(e){}}
+function lastSentKey(){return 'em_last_report_'+(U&&U.id?U.id:'');}
 function lastSent(){
-const t=localStorage.getItem('em_last_report');return t?+t:0;
+const t=localStorage.getItem(lastSentKey());return t?+t:0;
 }
 function canSendReport(){
 const t=lastSent();
@@ -1042,24 +1064,42 @@ return !t||(Date.now()-t)>=24*60*60*1000;
 function stars(n){return n>=100?'🌟':n>=80?'⭐':n>=50?'👍':'💪';}
 function sendReport(){
 if(!U){tt('سجّل الدخول أولاً','error');return;}
+if(!canSendReport()){
+const t=lastSent();
+const msLeft=24*60*60*1000-(Date.now()-t);
+if(msLeft>0){
+const h=Math.floor(msLeft/3600000);
+const m=Math.floor((msLeft%3600000)/60000);
+tt(`أرسلت تقريرك قبل ${h} ساعة و ${m} دقيقة. جرّب لاحقاً.`,'error');
+return;
+}
+}
 const d=getDay();
 const gradeName=(D.grades.find(g=>g.id===U.grade)||{}).name||'غير محدد';
 const totalWords=U.doneWords?Object.keys(U.doneWords).length:0;
-const today=d?`- كلمات جديدة اليوم: ${d.new}
-- إجابات صحيحة اليوم: ${d.ok}
-- إجابات خاطئة اليوم: ${d.no}
-- اختبارات اليوم: ${d.quizzes}
-- XP اليوم: ${d.xp}`:'- لا يوجد نشاط اليوم بعد';
-const msg=`📊 *تقرير تقدم: ${U.name}*
+const today=d?`• كلمات جديدة اليوم: ${d.new}
+• إجابات صحيحة اليوم: ${d.ok}
+• إجابات خاطئة اليوم: ${d.no}
+• اختبارات اليوم: ${d.quizzes}
+• XP اليوم: ${d.xp}`:'لا يوجد نشاط اليوم بعد';
+const acc=d&&(d.ok+d.no)>0?Math.round(d.ok/(d.ok+d.no)*100):0;
+const msg=`📊 *تقرير تقدم الطالب: ${U.name}*
 📚 الصف: ${gradeName}
+
 ⭐ مجموع XP: ${U.xp}
 📖 الكلمات المتمكنة: ${totalWords}
-📝 الاختبارات: ${U.qz}
-🔥 اليوم: ${today}
-${stars(d&&d.ok+d.no>0?Math.round(d.ok/(d.ok+d.no)*100):0)}
-_تم الإرسال من تطبيق English Master Pro_`;
+📝 عدد الاختبارات: ${U.qz}
+
+🔥 *نشاط اليوم:*
+${today}
+دقة اليوم: ${acc}% ${stars(acc)}
+
+_تم الإرسال تلقائياً من تطبيق English Master Pro_`;
 const url='https://wa.me/963949119294?text='+encodeURIComponent(msg);
-localStorage.setItem('em_last_report',String(Date.now()));
+localStorage.setItem(lastSentKey(),String(Date.now()));
+if(!U.log)U.log=[];
+U.log.push({t:todayStr(),time:Date.now(),newWords:d.new,ok:d.ok,no:d.no,quizzes:d.quizzes,xp:d.xp});
+syncUser();
 window.open(url,'_blank');
 tt('تم فتح واتساب مع تقريرك ✓','success');
 }
