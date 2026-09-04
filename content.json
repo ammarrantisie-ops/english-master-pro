@@ -577,288 +577,224 @@
               "word": "computers",
               "translation": "أجهزة الحاسوب",
               "done": false,
-              "cat": "n",
-              "en_s": "About 30 years ago, there were no computers or Internet in schools.",
-              "ar_s": "منذ حوالي 30 عاماً، لم تكن هناك أجهزة حاسوب أو إنترنت في المدارس."
+              "cat": "n"
             },
             {
               "id": 2,
               "word": "Internet",
               "translation": "الإنترنت",
               "done": false,
-              "cat": "n",
-              "en_s": "About 30 years ago, there were no computers or Internet in schools.",
-              "ar_s": "منذ حوالي 30 عاماً، لم تكن هناك أجهزة حاسوب أو إنترنت في المدارس."
+              "cat": "n"
             },
             {
               "id": 3,
               "word": "schools",
               "translation": "المدارس",
               "done": false,
-              "cat": "n",
-              "en_s": "About 30 years ago, there were no computers or Internet in schools.",
-              "ar_s": "منذ حوالي 30 عاماً، لم تكن هناك أجهزة حاسوب أو إنترنت في المدارس."
+              "cat": "n"
             },
             {
               "id": 4,
               "word": "past",
               "translation": "الماضي",
               "done": false,
-              "cat": "n",
-              "en_s": "Schools in the past had many modern technological innovations.",
-              "ar_s": "كان لدى المدارس في الماضي العديد من الابتكارات التكنولوجية الحديثة."
+              "cat": "n"
             },
             {
               "id": 5,
               "word": "modern",
               "translation": "حديث",
               "done": false,
-              "cat": "adj",
-              "en_s": "Schools in the past had many modern technological innovations.",
-              "ar_s": "كان لدى المدارس في الماضي العديد من الابتكارات التكنولوجية الحديثة."
+              "cat": "adj"
             },
             {
               "id": 6,
               "word": "technological",
               "translation": "تكنولوجي",
               "done": false,
-              "cat": "adj",
-              "en_s": "Schools in the past had many modern technological innovations.",
-              "ar_s": "كان لدى المدارس في الماضي العديد من الابتكارات التكنولوجية الحديثة."
+              "cat": "adj"
             },
             {
               "id": 7,
               "word": "innovations",
               "translation": "ابتكارات",
               "done": false,
-              "cat": "n",
-              "en_s": "Schools in the past had many modern technological innovations.",
-              "ar_s": "كان لدى المدارس في الماضي العديد من الابتكارات التكنولوجية الحديثة."
+              "cat": "n"
             },
             {
               "id": 8,
               "word": "development",
               "translation": "تطوّر",
               "done": false,
-              "cat": "n",
-              "en_s": "Schools have changed with the development of modern technology.",
-              "ar_s": "تغيّرت المدارس مع تطوّر التكنولوجيا الحديثة."
+              "cat": "n"
             },
             {
               "id": 9,
               "word": "technology",
               "translation": "تكنولوجيا",
               "done": false,
-              "cat": "n",
-              "en_s": "Schools have changed with the development of modern technology.",
-              "ar_s": "تغيّرت المدارس مع تطوّر التكنولوجيا الحديثة."
+              "cat": "n"
             },
             {
               "id": 10,
               "word": "changed",
               "translation": "تغيّر",
               "done": false,
-              "cat": "v",
-              "en_s": "Schools have changed with the development of modern technology.",
-              "ar_s": "تغيّرت المدارس مع تطوّر التكنولوجيا الحديثة."
+              "cat": "v"
             },
             {
               "id": 11,
               "word": "teachers",
               "translation": "معلّمون",
               "done": false,
-              "cat": "n",
-              "en_s": "Nowadays, teachers and students use computers and the Internet.",
-              "ar_s": "في الوقت الحاضر، يستخدم المعلمون والطلاب أجهزة الحاسوب والإنترنت."
+              "cat": "n"
             },
             {
               "id": 12,
               "word": "use",
               "translation": "يستخدمون",
               "done": false,
-              "cat": "v",
-              "en_s": "Nowadays, teachers and students use computers and the Internet.",
-              "ar_s": "في الوقت الحاضر، يستخدم المعلمون والطلاب أجهزة الحاسوب والإنترنت."
+              "cat": "v"
             },
             {
               "id": 13,
               "word": "students",
               "translation": "طلاب",
               "done": false,
-              "cat": "n",
-              "en_s": "Students in future schools will not care about their interests or future careers.",
-              "ar_s": "لن يهتم طلاب المدارس المستقبلية باهتماماتهم أو مساراتهم المهنية المستقبلية."
+              "cat": "n"
             },
             {
               "id": 14,
               "word": "important",
               "translation": "مهم",
               "done": false,
-              "cat": "adj",
-              "en_s": "Modern technologies have had an important role in education.",
-              "ar_s": "كان للتكنولوجيات الحديثة دور مهم في التعليم."
+              "cat": "adj"
             },
             {
               "id": 15,
               "word": "role",
               "translation": "دور",
               "done": false,
-              "cat": "n",
-              "en_s": "Modern technologies have had an important role in education.",
-              "ar_s": "كان للتكنولوجيات الحديثة دور مهم في التعليم."
+              "cat": "n"
             },
             {
               "id": 16,
               "word": "education",
               "translation": "التعليم",
               "done": false,
-              "cat": "n",
-              "en_s": "Modern technologies have had an important role in education.",
-              "ar_s": "كان للتكنولوجيات الحديثة دور مهم في التعليم."
+              "cat": "n"
             },
             {
               "id": 17,
               "word": "traditional",
               "translation": "تقليدي",
               "done": false,
-              "cat": "adj",
-              "en_s": "Teachers today must only use traditional teaching methods.",
-              "ar_s": "يجب على المعلّمين اليوم أن يستخدموا طرق التدريس التقليدية فقط."
+              "cat": "adj"
             },
             {
               "id": 18,
               "word": "teaching",
               "translation": "تدريس",
               "done": false,
-              "cat": "n",
-              "en_s": "Teachers today must only use traditional teaching methods.",
-              "ar_s": "يجب على المعلّمين اليوم أن يستخدموا طرق التدريس التقليدية فقط."
+              "cat": "n"
             },
             {
               "id": 19,
               "word": "methods",
               "translation": "طرق",
               "done": false,
-              "cat": "n",
-              "en_s": "Teachers today must only use traditional teaching methods.",
-              "ar_s": "يجب على المعلّمين اليوم أن يستخدموا طرق التدريس التقليدية فقط."
+              "cat": "n"
             },
             {
               "id": 20,
               "word": "future",
               "translation": "المستقبل",
               "done": false,
-              "cat": "n",
-              "en_s": "Future schools may provide flexible and personalized learning.",
-              "ar_s": "قد توفر المدارس المستقبلية تعليماً مرناً ومخصصاً."
+              "cat": "n"
             },
             {
               "id": 21,
               "word": "provide",
               "translation": "يوفّر",
               "done": false,
-              "cat": "v",
-              "en_s": "Future schools may provide flexible and personalized learning.",
-              "ar_s": "قد توفر المدارس المستقبلية تعليماً مرناً ومخصصاً."
+              "cat": "v"
             },
             {
               "id": 22,
               "word": "flexible",
               "translation": "مرن",
               "done": false,
-              "cat": "adj",
-              "en_s": "Future schools may provide flexible and personalized learning.",
-              "ar_s": "قد توفر المدارس المستقبلية تعليماً مرناً ومخصصاً."
+              "cat": "adj"
             },
             {
               "id": 23,
               "word": "personalized",
               "translation": "مخصّص",
               "done": false,
-              "cat": "adj",
-              "en_s": "Future schools may provide flexible and personalized learning.",
-              "ar_s": "قد توفر المدارس المستقبلية تعليماً مرناً ومخصصاً."
+              "cat": "adj"
             },
             {
               "id": 24,
               "word": "learning",
               "translation": "تعلّم",
               "done": false,
-              "cat": "n",
-              "en_s": "Future schools may provide flexible and personalized learning.",
-              "ar_s": "قد توفر المدارس المستقبلية تعليماً مرناً ومخصصاً."
+              "cat": "n"
             },
             {
               "id": 25,
               "word": "interests",
               "translation": "اهتمامات",
               "done": false,
-              "cat": "n",
-              "en_s": "Students in future schools will not care about their interests or future careers.",
-              "ar_s": "لن يهتم طلاب المدارس المستقبلية باهتماماتهم أو مساراتهم المهنية المستقبلية."
+              "cat": "n"
             },
             {
               "id": 26,
               "word": "careers",
               "translation": "مسارات مهنية",
               "done": false,
-              "cat": "n",
-              "en_s": "Students in future schools will not care about their interests or future careers.",
-              "ar_s": "لن يهتم طلاب المدارس المستقبلية باهتماماتهم أو مساراتهم المهنية المستقبلية."
+              "cat": "n"
             },
             {
               "id": 27,
               "word": "flying",
               "translation": "طائر",
               "done": false,
-              "cat": "adj",
-              "en_s": "Flying vehicles may replace school buses in the future.",
-              "ar_s": "قد تحلّ المركبات الطائرة محلّ الحافلات المدرسية في المستقبل."
+              "cat": "adj"
             },
             {
               "id": 28,
               "word": "vehicles",
               "translation": "مركبات",
               "done": false,
-              "cat": "n",
-              "en_s": "Flying vehicles may replace school buses in the future.",
-              "ar_s": "قد تحلّ المركبات الطائرة محلّ الحافلات المدرسية في المستقبل."
+              "cat": "n"
             },
             {
               "id": 29,
               "word": "replace",
               "translation": "يستبدل",
               "done": false,
-              "cat": "v",
-              "en_s": "Flying vehicles may replace school buses in the future.",
-              "ar_s": "قد تحلّ المركبات الطائرة محلّ الحافلات المدرسية في المستقبل."
+              "cat": "v"
             },
             {
               "id": 30,
               "word": "school buses",
               "translation": "حافلات مدرسية",
               "done": false,
-              "cat": "n",
-              "en_s": "Flying vehicles may replace school buses in the future.",
-              "ar_s": "قد تحلّ المركبات الطائرة محلّ الحافلات المدرسية في المستقبل."
+              "cat": "n"
             },
             {
               "id": 31,
               "word": "robotic",
               "translation": "روبوتي",
               "done": false,
-              "cat": "adj",
-              "en_s": "Future schools may have robotic teachers instead of human teachers.",
-              "ar_s": "قد تمتلك المدارس المستقبلية معلّمين روبوتيين بدلاً من المعلّمين البشر."
+              "cat": "adj"
             },
             {
               "id": 32,
               "word": "human",
               "translation": "بشري",
               "done": false,
-              "cat": "adj",
-              "en_s": "Future schools may have robotic teachers instead of human teachers.",
-              "ar_s": "قد تمتلك المدارس المستقبلية معلّمين روبوتيين بدلاً من المعلّمين البشر."
+              "cat": "adj"
             }
           ]
         }

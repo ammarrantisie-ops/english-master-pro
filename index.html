@@ -334,7 +334,7 @@ body{font-family:'Tajawal',sans-serif;background:var(--bg);color:var(--t);min-he
 <div class="fcc" onclick="flip()">
 <div class="fc" id="fc">
 <div class="cf cff"><div class="cfl">English</div><div class="cfw" id="cw">word</div><button class="cfs" onclick="event.stopPropagation();spk()">🔊</button></div>
-<div class="cf cfb"><div class="cfl">الترجمة</div><div class="cft" id="ct">ترجمة</div><div class="cfe" id="ce" style="font-size:12px;opacity:.9;margin-top:10px;padding:8px 12px;background:rgba(255,255,255,0.15);border-radius:10px;line-height:1.7"></div></div>
+<div class="cf cfb"><div class="cfl">الترجمة</div><div class="cft" id="ct">ترجمة</div></div>
 </div>
 </div>
 <div class="la">
@@ -1059,8 +1059,6 @@ if(ci>=uw.length){sQ();return;}
 const w=uw[ci];
 document.getElementById('cw').textContent=w.word;
 document.getElementById('ct').textContent=w.translation;
-const ex=getEx(w);
-document.getElementById('ce').textContent=`${ex.en}\n${ex.ar}`;
 document.getElementById('lp').style.width=Math.round(ci/uw.length*100)+'%';
 document.getElementById('lt').textContent=`${ci+1}/${uw.length}`;
 document.getElementById('fc').classList.remove('flipped');
