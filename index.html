@@ -564,7 +564,7 @@ body{font-family:'Tajawal',sans-serif;background:var(--bg);color:var(--t);min-he
 </div>
 <div class="psec">
 <h4>ℹ️ حول التطبيق</h4>
-<div class="pit"><span>English Master Pro</span><span>v4.0</span></div>
+<div class="pit"><span>English Master Pro</span><span id="appV">v4.0</span></div>
 <div class="pit"><span>تصميم</span><span>عمار الرنتيسي</span></div>
 </div>
 <nav class="bn">
@@ -605,6 +605,7 @@ let cCb=null;
 let xq=[],xi=0,xs=0,xm=0,xresC=null;
 
 const Q=[{t:"العلم نور والجهل ظلام",a:"مثل عربي"},{t:"من جد وجد ومن زرع حصد",a:"مثل عربي"},{t:"Knowledge is power",a:"فرنسيس بيكن"},{t:"Practice makes perfect",a:"مثل إنجليزي"},{t:"كل كلمة جديدة تعلمها خطوة نحو المستقبل",a:"Unknown"},{t:"ابدأ صغيراً واحلم كبيراً",a:"Unknown"},{t:"لا تحقر نفسك فأنت أقوى مما تتخيل",a:"Unknown"},{t:"المرء يكبر بعلمه لا بعمره",a:"مثل عربي"},{t:"A journey of a thousand miles begins with a step",a:"لاو تزو"},{t:"Learning is a treasure",a:"مثل صيني"}];
+const APP_VER='4.0/11';
 
 document.addEventListener('DOMContentLoaded',()=>{
 listenData();
@@ -619,6 +620,7 @@ navigator.serviceWorker.register('sw.js').catch(()=>{});
 }
 setTimeout(()=>{
 document.getElementById('splash').classList.add('hide');
+const av=document.getElementById('appV');if(av)av.textContent='v'+APP_VER;
 if(U||ad){showApp();}else{showAuth();}
 },2000);
 });
